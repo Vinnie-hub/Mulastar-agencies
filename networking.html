@@ -972,7 +972,7 @@
 
             <div class="hero-stats">
               <div class="stat">
-                <span class="stat-number">₵300-15K</span>
+                <span class="stat-number">Ksh.300-15K</span>
                 <span class="stat-label">Daily Earnings</span>
               </div>
               <div class="stat">
@@ -1035,7 +1035,7 @@
             </div>
             <h3>Direct Referrals</h3>
             <p>People you invite directly to join Mulastar</p>
-            <span class="commission">₵300</span>
+            <span class="commission">Ksh.300</span>
             <p><strong>Commission:</strong> Ksh.300 per activation</p>
             <p><strong>Bonus:</strong> Ksh.300 welcome bonus for each</p>
           </div>
@@ -1047,7 +1047,7 @@
             </div>
             <h3>Team Network</h3>
             <p>People invited by your Level 1 referrals</p>
-            <span class="commission">₵200</span>
+            <span class="commission">Ksh.200</span>
             <p><strong>Commission:</strong> Ksh.200 per activation</p>
             <p><strong>Passive Income:</strong> Automatically from your team</p>
           </div>
@@ -1059,7 +1059,7 @@
             </div>
             <h3>Extended Network</h3>
             <p>People invited by your Level 2 referrals</p>
-            <span class="commission">₵100</span>
+            <span class="commission">Ksh.100</span>
             <p><strong>Commission:</strong> Ksh.100 per activation</p>
             <p>
               <strong>Residual Income:</strong> Lifetime earnings from network
@@ -1118,10 +1118,10 @@
 
           <div class="calculator-result">
             <h3>Your Estimated Monthly Earnings</h3>
-            <div class="daily-earnings" id="monthlyEarnings">₵45,000</div>
+            <div class="daily-earnings" id="monthlyEarnings">Ksh.45,000</div>
             <p>From all 3 affiliate levels</p>
 
-            <div class="monthly-earnings" id="dailyEarnings">₵1,500</div>
+            <div class="monthly-earnings" id="dailyEarnings">Ksh.1,500</div>
             <p>Average Daily Income</p>
           </div>
         </div>
@@ -1605,13 +1605,13 @@
                 >
               </li>
               <li>
-                <a href="#calculator" class="btn btn-secondary">
-                  <i class="fas fa-calculator"></i> Calculate Earnings
+                <a href="#calculator"
+                  ><i class="fas fa-calculator"></i> Calculate Earnings
                 </a>
               </li>
               <li>
-                <a href="registration.html" class="btn btn-primary">
-                  <i class="fas fa-rocket"></i> Start Earning Now
+                <a href="registration.html"
+                  ><i class="fas fa-rocket"></i> Start Earning Now
                 </a>
               </li>
             </ul>
@@ -1666,9 +1666,10 @@
         const daily = monthly / 30;
 
         monthlyEarnings.textContent =
-          "₵" + monthly.toLocaleString("en-US", { maximumFractionDigits: 0 });
+          "Ksh." +
+          monthly.toLocaleString("en-US", { maximumFractionDigits: 0 });
         dailyEarnings.textContent =
-          "₵" + daily.toLocaleString("en-US", { maximumFractionDigits: 0 });
+          "Ksh." + daily.toLocaleString("en-US", { maximumFractionDigits: 0 });
       }
 
       directSlider.addEventListener("input", calculateEarnings);
