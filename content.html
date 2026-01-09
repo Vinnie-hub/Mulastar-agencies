@@ -1,0 +1,2067 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mulastar Agencies - Create, Share & Monetize Content</title>
+    <meta
+      name="description"
+      content="Create, share, and monetize memes, articles, and viral content. Get rewarded for every like, share, comment, and view on Mulastar Agencies."
+    />
+    <link rel="icon" href="pictures/icon2.png" type="image/png" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Montserrat:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <style>
+      :root {
+        --primary: #2563eb;
+        --primary-light: #3b82f6;
+        --primary-dark: #1d4ed8;
+        --secondary: #10b981;
+        --accent: #8b5cf6;
+        --warning: #f59e0b;
+        --danger: #ef4444;
+        --light: #f8fafc;
+        --dark: #1e293b;
+        --muted: #64748b;
+        --border: #e2e8f0;
+        --card-bg: #ffffff;
+        --gradient: linear-gradient(135deg, #2563eb 0%, #8b5cf6 100%);
+        --gradient-green: linear-gradient(135deg, #10b981 0%, #34d399 100%);
+        --gradient-orange: linear-gradient(135deg, #f59e0b 0%, #fbbf24 100%);
+        --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.12);
+        --shadow-hover: 0 20px 50px rgba(37, 99, 235, 0.15);
+        --radius: 16px;
+        --radius-lg: 24px;
+        --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        line-height: 1.6;
+        color: var(--dark);
+        background: var(--light);
+        overflow-x: hidden;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4 {
+        font-family: "Montserrat", sans-serif;
+        font-weight: 700;
+        line-height: 1.2;
+      }
+
+      .container {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 0 24px;
+      }
+
+      section {
+        padding: 100px 0;
+      }
+
+      /* 🎯 Navigation */
+      .navbar {
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        border-bottom: 1px solid rgba(139, 92, 246, 0.1);
+      }
+
+      .nav-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 0;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        text-decoration: none;
+        transition: var(--transition);
+      }
+
+      .logo:hover {
+        transform: translateY(-2px);
+      }
+
+      .logo-icon {
+        width: 48px;
+        height: 48px;
+        background: var(--gradient);
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-weight: 800;
+        font-size: 1.4rem;
+        box-shadow: var(--shadow);
+        transition: var(--transition);
+      }
+
+      .logo:hover .logo-icon {
+        transform: rotate(15deg);
+      }
+
+      .logo-text h1 {
+        font-size: 1.6rem;
+        margin: 0;
+        color: var(--darker);
+        background: var(--gradient);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .logo-text span {
+        font-size: 0.8rem;
+        color: var(--gray);
+        font-weight: 500;
+        display: block;
+        margin-top: 4px;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 30px;
+        align-items: center;
+      }
+
+      .nav-links a {
+        color: var(--dark);
+        text-decoration: none;
+        font-weight: 600;
+        padding: 8px 16px;
+        border-radius: 8px;
+        transition: var(--transition);
+        position: relative;
+        font-size: 0.95rem;
+      }
+
+      .nav-links a:hover {
+        color: var(--primary);
+        background: rgba(139, 92, 246, 0.05);
+      }
+
+      .nav-links a::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 2px;
+        background: var(--gradient);
+        border-radius: 2px;
+        transition: var(--transition);
+      }
+
+      .nav-links a:hover::after {
+        width: 80%;
+      }
+
+      .nav-cta {
+        background: var(--gradient);
+        color: white !important;
+        padding: 12px 28px !important;
+        border-radius: 10px;
+        font-weight: 700;
+        box-shadow: var(--shadow);
+        transition: var(--transition);
+      }
+
+      .nav-cta:hover {
+        transform: translateY(-3px);
+        box-shadow: var(--shadow-hover);
+        background: var(--gradient-dark);
+      }
+
+      .nav-cta::after {
+        display: none;
+      }
+
+      /* Mobile Menu */
+      .mobile-menu-btn {
+        display: none;
+        background: none;
+        border: none;
+        font-size: 1.5rem;
+        color: var(--dark);
+        cursor: pointer;
+        padding: 8px;
+        border-radius: 8px;
+        transition: var(--transition);
+      }
+
+      .mobile-menu-btn:hover {
+        background: var(--gray-light);
+      }
+
+      /* Agency Hero */
+      .agency-hero {
+        position: relative;
+        min-height: 90vh;
+        display: flex;
+        align-items: center;
+        color: white;
+        overflow: hidden;
+        background: linear-gradient(
+            rgba(17, 24, 39, 0.9),
+            rgba(139, 92, 246, 0.8)
+          ),
+          url("https://images.unsplash.com/photo-1611605698335-8b1569810432?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80");
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 2;
+        max-width: 900px;
+        animation: fadeInUp 1s ease-out;
+      }
+
+      .hero-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(10px);
+        padding: 12px 24px;
+        border-radius: 50px;
+        font-weight: 600;
+        color: white;
+        margin-bottom: 30px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        animation: pulse 2s infinite;
+      }
+
+      @keyframes pulse {
+        0% {
+          box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.3);
+        }
+        70% {
+          box-shadow: 0 0 0 15px rgba(255, 255, 255, 0);
+        }
+        100% {
+          box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+        }
+      }
+
+      .agency-hero h1 {
+        font-size: 4rem;
+        margin-bottom: 25px;
+        background: linear-gradient(135deg, #ffffff 0%, #fbbf24 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        line-height: 1.1;
+      }
+
+      .agency-hero p {
+        font-size: 1.3rem;
+        color: rgba(255, 255, 255, 0.9);
+        margin-bottom: 40px;
+        line-height: 1.6;
+      }
+
+      .hero-stats {
+        display: flex;
+        gap: 30px;
+        margin: 50px 0;
+        flex-wrap: wrap;
+      }
+
+      .hero-stat {
+        text-align: center;
+        padding: 25px 20px;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border-radius: var(--radius);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        min-width: 160px;
+        transition: var(--transition);
+      }
+
+      .hero-stat:hover {
+        transform: translateY(-5px);
+        background: rgba(255, 255, 255, 0.15);
+      }
+
+      .hero-stat .number {
+        font-size: 2.5rem;
+        font-weight: 800;
+        color: var(--secondary-light);
+        display: block;
+        line-height: 1;
+        margin-bottom: 8px;
+      }
+
+      .hero-stat .label {
+        font-size: 0.95rem;
+        color: rgba(255, 255, 255, 0.9);
+        font-weight: 500;
+      }
+
+      .hero-buttons {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+        margin-top: 40px;
+      }
+
+      .hero-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        background: var(--gradient);
+        color: white;
+        padding: 18px 40px;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 1.1rem;
+        transition: var(--transition);
+        box-shadow: var(--shadow);
+        border: 2px solid transparent;
+      }
+
+      .hero-btn:hover {
+        transform: translateY(-3px);
+        box-shadow: var(--shadow-hover);
+        border-color: rgba(255, 255, 255, 0.3);
+      }
+
+      .hero-btn-secondary {
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(10px);
+        border: 2px solid rgba(255, 255, 255, 0.3);
+      }
+
+      .hero-btn-secondary:hover {
+        background: rgba(255, 255, 255, 0.25);
+        border-color: rgba(255, 255, 255, 0.5);
+      }
+
+      /* Content Samples */
+      .content-samples {
+        background: white;
+        padding: 100px 0;
+      }
+
+      .samples-header {
+        text-align: center;
+        margin-bottom: 60px;
+      }
+
+      .samples-header h2 {
+        font-size: 3.2rem;
+        margin-bottom: 20px;
+        color: var(--darker);
+        position: relative;
+        display: inline-block;
+      }
+
+      .samples-header h2::after {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 4px;
+        background: var(--gradient);
+        border-radius: 2px;
+      }
+
+      .samples-header p {
+        color: var(--gray);
+        font-size: 1.2rem;
+        max-width: 700px;
+        margin: 0 auto;
+      }
+
+      .sample-filters {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        margin-bottom: 50px;
+        flex-wrap: wrap;
+      }
+
+      .filter-btn {
+        padding: 12px 30px;
+        background: var(--light);
+        border: 2px solid var(--gray-light);
+        border-radius: 50px;
+        font-weight: 600;
+        color: var(--dark);
+        cursor: pointer;
+        transition: var(--transition);
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .filter-btn.active,
+      .filter-btn:hover {
+        background: var(--gradient);
+        color: white;
+        border-color: transparent;
+        transform: translateY(-2px);
+      }
+
+      .samples-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        gap: 30px;
+        margin-bottom: 60px;
+      }
+
+      .sample-card {
+        background: white;
+        border-radius: var(--radius);
+        overflow: hidden;
+        box-shadow: var(--shadow);
+        transition: var(--transition);
+        border: 1px solid var(--gray-light);
+      }
+
+      .sample-card:hover {
+        transform: translateY(-10px);
+        box-shadow: var(--shadow-lg);
+        border-color: var(--primary-light);
+      }
+
+      .sample-image {
+        height: 250px;
+        overflow: hidden;
+        position: relative;
+      }
+
+      .sample-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.6s ease;
+      }
+
+      .sample-card:hover .sample-image img {
+        transform: scale(1.1);
+      }
+
+      .sample-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(
+          135deg,
+          rgba(139, 92, 246, 0.2),
+          rgba(245, 158, 11, 0.2)
+        );
+        opacity: 0;
+        transition: var(--transition);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .sample-card:hover .sample-overlay {
+        opacity: 1;
+      }
+
+      .sample-info {
+        padding: 30px;
+      }
+
+      .sample-category {
+        display: inline-block;
+        background: rgba(139, 92, 246, 0.1);
+        color: var(--primary);
+        padding: 8px 18px;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        font-weight: 600;
+        margin-bottom: 15px;
+      }
+
+      .sample-info h3 {
+        font-size: 1.4rem;
+        margin-bottom: 15px;
+        color: var(--darker);
+        line-height: 1.3;
+      }
+
+      .sample-stats {
+        display: flex;
+        gap: 25px;
+        margin: 20px 0;
+        color: var(--gray);
+        font-size: 0.9rem;
+      }
+
+      .sample-stats span {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+
+      .sample-stats i {
+        color: var(--primary);
+      }
+
+      .sample-earnings {
+        background: var(--gradient-secondary);
+        color: white;
+        padding: 12px 20px;
+        border-radius: 10px;
+        font-weight: 700;
+        margin-top: 20px;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .view-more {
+        text-align: center;
+        margin-top: 40px;
+      }
+
+      .view-more-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        background: var(--gradient);
+        color: white;
+        padding: 16px 40px;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 1.1rem;
+        transition: var(--transition);
+        box-shadow: var(--shadow);
+      }
+
+      .view-more-btn:hover {
+        transform: translateY(-3px);
+        box-shadow: var(--shadow-hover);
+      }
+
+      /* Earnings Calculator */
+      .earnings-calculator {
+        background: linear-gradient(135deg, #f0f4ff 0%, #e6f0ff 100%);
+        padding: 100px 0;
+        text-align: center;
+      }
+
+      .calculator-container {
+        max-width: 800px;
+        margin: 0 auto;
+        background: white;
+        padding: 60px;
+        border-radius: var(--radius-lg);
+        box-shadow: var(--shadow-lg);
+        border: 1px solid var(--gray-light);
+      }
+
+      .calculator-container h2 {
+        font-size: 2.8rem;
+        margin-bottom: 20px;
+        color: var(--darker);
+      }
+
+      .calculator-container p {
+        color: var(--gray);
+        margin-bottom: 50px;
+        font-size: 1.1rem;
+        line-height: 1.6;
+      }
+
+      .calculator-inputs {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+        margin-bottom: 40px;
+      }
+
+      .input-group {
+        text-align: left;
+      }
+
+      .input-group label {
+        display: block;
+        margin-bottom: 12px;
+        font-weight: 600;
+        color: var(--dark);
+        font-size: 1.1rem;
+      }
+
+      .input-group input,
+      .input-group select {
+        width: 100%;
+        padding: 16px 20px;
+        border: 2px solid var(--gray-light);
+        border-radius: 10px;
+        font-size: 1rem;
+        transition: var(--transition);
+        background: white;
+      }
+
+      .input-group input:focus,
+      .input-group select:focus {
+        border-color: var(--primary);
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
+      }
+
+      .calculator-result {
+        background: var(--gradient);
+        color: white;
+        padding: 40px;
+        border-radius: var(--radius);
+        margin: 40px 0;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .calculator-result::before {
+        content: "";
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(
+          circle,
+          rgba(255, 255, 255, 0.1) 0%,
+          transparent 70%
+        );
+      }
+
+      .result-label {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+        opacity: 0.9;
+        position: relative;
+        z-index: 1;
+      }
+
+      .result-amount {
+        font-size: 3.5rem;
+        font-weight: 800;
+        margin-bottom: 20px;
+        position: relative;
+        z-index: 1;
+      }
+
+      .result-note {
+        font-size: 1rem;
+        opacity: 0.8;
+        position: relative;
+        z-index: 1;
+      }
+
+      /* Success Stories */
+      .success-stories {
+        background: white;
+        padding: 100px 0;
+      }
+
+      .stories-header {
+        text-align: center;
+        margin-bottom: 60px;
+      }
+
+      .stories-header h2 {
+        font-size: 3.2rem;
+        margin-bottom: 20px;
+        color: var(--darker);
+      }
+
+      .stories-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 40px;
+      }
+
+      .story-card {
+        background: var(--light);
+        border-radius: var(--radius);
+        padding: 50px 40px;
+        text-align: center;
+        transition: var(--transition);
+        border: 1px solid transparent;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .story-card:hover {
+        transform: translateY(-10px);
+        border-color: var(--primary);
+        box-shadow: var(--shadow-lg);
+      }
+
+      .story-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: var(--gradient);
+      }
+
+      .story-avatar {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin: 0 auto 25px;
+        border: 3px solid var(--primary-light);
+        box-shadow: var(--shadow);
+      }
+
+      .story-content {
+        font-style: italic;
+        color: var(--dark);
+        line-height: 1.8;
+        margin-bottom: 25px;
+        position: relative;
+      }
+
+      .story-content::before,
+      .story-content::after {
+        content: '"';
+        font-size: 3rem;
+        color: var(--primary);
+        opacity: 0.2;
+        position: absolute;
+        font-family: Georgia, serif;
+      }
+
+      .story-content::before {
+        top: -20px;
+        left: 0;
+      }
+
+      .story-content::after {
+        bottom: -40px;
+        right: 0;
+      }
+
+      .story-author {
+        margin-top: 30px;
+      }
+
+      .story-author h4 {
+        color: var(--darker);
+        margin-bottom: 5px;
+        font-size: 1.2rem;
+      }
+
+      .story-role {
+        color: var(--primary);
+        font-weight: 600;
+        margin-bottom: 10px;
+        font-size: 0.95rem;
+      }
+
+      .story-earnings {
+        background: var(--gradient-green);
+        color: white;
+        padding: 10px 24px;
+        border-radius: 20px;
+        font-weight: 700;
+        display: inline-block;
+        font-size: 0.95rem;
+      }
+
+      /* Platform Features */
+      .platform-features {
+        background: linear-gradient(135deg, #f9fafb 0%, #f3f4f6 100%);
+        padding: 100px 0;
+      }
+
+      .features-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 40px;
+      }
+
+      .feature-card {
+        background: white;
+        padding: 50px 40px;
+        border-radius: var(--radius);
+        text-align: center;
+        transition: var(--transition);
+        box-shadow: var(--shadow);
+        border: 1px solid transparent;
+      }
+
+      .feature-card:hover {
+        transform: translateY(-10px);
+        box-shadow: var(--shadow-lg);
+        border-color: var(--primary-light);
+      }
+
+      .feature-icon {
+        width: 80px;
+        height: 80px;
+        background: var(--gradient);
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 30px;
+        font-size: 2rem;
+        color: white;
+        transition: var(--transition);
+      }
+
+      .feature-card:hover .feature-icon {
+        transform: scale(1.1) rotate(10deg);
+      }
+
+      .feature-card h3 {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+        color: var(--darker);
+      }
+
+      .feature-card p {
+        color: var(--gray);
+        line-height: 1.7;
+      }
+
+      /* CTA Section */
+      .agency-cta {
+        background: var(--gradient);
+        padding: 120px 0;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .agency-cta::before {
+        content: "";
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(
+          circle,
+          rgba(255, 255, 255, 0.1) 0%,
+          transparent 70%
+        );
+      }
+
+      .cta-content {
+        position: relative;
+        z-index: 2;
+        max-width: 800px;
+        margin: 0 auto;
+        color: white;
+      }
+
+      .cta-content h2 {
+        font-size: 3.5rem;
+        margin-bottom: 25px;
+        color: white;
+      }
+
+      .cta-content p {
+        font-size: 1.3rem;
+        margin-bottom: 40px;
+        opacity: 0.95;
+        line-height: 1.6;
+      }
+
+      .cta-steps {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        margin: 50px 0;
+        flex-wrap: wrap;
+      }
+
+      .cta-step {
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(10px);
+        padding: 25px 20px;
+        border-radius: var(--radius);
+        min-width: 180px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        transition: var(--transition);
+      }
+
+      .cta-step:hover {
+        transform: translateY(-5px);
+        background: rgba(255, 255, 255, 0.2);
+      }
+
+      .cta-step .number {
+        font-size: 2.5rem;
+        font-weight: 800;
+        color: var(--secondary-light);
+        margin-bottom: 10px;
+        display: block;
+      }
+
+      .cta-step p {
+        font-size: 1rem;
+        margin: 0;
+        opacity: 0.9;
+      }
+
+      .cta-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        margin-top: 50px;
+        flex-wrap: wrap;
+      }
+
+      .cta-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        background: white;
+        color: var(--primary);
+        padding: 20px 50px;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 1.2rem;
+        transition: var(--transition);
+        box-shadow: var(--shadow);
+      }
+
+      .cta-btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        background: var(--darker);
+        color: white;
+      }
+
+      .cta-btn-secondary {
+        background: transparent;
+        border: 2px solid white;
+        color: white;
+      }
+
+      .cta-btn-secondary:hover {
+        background: white;
+        color: var(--primary);
+      }
+
+      /* 🏁 Footer */
+      .footer {
+        background: var(--dark);
+        color: white;
+        padding: 80px 0 40px;
+      }
+
+      .footer-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 50px;
+        margin-bottom: 60px;
+      }
+
+      .footer-column h3 {
+        font-size: 1.3rem;
+        margin-bottom: 25px;
+        color: white;
+        position: relative;
+        display: inline-block;
+      }
+
+      .footer-column h3::after {
+        content: "";
+        position: absolute;
+        bottom: -8px;
+        left: 0;
+        width: 40px;
+        height: 3px;
+        background: var(--gradient);
+        border-radius: 2px;
+      }
+
+      .footer-links {
+        list-style: none;
+      }
+
+      .footer-links li {
+        margin-bottom: 15px;
+      }
+
+      .footer-links a {
+        color: #94a3b8;
+        text-decoration: none;
+        transition: var(--transition);
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-size: 0.95rem;
+      }
+
+      .footer-links a:hover {
+        color: white;
+        transform: translateX(8px);
+      }
+
+      .footer-about {
+        color: #94a3b8;
+        line-height: 1.7;
+        margin-bottom: 25px;
+        font-size: 0.95rem;
+      }
+
+      .social-links {
+        display: flex;
+        gap: 15px;
+        margin-top: 25px;
+      }
+
+      .social-link {
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        text-decoration: none;
+        transition: var(--transition);
+      }
+
+      .social-link:hover {
+        background: var(--gradient);
+        transform: translateY(-3px);
+      }
+
+      .copyright {
+        text-align: center;
+        padding-top: 40px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        color: #94a3b8;
+        font-size: 0.9rem;
+      }
+
+      .copyright a {
+        color: var(--primary-light);
+        text-decoration: none;
+        transition: var(--transition);
+      }
+
+      .copyright a:hover {
+        color: white;
+        text-decoration: underline;
+      }
+
+      /* Animations */
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes slideIn {
+        from {
+          opacity: 0;
+          transform: translateY(-20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Responsive Design */
+      @media (max-width: 1024px) {
+        .agency-hero h1 {
+          font-size: 3.2rem;
+        }
+
+        .samples-header h2,
+        .calculator-container h2,
+        .stories-header h2 {
+          font-size: 2.5rem;
+        }
+
+        .hero-stat {
+          min-width: 140px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        section {
+          padding: 80px 0;
+        }
+
+        .mobile-menu-btn {
+          display: block;
+        }
+
+        .nav-links {
+          display: none;
+          position: absolute;
+          top: 100%;
+          left: 0;
+          right: 0;
+          background: white;
+          padding: 20px;
+          box-shadow: var(--shadow-lg);
+          border-radius: 0 0 var(--radius) var(--radius);
+          flex-direction: column;
+          gap: 15px;
+        }
+
+        .nav-links.show {
+          display: flex;
+        }
+
+        .agency-hero {
+          min-height: 80vh;
+          text-align: center;
+        }
+
+        .agency-hero h1 {
+          font-size: 2.5rem;
+        }
+
+        .agency-hero p {
+          font-size: 1.1rem;
+        }
+
+        .hero-stats {
+          gap: 20px;
+        }
+
+        .hero-stat {
+          min-width: 120px;
+          padding: 20px 15px;
+        }
+
+        .hero-stat .number {
+          font-size: 2rem;
+        }
+
+        .hero-buttons {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .hero-btn {
+          width: 100%;
+          max-width: 300px;
+          justify-content: center;
+        }
+
+        .samples-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .calculator-container {
+          padding: 40px 30px;
+        }
+
+        .stories-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .cta-content h2 {
+          font-size: 2.5rem;
+        }
+
+        .cta-buttons {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .cta-btn {
+          width: 100%;
+          max-width: 300px;
+          justify-content: center;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .agency-hero h1 {
+          font-size: 2rem;
+        }
+
+        .hero-stat {
+          min-width: 100%;
+        }
+
+        .sample-filters {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .filter-btn {
+          width: 100%;
+          max-width: 200px;
+          justify-content: center;
+        }
+
+        .calculator-inputs {
+          grid-template-columns: 1fr;
+        }
+
+        .result-amount {
+          font-size: 2.8rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 🎯 Navigation -->
+    <nav class="navbar">
+      <div class="container nav-container">
+        <a href="index.html" class="logo">
+          <div class="logo-icon">🧿</div>
+          <div class="logo-text">
+            <h1>Mulastar</h1>
+            <span>Content Creation</span>
+          </div>
+        </a>
+
+        <div class="nav-links" id="navLinks">
+          <a href="index.html"><i class="fas fa-home"></i> Home</a>
+          <a href="#content-samples"><i class="fas fa-image"></i> Samples</a>
+          <a href="#earnings-calculator"
+            ><i class="fas fa-calculator"></i> Earnings</a
+          >
+          <a href="#success-stories"
+            ><i class="fas fa-users"></i> Success Stories</a
+          >
+          <a href="#features"><i class="fas fa-star"></i> Features</a>
+          <a href="registration.html" class="nav-cta">
+            <i class="fas fa-upload"></i> Start Creating
+          </a>
+        </div>
+
+        <button class="mobile-menu-btn" id="mobileMenuBtn">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Agency Hero -->
+    <section class="agency-hero">
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-badge">
+            <i class="fas fa-crown"></i>
+            #1 Content Monetization Platform in Africa
+          </div>
+
+          <h1>Turn Your Creativity Into Income</h1>
+          <p>
+            Join Africa's fastest-growing content monetization platform. Upload
+            memes, articles, videos, and viral content. Get paid for every like,
+            share, and view. Your creativity is your currency.
+          </p>
+
+          <div class="hero-stats">
+            <div class="hero-stat">
+              <span class="number">10,000+</span>
+              <span class="label">Active Creators</span>
+            </div>
+            <div class="hero-stat">
+              <span class="number">Ksh 5M+</span>
+              <span class="label">Paid Out</span>
+            </div>
+            <div class="hero-stat">
+              <span class="number">24/7</span>
+              <span class="label">Support</span>
+            </div>
+            <div class="hero-stat">
+              <span class="number">Instant</span>
+              <span class="label">Payouts</span>
+            </div>
+          </div>
+
+          <div class="hero-buttons">
+            <a href="#content-samples" class="hero-btn">
+              <i class="fas fa-eye"></i> View Content Samples
+            </a>
+            <a href="registration.html" class="hero-btn hero-btn-secondary">
+              <i class="fas fa-user-plus"></i> Start Creating Free
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Content Samples Section -->
+    <section id="content-samples" class="content-samples">
+      <div class="container">
+        <div class="samples-header">
+          <h2>Top Earning Content Samples</h2>
+          <p>See what type of content is earning the most on our platform</p>
+        </div>
+
+        <div class="sample-filters">
+          <button class="filter-btn active" data-filter="all">
+            <i class="fas fa-layer-group"></i> All Content
+          </button>
+          <button class="filter-btn" data-filter="memes">
+            <i class="fas fa-laugh"></i> Memes
+          </button>
+          <button class="filter-btn" data-filter="articles">
+            <i class="fas fa-newspaper"></i> Articles
+          </button>
+          <button class="filter-btn" data-filter="trending">
+            <i class="fas fa-fire"></i> Trending
+          </button>
+          <button class="filter-btn" data-filter="creative">
+            <i class="fas fa-palette"></i> Creative
+          </button>
+        </div>
+
+        <div class="samples-grid">
+          <!-- Sample 1 - Meme -->
+          <div class="sample-card" data-category="memes">
+            <div class="sample-image">
+              <img
+                src="https://images.unsplash.com/photo-1611262588024-d12430b98920?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                alt="Funny Meme"
+              />
+            </div>
+            <div class="sample-info">
+              <span class="sample-category">Meme</span>
+              <h3>"When Monday Hits" - Relatable Work Meme</h3>
+              <p>
+                A hilarious take on Monday mornings that went viral across
+                social media platforms.
+              </p>
+              <div class="sample-stats">
+                <span><i class="fas fa-eye"></i> 245K views</span>
+                <span><i class="fas fa-heart"></i> 15.8K likes</span>
+                <span><i class="fas fa-share"></i> 4.2K shares</span>
+              </div>
+              <div class="sample-earnings">Earned: Ksh 3,450</div>
+            </div>
+          </div>
+
+          <!-- Sample 2 - Article -->
+          <div class="sample-card" data-category="articles">
+            <div class="sample-image">
+              <img
+                src="https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                alt="Tech Article"
+              />
+            </div>
+            <div class="sample-info">
+              <span class="sample-category">Article</span>
+              <h3>AI in 2024: How It's Changing Daily Life</h3>
+              <p>
+                Comprehensive guide on practical AI applications that received
+                massive engagement.
+              </p>
+              <div class="sample-stats">
+                <span><i class="fas fa-eye"></i> 180K views</span>
+                <span><i class="fas fa-comment"></i> 2.5K comments</span>
+                <span><i class="fas fa-clock"></i> 8 min read</span>
+              </div>
+              <div class="sample-earnings">Earned: Ksh 4,120</div>
+            </div>
+          </div>
+
+          <!-- Sample 3 - Trending -->
+          <div class="sample-card" data-category="trending">
+            <div class="sample-image">
+              <img src="pictures/yoga.jpeg" alt="Trending Challenge" />
+            </div>
+            <div class="sample-info">
+              <span class="sample-category">Trending</span>
+              <h3>Dance Challenge Compilation 2024</h3>
+              <p>
+                Curated compilation of viral dance challenges that took the
+                platform by storm.
+              </p>
+              <div class="sample-stats">
+                <span><i class="fas fa-eye"></i> 500K+ views</span>
+                <span><i class="fas fa-heart"></i> 32K likes</span>
+                <span><i class="fas fa-share"></i> 15K shares</span>
+              </div>
+              <div class="sample-earnings">Earned: Ksh 7,800</div>
+            </div>
+          </div>
+
+          <!-- Sample 4 - Creative -->
+          <div class="sample-card" data-category="creative">
+            <div class="sample-image">
+              <img
+                src="https://images.unsplash.com/photo-1545235617-9465d2a55698?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                alt="Digital Art"
+              />
+            </div>
+            <div class="sample-info">
+              <span class="sample-category">Creative</span>
+              <h3>African Sunset Digital Art Series</h3>
+              <p>
+                Beautiful digital paintings of African landscapes that
+                captivated the community.
+              </p>
+              <div class="sample-stats">
+                <span><i class="fas fa-eye"></i> 120K views</span>
+                <span><i class="fas fa-heart"></i> 8.5K likes</span>
+                <span><i class="fas fa-download"></i> 3.2K saves</span>
+              </div>
+              <div class="sample-earnings">Earned: Ksh 2,950</div>
+            </div>
+          </div>
+
+          <!-- Sample 5 - Meme -->
+          <div class="sample-card" data-category="memes">
+            <div class="sample-image">
+              <img
+                src="https://images.unsplash.com/photo-1616469829581-73993eb86b02?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                alt="Student Meme"
+              />
+            </div>
+            <div class="sample-info">
+              <span class="sample-category">Meme</span>
+              <h3>Student Life Struggles Compilation</h3>
+              <p>
+                Relatable memes about student life that resonated with thousands
+                of users.
+              </p>
+              <div class="sample-stats">
+                <span><i class="fas fa-eye"></i> 320K views</span>
+                <span><i class="fas fa-heart"></i> 21K likes</span>
+                <span><i class="fas fa-share"></i> 7.5K shares</span>
+              </div>
+              <div class="sample-earnings">Earned: Ksh 4,560</div>
+            </div>
+          </div>
+
+          <!-- Sample 6 - Article -->
+          <div class="sample-card" data-category="articles">
+            <div class="sample-image">
+              <img
+                src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                alt="Finance Article"
+              />
+            </div>
+            <div class="sample-info">
+              <span class="sample-category">Article</span>
+              <h3>Side Hustles That Pay in 2024</h3>
+              <p>
+                Practical guide to online earning opportunities that went
+                massively viral.
+              </p>
+              <div class="sample-stats">
+                <span><i class="fas fa-eye"></i> 450K views</span>
+                <span><i class="fas fa-comment"></i> 3.8K comments</span>
+                <span><i class="fas fa-bookmark"></i> 12K saves</span>
+              </div>
+              <div class="sample-earnings">Earned: Ksh 9,250</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="view-more">
+          <a href="registration.html" class="view-more-btn">
+            <i class="fas fa-plus-circle"></i> Upload Your Content & Start
+            Earning
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Earnings Calculator -->
+    <section id="earnings-calculator" class="earnings-calculator">
+      <div class="container">
+        <div class="calculator-container">
+          <h2>Calculate Your Potential Earnings</h2>
+          <p>See how much you could earn based on your content performance</p>
+
+          <div class="calculator-inputs">
+            <div class="input-group">
+              <label for="content-type"
+                ><i class="fas fa-file-alt"></i> Content Type</label
+              >
+              <select id="content-type">
+                <option value="meme">Meme</option>
+                <option value="article">Article</option>
+                <option value="video">Video</option>
+                <option value="creative">Creative Art</option>
+              </select>
+            </div>
+
+            <div class="input-group">
+              <label for="daily-uploads"
+                ><i class="fas fa-upload"></i> Daily Uploads</label
+              >
+              <input
+                type="range"
+                id="daily-uploads"
+                min="1"
+                max="20"
+                value="5"
+              />
+              <div
+                style="
+                  margin-top: 10px;
+                  text-align: center;
+                  color: var(--gray);
+                  font-weight: 500;
+                "
+              >
+                <span id="uploads-value">5</span> uploads per day
+              </div>
+            </div>
+
+            <div class="input-group">
+              <label for="engagement"
+                ><i class="fas fa-chart-line"></i> Expected Engagement</label
+              >
+              <select id="engagement">
+                <option value="low">Low (1K-5K views)</option>
+                <option value="medium" selected>Medium (5K-20K views)</option>
+                <option value="high">High (20K-100K views)</option>
+                <option value="viral">Viral (100K+ views)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="calculator-result">
+            <div class="result-label">Your Estimated Monthly Earnings</div>
+            <div class="result-amount" id="earnings-result">Ksh 8,250</div>
+            <div class="result-note">
+              Based on average performance metrics of similar content
+            </div>
+          </div>
+
+          <a
+            href="registration.html"
+            class="hero-btn"
+            style="background: var(--gradient); color: white; border: none"
+          >
+            <i class="fas fa-chart-line"></i> Start Earning Now
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Success Stories -->
+    <section id="success-stories" class="success-stories">
+      <div class="container">
+        <div class="stories-header">
+          <h2>Success Stories From Our Creators</h2>
+          <p>Real people earning real money from their content</p>
+        </div>
+
+        <div class="stories-grid">
+          <div class="story-card">
+            <img
+              src="https://randomuser.me/api/portraits/women/44.jpg"
+              alt="Sarah"
+              class="story-avatar"
+            />
+            <div class="story-content">
+              "I started posting memes as a hobby. Now I earn more from Mulastar
+              Agencies than my 9-5 job. The platform is incredibly
+              creator-friendly!"
+            </div>
+            <div class="story-author">
+              <h4>Sarah M.</h4>
+              <div class="story-role">Meme Creator</div>
+              <div class="story-earnings">Earns: Ksh 25,000/month</div>
+            </div>
+          </div>
+
+          <div class="story-card">
+            <img
+              src="https://randomuser.me/api/portraits/men/32.jpg"
+              alt="David"
+              class="story-avatar"
+            />
+            <div class="story-content">
+              "As a writer, finding platforms that value quality content is
+              hard. Mulastar Agencies pays fairly for my articles. It's
+              life-changing!"
+            </div>
+            <div class="story-author">
+              <h4>David K.</h4>
+              <div class="story-role">Content Writer</div>
+              <div class="story-earnings">Earns: Ksh 18,500/month</div>
+            </div>
+          </div>
+
+          <div class="story-card">
+            <img
+              src="https://randomuser.me/api/portraits/women/68.jpg"
+              alt="Grace"
+              class="story-avatar"
+            />
+            <div class="story-content">
+              "I create digital art for fun. Mulastar Agencies helped me
+              monetize my passion. Now I earn while doing what I love!"
+            </div>
+            <div class="story-author">
+              <h4>Grace W.</h4>
+              <div class="story-role">Digital Artist</div>
+              <div class="story-earnings">Earns: Ksh 15,750/month</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Platform Features -->
+    <section id="features" class="platform-features">
+      <div class="container">
+        <div class="samples-header">
+          <h2>Why Creators Love Our Platform</h2>
+          <p>Everything you need to succeed as a content creator</p>
+        </div>
+
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-bolt"></i>
+            </div>
+            <h3>Instant Payouts</h3>
+            <p>
+              Get paid instantly via M-Pesa, bank transfer, or mobile money. No
+              waiting periods.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-chart-line"></i>
+            </div>
+            <h3>Real-Time Analytics</h3>
+            <p>
+              Track your earnings, views, and engagement with detailed analytics
+              dashboard.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-users"></i>
+            </div>
+            <h3>Creator Community</h3>
+            <p>
+              Join our active community, collaborate, and grow together with
+              other creators.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-shield-alt"></i>
+            </div>
+            <h3>Content Protection</h3>
+            <p>
+              Your content is protected. We monitor and prevent unauthorized use
+              of your work.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-mobile-alt"></i>
+            </div>
+            <h3>Mobile First</h3>
+            <p>
+              Upload and manage your content from anywhere using our
+              mobile-friendly platform.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-headset"></i>
+            </div>
+            <h3>24/7 Support</h3>
+            <p>
+              Get help anytime from our dedicated creator support team via chat,
+              email, or phone.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="agency-cta">
+      <div class="cta-content">
+        <h2>Start Your Content Creation Journey Today</h2>
+        <p>
+          Join thousands of successful creators who are already earning from
+          their passion. No experience needed.
+        </p>
+
+        <div class="cta-steps">
+          <div class="cta-step">
+            <div class="number">1</div>
+            <p>Sign Up Free</p>
+          </div>
+          <div class="cta-step">
+            <div class="number">2</div>
+            <p>Upload Content</p>
+          </div>
+          <div class="cta-step">
+            <div class="number">3</div>
+            <p>Get Engagement</p>
+          </div>
+          <div class="cta-step">
+            <div class="number">4</div>
+            <p>Earn Money</p>
+          </div>
+        </div>
+
+        <div class="cta-buttons">
+          <a href="registration.html" class="cta-btn">
+            <i class="fas fa-user-plus"></i> Create Free Account
+          </a>
+          <a href="#content-samples" class="cta-btn cta-btn-secondary">
+            <i class="fas fa-play-circle"></i> See More Samples
+          </a>
+        </div>
+
+        <p style="margin-top: 40px; font-size: 1rem; opacity: 0.8">
+          🎁 <strong>Limited Offer:</strong> Get Ksh 500 welcome bonus on your
+          first successful upload!
+        </p>
+      </div>
+    </section>
+
+    <!-- 🏁 Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div>
+            <div class="logo" style="color: white; margin-bottom: 25px">
+              <div class="logo-icon">MA</div>
+              <div>
+                <h3>Mulastar Agencies</h3>
+                <span style="color: #94a3b8">Content Creation Platform</span>
+              </div>
+            </div>
+            <p class="footer-about">
+              Transform your creativity into sustainable income. Join Africa's
+              #1 content monetization platform.
+            </p>
+            <div class="social-links">
+              <a
+                href="https://www.facebook.com/dajenny.sydney"
+                class="social-link"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="https://x.com/jenny995729" class="social-link"
+                ><i class="fab fa-twitter"></i
+              ></a>
+              <a
+                href="https://www.instagram.com/bestaffiliatecoach2025"
+                class="social-link"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a
+                href="https://www.youtube.com/DajennySydney"
+                class="social-link"
+                ><i class="fab fa-youtube"></i
+              ></a>
+              <a
+                href="https://www.tiktok.com/@dajenny.sydney"
+                class="social-link"
+                ><i class="fab fa-tiktok"></i
+              ></a>
+            </div>
+          </div>
+
+          <div>
+            <h3>Content Categories</h3>
+            <ul class="footer-links">
+              <li>
+                <a href="videos.html"
+                  ><i class="fas fa-play-circle"></i> Watch Videos</a
+                >
+              </li>
+              <li>
+                <a href="games.html"
+                  ><i class="fas fa-gamepad"></i> Play Games</a
+                >
+              </li>
+              <li>
+                <a href="surveys.html"
+                  ><i class="fas fa-clipboard-check"></i> Surveys</a
+                >
+              </li>
+              <li>
+                <a href="networking.html"
+                  ><i class="fas fa-users"></i> Referrals</a
+                >
+              </li>
+              <li>
+                <a href="blog.html"><i class="fas fa-laugh"></i> Blogs</a>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h3>Quick Links</h3>
+            <ul class="footer-links">
+              <li>
+                <a href="index.html"><i class="fas fa-home"></i> Home</a>
+              </li>
+              <li>
+                <a href="#content-samples"
+                  ><i class="fas fa-image"></i> Content Samples</a
+                >
+              </li>
+              <li>
+                <a href="#earnings-calculator"
+                  ><i class="fas fa-calculator"></i> Earnings Calculator</a
+                >
+              </li>
+              <li>
+                <a href="#success-stories"
+                  ><i class="fas fa-users"></i> Success Stories</a
+                >
+              </li>
+              <li>
+                <a href="#features"><i class="fas fa-star"></i> Features</a>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h3>Support</h3>
+            <ul class="footer-links">
+              <li>
+                <a
+                  href="https://wa.me/254755252499?text=Hello%20Coach%20Dajenny,%20guide%20me%20through."
+                  ><i class="fab fa-whatsapp"></i> WhatsApp Support</a
+                >
+              </li>
+              <li>
+                <a href="tel:+254755252499"
+                  ><i class="fas fa-phone"></i> Call Support</a
+                >
+              </li>
+              <li>
+                <a href="mailto:support@mulastar.com"
+                  ><i class="fas fa-envelope"></i> Email Support</a
+                >
+              </li>
+              <li>
+                <a href="registration.html"
+                  ><i class="fas fa-user-plus"></i> Sign Up</a
+                >
+              </li>
+              <li>
+                <a href="#"
+                  ><i class="fas fa-question-circle"></i> Help Center</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="copyright">
+          <p>
+            © <span id="currentYear"></span> Mulastar Agencies. All rights
+            reserved.
+          </p>
+          <p style="margin-top: 10px; font-size: 0.9rem">
+            Managed by BESTTECH MANAGEMENT | Phone: +254 755 252 499 | Email:
+            support@mulastar.com
+          </p>
+          <p style="margin-top: 10px; font-size: 0.8rem">
+            Website developed by <a href="https://wa.me/254707995729">Jeff</a>
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Mobile Menu Toggle
+      const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+      const navLinks = document.getElementById("navLinks");
+
+      mobileMenuBtn.addEventListener("click", () => {
+        navLinks.classList.toggle("show");
+      });
+
+      // Close mobile menu when clicking outside
+      document.addEventListener("click", (e) => {
+        if (!mobileMenuBtn.contains(e.target) && !navLinks.contains(e.target)) {
+          navLinks.classList.remove("show");
+        }
+      });
+
+      // Set current year
+      document.getElementById("currentYear").textContent =
+        new Date().getFullYear();
+
+      // Filter content samples
+      const filterBtns = document.querySelectorAll(".filter-btn");
+      const sampleCards = document.querySelectorAll(".sample-card");
+
+      filterBtns.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          // Remove active class from all buttons
+          filterBtns.forEach((b) => b.classList.remove("active"));
+          // Add active class to clicked button
+          btn.classList.add("active");
+
+          const filter = btn.getAttribute("data-filter");
+
+          sampleCards.forEach((card) => {
+            if (
+              filter === "all" ||
+              card.getAttribute("data-category") === filter
+            ) {
+              card.style.display = "block";
+              setTimeout(() => {
+                card.style.opacity = "1";
+                card.style.transform = "translateY(0)";
+              }, 10);
+            } else {
+              card.style.opacity = "0";
+              card.style.transform = "translateY(20px)";
+              setTimeout(() => {
+                card.style.display = "none";
+              }, 300);
+            }
+          });
+        });
+      });
+
+      // Earnings Calculator
+      const dailyUploads = document.getElementById("daily-uploads");
+      const uploadsValue = document.getElementById("uploads-value");
+      const contentType = document.getElementById("content-type");
+      const engagement = document.getElementById("engagement");
+      const earningsResult = document.getElementById("earnings-result");
+
+      // Earnings multipliers based on content type
+      const contentMultipliers = {
+        meme: 650,
+        article: 850,
+        video: 1200,
+        creative: 750,
+      };
+
+      // Engagement multipliers
+      const engagementMultipliers = {
+        low: 0.5,
+        medium: 1,
+        high: 2.5,
+        viral: 5,
+      };
+
+      function calculateEarnings() {
+        const uploads = parseInt(dailyUploads.value);
+        const contentValue = contentMultipliers[contentType.value];
+        const engagementValue = engagementMultipliers[engagement.value];
+
+        // Monthly earnings calculation
+        const dailyEarnings = uploads * contentValue * engagementValue;
+        const monthlyEarnings = Math.round(dailyEarnings * 30);
+
+        // Format number with commas
+        earningsResult.textContent = `Ksh ${monthlyEarnings.toLocaleString()}`;
+        uploadsValue.textContent = uploads;
+      }
+
+      // Add event listeners
+      dailyUploads.addEventListener("input", calculateEarnings);
+      contentType.addEventListener("change", calculateEarnings);
+      engagement.addEventListener("change", calculateEarnings);
+
+      // Initial calculation
+      calculateEarnings();
+
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+
+          const targetId = this.getAttribute("href");
+          if (targetId === "#") return;
+
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            window.scrollTo({
+              top: targetElement.offsetTop - 80,
+              behavior: "smooth",
+            });
+
+            // Close mobile menu if open
+            navLinks.classList.remove("show");
+          }
+        });
+      });
+
+      // Animate elements on scroll
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px",
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.style.animation = "fadeInUp 0.8s ease forwards";
+          }
+        });
+      }, observerOptions);
+
+      // Observe elements for animation
+      document
+        .querySelectorAll(".sample-card, .story-card, .feature-card")
+        .forEach((el) => {
+          el.style.opacity = "0";
+          observer.observe(el);
+        });
+    </script>
+  </body>
+</html>

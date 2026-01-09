@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Mulastar | Coming Soon</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", Arial, sans-serif;
+      }
+
+      body {
+        min-height: 100vh;
+        background: linear-gradient(
+            rgba(29, 28, 28, 0.85),
+            rgba(27, 27, 27, 0.9)
+          ),
+          url("https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80")
+            no-repeat center center/cover;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        text-align: center;
+        overflow-x: hidden;
+      }
+
+      .container {
+        max-width: 1200px;
+        width: 90%;
+        padding: 40px 20px;
+        animation: fadeIn 1.5s ease-out;
+      }
+
+      .logo {
+        margin-bottom: 20px;
+      }
+
+      .logo-text {
+        font-family: "Montserrat", sans-serif;
+        font-size: 3.5rem;
+        font-weight: 900;
+        background: linear-gradient(90deg, #ff6b6b, #feca57, #48dbfb, #ff9ff3);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        margin-bottom: 10px;
+        letter-spacing: 1px;
+      }
+
+      h1 {
+        font-size: 3.5rem;
+        margin-bottom: 20px;
+        font-weight: 700;
+        line-height: 1.2;
+      }
+
+      .highlight {
+        color: #feca57;
+        position: relative;
+        display: inline-block;
+      }
+
+      .highlight:after {
+        content: "";
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background: linear-gradient(90deg, transparent, #feca57, transparent);
+      }
+
+      p {
+        font-size: 1.2rem;
+        line-height: 1.7;
+        margin-bottom: 50px;
+        color: #ddd;
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 0 20px;
+      }
+
+      .launch-time {
+        background: rgba(255, 255, 255, 0.1);
+        padding: 15px 30px;
+        border-radius: 50px;
+        display: inline-block;
+        margin-bottom: 30px;
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .countdown {
+        display: flex;
+        justify-content: center;
+        gap: 25px;
+        flex-wrap: wrap;
+        margin-bottom: 60px;
+      }
+
+      .time-box {
+        background: rgba(255, 255, 255, 0.1);
+        color: #fff;
+        width: 140px;
+        height: 140px;
+        border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .time-box:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.1),
+          transparent
+        );
+        transition: left 0.7s ease;
+      }
+
+      .time-box:hover:before {
+        left: 100%;
+      }
+
+      .time-box:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+      }
+
+      .time-box span {
+        font-size: 2.8rem;
+        font-weight: 700;
+        color: #fff;
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+      }
+
+      .time-box small {
+        font-size: 0.9rem;
+        margin-top: 5px;
+        color: #aaa;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes float {
+        0% {
+          transform: translateY(0) rotate(0deg);
+          opacity: 0.5;
+        }
+        50% {
+          transform: translateY(-100px) rotate(180deg);
+          opacity: 0.8;
+        }
+        100% {
+          transform: translateY(0) rotate(360deg);
+          opacity: 0.5;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .logo-text {
+          font-size: 2.5rem;
+        }
+
+        h1 {
+          font-size: 2.5rem;
+        }
+
+        .time-box {
+          width: 120px;
+          height: 120px;
+        }
+
+        .time-box span {
+          font-size: 2.2rem;
+        }
+
+        .form-group {
+          flex-direction: column;
+        }
+
+        .notify-btn {
+          width: 100%;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .logo-text {
+          font-size: 2rem;
+        }
+
+        h1 {
+          font-size: 2rem;
+        }
+
+        .time-box {
+          width: 100px;
+          height: 100px;
+        }
+
+        .time-box span {
+          font-size: 1.8rem;
+        }
+
+        .countdown {
+          gap: 15px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Floating background elements -->
+    <div class="floating-elements">
+      <div class="floating-element" style="top: 10%; left: 5%"></div>
+      <div class="floating-element" style="top: 20%; right: 10%"></div>
+      <div class="floating-element" style="bottom: 30%; left: 15%"></div>
+      <div class="floating-element" style="bottom: 20%; right: 20%"></div>
+      <div class="floating-element" style="top: 50%; left: 10%"></div>
+    </div>
+
+    <div class="container">
+      <div class="logo">
+        <div class="logo-text">MULASTAR AGENCIES</div>
+      </div>
+
+      <h1>Coming <span class="highlight">Soon</span></h1>
+
+      <div class="launch-time">
+        <i class="far fa-calendar-alt"></i> Launching on
+        <strong>17th January 2026, 2:00 PM</strong>
+      </div>
+
+      <p>
+        We're building something extraordinary to help you earn more, save
+        smarter, and grow wealthier. Get ready for cutting-edge features and
+        innovative products designed to transform your financial journey.
+      </p>
+
+      <div class="countdown">
+        <div class="time-box">
+          <span id="days">00</span>
+          <small>Days</small>
+        </div>
+
+        <div class="time-box">
+          <span id="hours">00</span>
+          <small>Hours</small>
+        </div>
+
+        <div class="time-box">
+          <span id="minutes">00</span>
+          <small>Minutes</small>
+        </div>
+
+        <div class="time-box">
+          <span id="seconds">00</span>
+          <small>Seconds</small>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // SET LAUNCH DATE (YYYY, MM-1, DD, HH, MM, SS)
+      const launchDate = new Date(2026, 0, 17, 14, 0, 0).getTime();
+
+      const timer = setInterval(() => {
+        const now = new Date().getTime();
+        const distance = launchDate - now;
+
+        if (distance < 0) {
+          clearInterval(timer);
+          document.querySelector(".countdown").innerHTML =
+            '<div style="padding: 40px; background: rgba(255, 255, 255, 0.1); border-radius: 20px; backdrop-filter: blur(10px);">' +
+            '<h2 style="font-size: 2.5rem; color: #feca57; margin-bottom: 15px;"><i class="fas fa-rocket"></i> We Are Live!</h2>' +
+            '<p style="color: #ddd; font-size: 1.1rem;">Visit our main website to get started!</p>' +
+            '<a href="#" style="display: inline-block; margin-top: 20px; padding: 12px 30px; background: linear-gradient(90deg, #ff6b6b, #feca57); color: #222; text-decoration: none; border-radius: 50px; font-weight: 600;">Launch App</a>' +
+            "</div>";
+          return;
+        }
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor(
+          (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+        );
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById("days").textContent = days
+          .toString()
+          .padStart(2, "0");
+        document.getElementById("hours").textContent = hours
+          .toString()
+          .padStart(2, "0");
+        document.getElementById("minutes").textContent = minutes
+          .toString()
+          .padStart(2, "0");
+        document.getElementById("seconds").textContent = seconds
+          .toString()
+          .padStart(2, "0");
+      }, 1000);
+
+      // Notification form functionality
+      document
+        .getElementById("notifyBtn")
+        .addEventListener("click", function () {
+          const emailInput = document.getElementById("emailInput");
+          const formMessage = document.getElementById("formMessage");
+          const email = emailInput.value;
+
+          if (!email || !email.includes("@")) {
+            formMessage.textContent = "Please enter a valid email address.";
+            formMessage.style.color = "#ff6b6b";
+            emailInput.style.borderColor = "#ff6b6b";
+            return;
+          }
+
+          // In a real implementation, you would send this to a server
+          formMessage.textContent =
+            "Thank you! We'll notify you when we launch.";
+          formMessage.style.color = "#48dbfb";
+          emailInput.style.borderColor = "#48dbfb";
+          emailInput.value = "";
+
+          // Reset after 5 seconds
+          setTimeout(() => {
+            formMessage.textContent = "";
+            emailInput.style.borderColor = "rgba(255, 255, 255, 0.2)";
+          }, 5000);
+        });
+
+      // Allow Enter key to submit form
+      document
+        .getElementById("emailInput")
+        .addEventListener("keypress", function (e) {
+          if (e.key === "Enter") {
+            document.getElementById("notifyBtn").click();
+          }
+        });
+
+      // Add floating elements animation
+      document.addEventListener("DOMContentLoaded", function () {
+        const floatingContainer = document.querySelector(".floating-elements");
+
+        // Create additional floating elements
+        for (let i = 0; i < 8; i++) {
+          const element = document.createElement("div");
+          element.className = "floating-element";
+
+          // Random position
+          const top = Math.random() * 100;
+          const left = Math.random() * 100;
+          const size = 10 + Math.random() * 30;
+          const delay = Math.random() * 5;
+          const duration = 15 + Math.random() * 20;
+
+          element.style.top = `${top}%`;
+          element.style.left = `${left}%`;
+          element.style.width = `${size}px`;
+          element.style.height = `${size}px`;
+          element.style.animationDelay = `${delay}s`;
+          element.style.animationDuration = `${duration}s`;
+
+          floatingContainer.appendChild(element);
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,1823 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Start Blogging & Earn Money | Mulastar Agencies</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <meta
+      name="keywords"
+      content="Write blogs earn money, online blogs Kenya, blogging tips, earn from blogs, Mulastar Agencies, blogging platform, content creation, blog monetization, freelance blogging, blogging jobs Kenya"
+    />
+    <link rel="icon" href="pictures/icon2.png" type="image/png" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      /* CSS Variables - Matching Games Page */
+      :root {
+        --primary: #2563eb;
+        --primary-light: #3b82f6;
+        --primary-dark: #1d4ed8;
+        --secondary: #10b981;
+        --accent: #8b5cf6;
+        --warning: #f59e0b;
+        --danger: #ef4444;
+        --light: #f8fafc;
+        --dark: #1e293b;
+        --muted: #64748b;
+        --border: #e2e8f0;
+        --card-bg: #ffffff;
+        --gradient: linear-gradient(135deg, #2563eb 0%, #8b5cf6 100%);
+        --gradient-green: linear-gradient(135deg, #10b981 0%, #34d399 100%);
+        --gradient-purple: linear-gradient(135deg, #8b5cf6 0%, #ec4899 100%);
+        --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.12);
+        --shadow-hover: 0 20px 50px rgba(37, 99, 235, 0.15);
+        --radius: 16px;
+        --radius-lg: 24px;
+        --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      /* Reset & Base Styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 80px;
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+        line-height: 1.6;
+        color: var(--dark);
+        background: #fff;
+        overflow-x: hidden;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      /* 🎯 Navigation - Matching Games Page */
+      .navbar {
+        background: white;
+        box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .nav-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 0;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-weight: 700;
+        font-size: 1.3rem;
+        color: var(--primary);
+        text-decoration: none;
+      }
+
+      .logo-icon {
+        width: 40px;
+        height: 40px;
+        background: var(--gradient);
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-weight: 800;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 30px;
+        align-items: center;
+      }
+
+      .nav-links a {
+        color: var(--dark);
+        text-decoration: none;
+        font-weight: 500;
+        padding: 8px 16px;
+        border-radius: 8px;
+        transition: var(--transition);
+      }
+
+      .nav-links a:hover {
+        color: var(--primary);
+        background: rgba(37, 99, 235, 0.05);
+      }
+
+      .nav-cta {
+        background: var(--gradient);
+        color: white !important;
+        padding: 10px 24px !important;
+      }
+
+      .nav-cta:hover {
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-hover);
+      }
+
+      /* Mobile Menu Button */
+      .mobile-menu-btn {
+        display: none;
+        background: none;
+        border: none;
+        font-size: 1.5rem;
+        color: var(--dark);
+        cursor: pointer;
+        padding: 5px;
+        border-radius: 5px;
+        transition: var(--transition);
+      }
+
+      .mobile-menu-btn:hover {
+        background: rgba(37, 99, 235, 0.05);
+      }
+
+      /* 🔝 Announcement Bar - Matching Games Page */
+      .announcement-bar {
+        background: var(--gradient-purple);
+        color: white;
+        padding: 10px 0;
+        font-weight: 500;
+        text-align: center;
+        z-index: 999;
+      }
+
+      .announcement-content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+
+      .announcement-badge {
+        background: rgba(255, 255, 255, 0.2);
+        padding: 4px 12px;
+        border-radius: 20px;
+        font-size: 0.85rem;
+      }
+
+      /* 🎮 Hero Section - Matching Design */
+      .games-hero {
+        padding: 100px 0 60px;
+        background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .games-hero::before {
+        content: "";
+        position: absolute;
+        top: -50%;
+        right: -20%;
+        width: 600px;
+        height: 600px;
+        background: radial-gradient(
+          circle,
+          rgba(139, 92, 246, 0.1) 0%,
+          transparent 70%
+        );
+        border-radius: 50%;
+      }
+
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        align-items: center;
+      }
+
+      .hero-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: white;
+        padding: 8px 20px;
+        border-radius: 50px;
+        font-weight: 600;
+        color: var(--primary);
+        margin-bottom: 20px;
+        animation: pulse 2s infinite;
+        box-shadow: var(--shadow);
+      }
+
+      @keyframes pulse {
+        0% {
+          box-shadow: 0 0 0 0 rgba(139, 92, 246, 0.7);
+        }
+        70% {
+          box-shadow: 0 0 0 15px rgba(139, 92, 246, 0);
+        }
+        100% {
+          box-shadow: 0 0 0 0 rgba(139, 92, 246, 0);
+        }
+      }
+
+      .hero-title {
+        font-size: 3.2rem;
+        font-weight: 900;
+        line-height: 1.1;
+        margin-bottom: 20px;
+        color: white;
+      }
+
+      .hero-title span {
+        background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .hero-subtitle {
+        font-size: 1.2rem;
+        color: rgba(255, 255, 255, 0.8);
+        margin-bottom: 30px;
+        max-width: 500px;
+      }
+
+      .hero-stats {
+        display: flex;
+        gap: 30px;
+        margin: 30px 0;
+        flex-wrap: wrap;
+      }
+
+      .stat {
+        text-align: center;
+        padding: 20px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: var(--radius);
+        backdrop-filter: blur(10px);
+        min-width: 120px;
+      }
+
+      .stat-number {
+        font-size: 2.2rem;
+        font-weight: 800;
+        color: white;
+        display: block;
+      }
+
+      .stat-label {
+        font-size: 0.9rem;
+        color: rgba(255, 255, 255, 0.8);
+      }
+
+      .hero-actions {
+        display: flex;
+        gap: 15px;
+        flex-wrap: wrap;
+        margin-top: 30px;
+      }
+
+      .btn {
+        padding: 14px 32px;
+        border-radius: 12px;
+        font-weight: 600;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        transition: var(--transition);
+        border: none;
+        cursor: pointer;
+        font-size: 1rem;
+      }
+
+      .btn-primary {
+        background: var(--gradient);
+        color: white;
+        box-shadow: var(--shadow);
+      }
+
+      .btn-primary:hover {
+        transform: translateY(-3px);
+        box-shadow: var(--shadow-hover);
+      }
+
+      .btn-secondary {
+        background: white;
+        color: var(--primary);
+        border: 2px solid var(--border);
+      }
+
+      .btn-secondary:hover {
+        border-color: var(--primary);
+        transform: translateY(-3px);
+      }
+
+      .btn-whatsapp {
+        background: #25d366;
+        color: white;
+      }
+
+      .btn-whatsapp:hover {
+        background: #128c7e;
+        transform: translateY(-3px);
+      }
+
+      .hero-image {
+        flex: 1;
+        min-width: 300px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .hero-image img {
+        width: 100%;
+        max-width: 520px;
+        border-radius: var(--radius-lg);
+        box-shadow: var(--shadow-lg);
+        transform: perspective(1000px) rotateY(-5deg) rotateX(2deg);
+        transition: var(--transition);
+      }
+
+      .hero-image img:hover {
+        transform: perspective(1000px) rotateY(0deg) rotateX(0deg);
+      }
+
+      /* 🎯 Section Styles */
+      .section {
+        padding: 100px 0;
+      }
+
+      .section-title {
+        text-align: center;
+        margin-bottom: 60px;
+      }
+
+      .section-title h2 {
+        font-size: 2.8rem;
+        color: var(--dark);
+        margin-bottom: 15px;
+        position: relative;
+        display: inline-block;
+      }
+
+      .section-title h2::after {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100px;
+        height: 4px;
+        background: var(--gradient);
+        border-radius: 2px;
+      }
+
+      .section-title p {
+        color: var(--muted);
+        max-width: 600px;
+        margin: 0 auto;
+        font-size: 1.1rem;
+      }
+
+      /* 📝 Blog Guide Section - Updated Design */
+      .featured-games {
+        background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+        border-radius: var(--radius-lg);
+        padding: 60px;
+        margin: 40px 0;
+      }
+
+      .step-card {
+        background: white;
+        border-radius: var(--radius);
+        padding: 40px;
+        margin-bottom: 30px;
+        box-shadow: var(--shadow);
+        border-left: 4px solid var(--primary);
+        transition: var(--transition);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .step-card:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-lg);
+      }
+
+      .step-card h2 {
+        font-size: 1.8rem;
+        color: var(--dark);
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .step-card h2::before {
+        content: "📝";
+        font-size: 1.5rem;
+      }
+
+      .step-card h3 {
+        font-size: 1.4rem;
+        color: var(--dark);
+        margin: 25px 0 15px;
+        padding-left: 20px;
+        border-left: 3px solid var(--primary);
+      }
+
+      .step-card p {
+        color: var(--muted);
+        line-height: 1.7;
+        margin-bottom: 20px;
+      }
+
+      .highlight-box {
+        background: linear-gradient(135deg, #f0f4ff, #e6f7ff);
+        border-left: 4px solid var(--success);
+        padding: 25px;
+        border-radius: var(--radius);
+        margin: 25px 0;
+        position: relative;
+      }
+
+      .highlight-box strong {
+        color: var(--primary);
+        font-size: 1.1rem;
+        display: block;
+        margin-bottom: 15px;
+      }
+
+      .topics {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin: 15px 0;
+      }
+
+      .topic {
+        background: var(--gradient);
+        color: white;
+        border-radius: 20px;
+        padding: 10px 20px;
+        font-size: 0.9rem;
+        font-weight: 500;
+        transition: var(--transition);
+      }
+
+      .topic:hover {
+        transform: translateY(-2px);
+        box-shadow: var(--shadow);
+      }
+
+      .features {
+        list-style: none;
+        padding: 0;
+        margin: 25px 0;
+      }
+
+      .features li {
+        font-size: 1.05rem;
+        color: var(--dark);
+        margin-bottom: 15px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 10px 0;
+      }
+
+      .success-icon {
+        color: var(--success);
+        font-size: 1.1rem;
+      }
+
+      /* 🎮 Micro Tasking Section - Games Style */
+      .micro-tasking {
+        background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+        border-radius: var(--radius-lg);
+        padding: 60px;
+        margin: 60px 0;
+      }
+
+      .micro-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 50px;
+        align-items: start;
+      }
+
+      .text-side h2 {
+        font-size: 2.4rem;
+        color: var(--dark);
+        margin-bottom: 20px;
+        font-weight: 800;
+      }
+
+      .text-side p {
+        color: var(--muted);
+        margin-bottom: 20px;
+        line-height: 1.7;
+      }
+
+      .task-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+      }
+
+      .task-card {
+        background: white;
+        border-radius: var(--radius);
+        overflow: hidden;
+        box-shadow: var(--shadow);
+        transition: var(--transition);
+        position: relative;
+      }
+
+      .task-card:hover {
+        transform: translateY(-8px);
+        box-shadow: var(--shadow-lg);
+      }
+
+      .task-card img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+        transition: var(--transition);
+      }
+
+      .task-card:hover img {
+        transform: scale(1.05);
+      }
+
+      .task-card .info {
+        padding: 20px;
+      }
+
+      .task-card .tag {
+        font-size: 0.75rem;
+        color: var(--primary);
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        background: rgba(37, 99, 235, 0.1);
+        padding: 4px 12px;
+        border-radius: 20px;
+        display: inline-block;
+      }
+
+      .task-card h4 {
+        margin: 12px 0 8px 0;
+        font-size: 1.15rem;
+        font-weight: 700;
+        color: var(--dark);
+      }
+
+      .task-card p {
+        color: var(--muted);
+        font-size: 0.95rem;
+        line-height: 1.5;
+      }
+
+      .price {
+        display: block;
+        margin-top: 12px;
+        color: var(--primary);
+        font-weight: 700;
+        font-size: 1.1rem;
+      }
+
+      /* 💰 Payment Section */
+      .payment-section {
+        background: white;
+        border-radius: var(--radius-lg);
+        padding: 60px;
+        margin: 60px 0;
+        box-shadow: var(--shadow);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .payment-section::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 5px;
+        background: var(--gradient);
+      }
+
+      .payment-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 60px;
+      }
+
+      .payment-image {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        position: relative;
+      }
+
+      .payment-image::before {
+        content: "";
+        position: absolute;
+        top: -20px;
+        left: -20px;
+        right: 20px;
+        bottom: 20px;
+        background: var(--gradient);
+        border-radius: var(--radius-lg);
+        z-index: -1;
+        opacity: 0.1;
+      }
+
+      .phone-bg {
+        width: 100%;
+        max-width: 450px;
+        border-radius: var(--radius-lg);
+        box-shadow: var(--shadow-lg);
+        transform: perspective(1000px) rotateY(5deg);
+        transition: var(--transition);
+      }
+
+      .phone-bg:hover {
+        transform: perspective(1000px) rotateY(0deg);
+      }
+
+      .payment-text {
+        flex: 1;
+        min-width: 300px;
+      }
+
+      .payment-text .tag {
+        color: var(--success);
+        font-weight: 700;
+        letter-spacing: 1px;
+        margin-bottom: 16px;
+        display: inline-block;
+        background: rgba(16, 185, 129, 0.1);
+        padding: 6px 16px;
+        border-radius: 20px;
+      }
+
+      .payment-text h2 {
+        font-size: 2.2rem;
+        font-weight: 800;
+        color: var(--dark);
+        line-height: 1.3;
+        margin-bottom: 20px;
+      }
+
+      .payment-text .description {
+        font-size: 1.1rem;
+        color: var(--muted);
+        line-height: 1.7;
+        margin-bottom: 30px;
+      }
+
+      .benefits {
+        list-style: none;
+        padding: 0;
+      }
+
+      .benefits li {
+        font-size: 1.05rem;
+        color: var(--dark);
+        margin-bottom: 15px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 10px 0;
+      }
+
+      /* 🏆 Workplace Section - Minimal Light Mode */
+      .workplace-section {
+        background: white;
+        color: var(--dark);
+        border-radius: var(--radius-lg);
+        padding: 60px;
+        margin: 60px 0;
+        position: relative;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.05);
+      }
+
+      .workplace-section::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100px;
+        height: 4px;
+        background: var(--gradient);
+        border-radius: 0 0 4px 4px;
+      }
+
+      .workplace-section .section-title h2 {
+        color: var(--dark);
+      }
+
+      .workplace-section .section-title h2::after {
+        background: var(--gradient);
+      }
+
+      .workplace-section .section-title p {
+        color: var(--muted);
+      }
+
+      .workplace-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        margin-top: 40px;
+      }
+
+      .workplace-card {
+        background: white;
+        border-radius: var(--radius);
+        padding: 40px 30px;
+        border: 1px solid var(--border);
+        transition: var(--transition);
+        text-align: center;
+        position: relative;
+      }
+
+      .workplace-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(37, 99, 235, 0.1);
+        border-color: transparent;
+      }
+
+      .workplace-card .icon {
+        font-size: 2.8rem;
+        color: var(--primary);
+        margin-bottom: 25px;
+        display: inline-block;
+        width: 80px;
+        height: 80px;
+        line-height: 80px;
+        background: linear-gradient(
+          135deg,
+          rgba(37, 99, 235, 0.05),
+          rgba(139, 92, 246, 0.05)
+        );
+        border-radius: 20px;
+        transition: var(--transition);
+      }
+
+      .workplace-card:hover .icon {
+        background: var(--gradient);
+        color: white;
+        transform: rotateY(180deg);
+      }
+
+      .workplace-card h3 {
+        font-size: 1.3rem;
+        font-weight: 700;
+        margin-bottom: 15px;
+        color: var(--dark);
+      }
+
+      .workplace-card p {
+        color: var(--muted);
+        line-height: 1.7;
+        font-size: 0.95rem;
+      }
+
+      /* Subtle corner accent */
+      .workplace-card::before {
+        content: "";
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        width: 20px;
+        height: 20px;
+        border-top: 3px solid var(--primary);
+        border-right: 3px solid var(--primary);
+        border-radius: 0 var(--radius) 0 0;
+        opacity: 0.3;
+        transition: var(--transition);
+      }
+
+      .workplace-card:hover::before {
+        opacity: 1;
+        width: 30px;
+        height: 30px;
+      }
+
+      /* 📞 CTA Section */
+      .cta-section {
+        background: var(--gradient);
+        color: white;
+        padding: 80px 0;
+        border-radius: var(--radius-lg);
+        margin: 60px 0;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .cta-section::before {
+        content: "";
+        position: absolute;
+        top: -50%;
+        right: -50%;
+        width: 400px;
+        height: 400px;
+        background: radial-gradient(
+          circle,
+          rgba(255, 255, 255, 0.1) 0%,
+          transparent 70%
+        );
+        border-radius: 50%;
+      }
+
+      .cta-section h2 {
+        font-size: 3rem;
+        margin-bottom: 20px;
+        position: relative;
+      }
+
+      .cta-section p {
+        font-size: 1.2rem;
+        opacity: 0.9;
+        max-width: 700px;
+        margin: 0 auto 30px;
+        position: relative;
+      }
+
+      .cta-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        margin-top: 40px;
+        flex-wrap: wrap;
+        position: relative;
+      }
+
+      /* 🏁 Footer - Matching Games Page */
+      .footer {
+        background: var(--dark);
+        color: white;
+        padding: 60px 0 30px;
+        margin-top: 100px;
+      }
+
+      .footer-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 40px;
+        margin-bottom: 40px;
+      }
+
+      .footer-column h3 {
+        font-size: 1.2rem;
+        margin-bottom: 20px;
+        color: white;
+      }
+
+      .footer-links {
+        list-style: none;
+      }
+
+      .footer-links li {
+        margin-bottom: 12px;
+      }
+
+      .footer-links a {
+        color: #94a3b8;
+        text-decoration: none;
+        transition: var(--transition);
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .footer-links a:hover {
+        color: white;
+        transform: translateX(5px);
+      }
+
+      .social-links {
+        display: flex;
+        gap: 15px;
+        margin-top: 20px;
+      }
+
+      .social-link {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        text-decoration: none;
+        transition: var(--transition);
+      }
+
+      .social-link:hover {
+        background: var(--primary);
+        transform: translateY(-3px);
+      }
+
+      .copyright {
+        text-align: center;
+        padding-top: 30px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        color: #94a3b8;
+        font-size: 0.9rem;
+      }
+
+      /* Navigation Links */
+      .about-navigation {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 60px;
+        padding-top: 40px;
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+      }
+
+      .nav-about {
+        display: flex;
+        align-items: center;
+        color: white;
+        font-weight: 600;
+        text-decoration: none;
+        transition: var(--transition);
+        padding: 16px 24px;
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        border-radius: 10px;
+        gap: 12px;
+        font-size: 1.05rem;
+      }
+
+      .nav-about:hover {
+        background: rgba(255, 255, 255, 0.1);
+        border-color: white;
+        transform: translateY(-3px);
+      }
+
+      /* Mobile Menu */
+      .mobile-menu {
+        display: none;
+        position: fixed;
+        top: 80px;
+        right: 20px;
+        background: white;
+        padding: 20px;
+        border-radius: var(--radius);
+        box-shadow: var(--shadow-lg);
+        z-index: 999;
+        min-width: 250px;
+      }
+
+      .mobile-menu.show {
+        display: block;
+      }
+
+      .mobile-menu a {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 12px 16px;
+        color: var(--dark);
+        text-decoration: none;
+        border-radius: 8px;
+        transition: var(--transition);
+        margin-bottom: 5px;
+      }
+
+      .mobile-menu a:hover {
+        background: rgba(37, 99, 235, 0.05);
+        color: var(--primary);
+      }
+
+      /* 📱 Responsive Design */
+      @media (max-width: 1024px) {
+        .hero-grid {
+          grid-template-columns: 1fr;
+          text-align: center;
+          gap: 40px;
+        }
+
+        .hero-stats {
+          justify-content: center;
+        }
+
+        .hero-actions {
+          justify-content: center;
+        }
+
+        .hero-subtitle {
+          margin: 0 auto 30px;
+        }
+
+        .micro-content {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .hero-title {
+          font-size: 2.5rem;
+        }
+
+        .section-title h2 {
+          font-size: 2.2rem;
+        }
+
+        .nav-links {
+          display: none;
+          position: absolute;
+          top: 100%;
+          left: 0;
+          right: 0;
+          background: white;
+          flex-direction: column;
+          padding: 20px;
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+          border-radius: 0 0 var(--radius) var(--radius);
+          z-index: 1000;
+        }
+
+        .nav-links.show {
+          display: flex;
+        }
+
+        .mobile-menu-btn {
+          display: block;
+        }
+
+        .payment-container {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        .phone-bg {
+          transform: none;
+        }
+
+        .task-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .featured-games,
+        .micro-tasking,
+        .payment-section,
+        .workplace-section {
+          padding: 40px 20px;
+        }
+
+        .cta-section {
+          padding: 60px 20px;
+        }
+
+        .cta-section h2 {
+          font-size: 2.2rem;
+        }
+
+        .about-navigation {
+          flex-direction: column;
+          gap: 20px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .hero-title {
+          font-size: 2rem;
+        }
+
+        .btn {
+          width: 100%;
+          justify-content: center;
+        }
+
+        .hero-actions {
+          flex-direction: column;
+        }
+
+        .stat {
+          min-width: 100px;
+          padding: 15px;
+        }
+
+        .stat-number {
+          font-size: 1.8rem;
+        }
+
+        .cta-buttons {
+          flex-direction: column;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 🎯 Navigation -->
+    <nav class="navbar">
+      <div class="container nav-container">
+        <a href="index.html" class="logo">
+          <div class="logo-icon">🧿</div>
+          <div>
+            <div>Mulastar</div>
+            <div style="font-size: 0.9rem; color: var(--muted)">Blog</div>
+          </div>
+        </a>
+
+        <div class="nav-links" id="navLinks">
+          <a href="index.html">Home</a>
+          <a href="#guide">Blog Guide</a>
+          <a href="#tasks">Micro Tasks</a>
+          <a href="#payment">Payments</a>
+          <a href="#workplace">Workplace</a>
+          <a href="registration.html" class="nav-cta">
+            <i class="fas fa-blog"></i> Start Blogging
+          </a>
+        </div>
+
+        <button class="mobile-menu-btn" id="mobileMenuBtn">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </nav>
+
+    <!-- 🔝 Announcement Bar -->
+    <div class="announcement-bar">
+      <div class="container announcement-content">
+        <span class="announcement-badge">📝 EARN WHILE YOU BLOG</span>
+        <span
+          >Earn up to <strong>Ksh 500+</strong> per blog post! Start today</span
+        >
+      </div>
+    </div>
+
+    <!-- 🎮 Hero Section -->
+    <section class="games-hero">
+      <div class="container">
+        <div class="hero-grid">
+          <div>
+            <div class="hero-badge">
+              <i class="fas fa-pen-nib"></i>
+              START EARNING FROM BLOGGING
+            </div>
+
+            <h1 class="hero-title">
+              Write Blogs, <span>Earn Real Money</span>
+            </h1>
+
+            <p class="hero-subtitle">
+              Turn your writing skills into cash! Share your thoughts,
+              experiences, and expertise through blogging. Get paid for every
+              approved post, with instant withdrawals to M-Pesa.
+            </p>
+
+            <div class="hero-stats">
+              <div class="stat">
+                <span class="stat-number">10K+</span>
+                <span class="stat-label">Bloggers</span>
+              </div>
+              <div class="stat">
+                <span class="stat-number">Ksh 5M+</span>
+                <span class="stat-label">Paid to Writers</span>
+              </div>
+              <div class="stat">
+                <span class="stat-number">50+</span>
+                <span class="stat-label">Topics Available</span>
+              </div>
+              <div class="stat">
+                <span class="stat-number">Instant</span>
+                <span class="stat-label">Cashouts</span>
+              </div>
+            </div>
+
+            <div class="hero-actions">
+              <a href="registration.html" class="btn btn-primary">
+                <i class="fas fa-pen-fancy"></i> START BLOGGING NOW
+              </a>
+              <a
+                href="https://wa.me/254755252499?text=Hello%20Coach%20Dajenny,%20guide%20me%20through."
+                class="btn btn-whatsapp"
+              >
+                <i class="fab fa-whatsapp"></i> GET GUIDANCE
+              </a>
+            </div>
+          </div>
+
+          <div class="hero-image">
+            <img src="pictures/Blog.png" alt="Blogging platform interface" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 📝 Blog Guide Section -->
+    <section id="guide" class="featured-games">
+      <div class="container">
+        <div class="section-title">
+          <h2>📝 Complete Blogging Guide</h2>
+          <p>Follow these steps to start earning from your writing</p>
+        </div>
+
+        <div class="step-card">
+          <h2>Step 1 — Planning & Preparation</h2>
+          <p>
+            Successful blogs start with proper planning. Decide your primary
+            goal (audience, income source, creative outlet) and spend time
+            researching your niche, competitors, and audience needs.
+          </p>
+
+          <h3>Pick Your Niche</h3>
+          <p>
+            Narrow focus beats general noise. Choose a niche you enjoy and can
+            create authority in — from travel to budget living to niche hobbies.
+          </p>
+
+          <div class="highlight-box">
+            <strong>Popular Blogging Topics</strong>
+            <div class="topics">
+              <div class="topic">Travel</div>
+              <div class="topic">Finance</div>
+              <div class="topic">Food</div>
+              <div class="topic">DIY</div>
+              <div class="topic">Fitness</div>
+              <div class="topic">Tech</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="step-card">
+          <h2>Step 2 — Content Creation</h2>
+          <p>
+            Quality content is the core. Use clear headings, FAQs for better
+            engagement, and keep posts skimmable with bullet points. Maintain a
+            consistent posting schedule.
+          </p>
+
+          <div class="highlight-box">
+            <strong>Content Length Guidelines</strong><br />
+            Aim for 300–1500 words depending on topic depth. Recipes and quick
+            guides can be shorter; longform authority pieces may sit at 2000+
+            words for comprehensive coverage.
+          </div>
+        </div>
+
+        <div class="step-card">
+          <h2>Step 3 — Monetization Strategies</h2>
+          <p>
+            With Mulastar, you earn per approved post. We also help you explore
+            additional income streams as your blog grows.
+          </p>
+
+          <ul class="features">
+            <li>
+              <i class="fas fa-check-circle success-icon"></i> Per-post payments
+              (Ksh 50-500)
+            </li>
+            <li>
+              <i class="fas fa-check-circle success-icon"></i> Performance
+              bonuses
+            </li>
+            <li>
+              <i class="fas fa-check-circle success-icon"></i> Sponsored content
+              opportunities
+            </li>
+            <li>
+              <i class="fas fa-check-circle success-icon"></i> Affiliate
+              marketing training
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 🎮 Micro Tasking Section -->
+    <section id="tasks" class="micro-tasking">
+      <div class="container">
+        <div class="section-title">
+          <h2>📋 Available Blogging Tasks</h2>
+          <p>
+            Choose from various blogging opportunities that match your interests
+          </p>
+        </div>
+
+        <div class="micro-content">
+          <div class="text-side">
+            <h2>Why Blog with Mulastar?</h2>
+            <p>
+              We offer interesting and fun blogging tasks that match your
+              expertise. Join us in creating valuable content while earning real
+              money.
+            </p>
+
+            <ul class="features">
+              <li>
+                <i class="fas fa-check-circle success-icon"></i>
+                Wide variety of blogging topics
+              </li>
+              <li>
+                <i class="fas fa-check-circle success-icon"></i>
+                Customized to your interests
+              </li>
+              <li>
+                <i class="fas fa-check-circle success-icon"></i>
+                Flexible working hours
+              </li>
+              <li>
+                <i class="fas fa-check-circle success-icon"></i>
+                Instant payments via M-Pesa
+              </li>
+              <li>
+                <i class="fas fa-check-circle success-icon"></i>
+                Professional feedback and guidance
+              </li>
+            </ul>
+          </div>
+
+          <div class="image-side">
+            <div class="task-grid">
+              <div class="task-card">
+                <img src="pictures/yoga.jpeg" alt="Yoga experience" />
+                <div class="info">
+                  <span class="tag">WELLNESS</span>
+                  <h4>Yoga Experience</h4>
+                  <p>Share your yoga journey and practices</p>
+                  <span class="price">Ksh 89.50 per post</span>
+                </div>
+              </div>
+
+              <div class="task-card">
+                <img src="pictures/pet.jpg" alt="Animal photo" />
+                <div class="info">
+                  <span class="tag">PETS</span>
+                  <h4>Pet Stories</h4>
+                  <p>Write about your pets and experiences</p>
+                  <span class="price">Ksh 124.20 per post</span>
+                </div>
+              </div>
+
+              <div class="task-card">
+                <img src="pictures/fragrance.webp" alt="Mystery visit" />
+                <div class="info">
+                  <span class="tag">REVIEWS</span>
+                  <h4>Product Reviews</h4>
+                  <p>Review different products and services</p>
+                  <span class="price">Ksh 162.20 per post</span>
+                </div>
+              </div>
+
+              <div class="task-card">
+                <img src="pictures/dining.jpeg" alt="Dining area photos" />
+                <div class="info">
+                  <span class="tag">LIFESTYLE</span>
+                  <h4>Home & Living</h4>
+                  <p>Share home decor and lifestyle tips</p>
+                  <span class="price">Ksh 112.50 per post</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 💰 Payment Section -->
+    <section id="payment" class="payment-section">
+      <div class="container">
+        <div class="section-title">
+          <h2>💰 Easy Payments & Withdrawals</h2>
+          <p>Get paid quickly and securely for your blogging work</p>
+        </div>
+
+        <div class="payment-container">
+          <div class="payment-image">
+            <img
+              src="pictures/withdraw.jpeg"
+              alt="Payment illustration"
+              class="phone-bg"
+            />
+          </div>
+
+          <div class="payment-text">
+            <p class="tag">WEEKLY PAYMENTS</p>
+            <h2>Secure & Timely Payments</h2>
+            <p class="description">
+              Once your blog posts are approved, receive regular payments
+              through secure methods. We ensure you get paid for every piece of
+              quality content.
+            </p>
+
+            <ul class="benefits">
+              <li>
+                <i class="fas fa-shield-alt success-icon"></i>
+                Secure payment via M-Pesa & MTN
+              </li>
+              <li>
+                <i class="fas fa-calendar-week success-icon"></i>
+                Weekly payment schedule
+              </li>
+              <li>
+                <i class="fas fa-user-clock success-icon"></i>
+                Choose your payment timing
+              </li>
+              <li>
+                <i class="fas fa-bolt success-icon"></i>
+                Instant processing for verified accounts
+              </li>
+            </ul>
+
+            <div style="margin-top: 30px">
+              <a href="registration.html" class="btn btn-primary">
+                <i class="fas fa-wallet"></i> START EARNING NOW
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 🏆 Workplace Section -->
+    <section id="workplace" class="workplace-section">
+      <div class="container">
+        <div class="section-title">
+          <h2>🚀 Maximize Your Blogging Potential</h2>
+          <p>Tools and features to help you succeed as a blogger</p>
+        </div>
+
+        <div class="workplace-grid">
+          <div class="workplace-card">
+            <div class="icon">
+              <i class="fas fa-search"></i>
+            </div>
+            <h3>Find Perfect Topics</h3>
+            <p>
+              Discover trending topics that match your interests with our smart
+              recommendation system.
+            </p>
+          </div>
+
+          <div class="workplace-card">
+            <div class="icon">
+              <i class="fas fa-bell"></i>
+            </div>
+            <h3>Task Notifications</h3>
+            <p>
+              Get instant alerts when new blogging opportunities match your
+              profile and interests.
+            </p>
+          </div>
+
+          <div class="workplace-card">
+            <div class="icon">
+              <i class="fas fa-chart-line"></i>
+            </div>
+            <h3>Earnings Tracker</h3>
+            <p>
+              Monitor your income, pending payments, and performance metrics in
+              real-time.
+            </p>
+          </div>
+
+          <div class="workplace-card">
+            <div class="icon">
+              <i class="fas fa-wifi"></i>
+            </div>
+            <h3>Work Anywhere</h3>
+            <p>
+              Blog from anywhere with our mobile-friendly platform. Write and
+              submit posts on the go.
+            </p>
+          </div>
+
+          <div class="workplace-card">
+            <div class="icon">
+              <i class="fas fa-lock"></i>
+            </div>
+            <h3>Secure Platform</h3>
+            <p>
+              Your content and earnings are protected with enterprise-grade
+              security measures.
+            </p>
+          </div>
+
+          <div class="workplace-card">
+            <div class="icon">
+              <i class="fas fa-graduation-cap"></i>
+            </div>
+            <h3>Learn & Grow</h3>
+            <p>
+              Access blogging resources, templates, and best practices to
+              improve your writing skills.
+            </p>
+          </div>
+        </div>
+
+        <div class="about-navigation">
+          <a class="nav-about" href="ads.html">
+            <i class="fas fa-arrow-left"></i> Previous: Ads
+          </a>
+          <a class="nav-about" href="forex.html">
+            Next: Forex <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 📞 Final CTA -->
+    <section class="cta-section">
+      <div class="container">
+        <h2>Ready to Start Earning from Your Writing?</h2>
+        <p>
+          Join thousands of African bloggers who are already earning real money
+          from their writing skills. No experience needed - just passion for
+          sharing!
+        </p>
+
+        <div class="cta-buttons">
+          <a
+            href="registration.html"
+            class="btn btn-primary"
+            style="background: white; color: var(--primary)"
+          >
+            <i class="fas fa-pen-fancy"></i> START BLOGGING NOW
+          </a>
+          <a
+            href="https://wa.me/254755252499?text=Hello%20Coach%20Dajenny,%20guide%20me%20through."
+            class="btn btn-secondary"
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              color: white;
+              border: 2px solid white;
+            "
+          >
+            <i class="fab fa-whatsapp"></i> CHAT WITH SUPPORT
+          </a>
+        </div>
+
+        <div style="margin-top: 50px; opacity: 0.8; font-size: 0.95rem">
+          <p><i class="fas fa-check-circle"></i> Instant M-Pesa withdrawals</p>
+          <p>
+            <i class="fas fa-check-circle"></i> 100% legitimate & registered
+            company
+          </p>
+          <p><i class="fas fa-check-circle"></i> 24/7 support & guidance</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 🏁 Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div>
+            <div class="logo" style="color: white; margin-bottom: 20px">
+              <div class="logo-icon">MA</div>
+              <div>
+                <div>Mulastar</div>
+                <div style="font-size: 0.9rem; color: #94a3b8">Agencies</div>
+              </div>
+            </div>
+            <p style="color: #94a3b8; margin-bottom: 20px">
+              Start blogging and earn real money. Africa's #1 platform for
+              writers and content creators.
+            </p>
+            <div class="social-links">
+              <a
+                href="https://www.facebook.com/dajenny.sydney"
+                class="social-link"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="https://x.com/jenny995729" class="social-link"
+                ><i class="fab fa-twitter"></i
+              ></a>
+              <a
+                href="https://www.instagram.com/bestaffiliatecoach2025"
+                class="social-link"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a
+                href="https://www.youtube.com/DajennySydney"
+                class="social-link"
+                ><i class="fab fa-youtube"></i
+              ></a>
+            </div>
+          </div>
+
+          <div>
+            <h3>Blog Categories</h3>
+            <ul class="footer-links">
+              <li>
+                <a href="videos.html"
+                  ><i class="fas fa-play-circle"></i> Watch Videos</a
+                >
+              </li>
+              <li>
+                <a href="games.html"
+                  ><i class="fas fa-gamepad"></i> Play Games</a
+                >
+              </li>
+              <li>
+                <a href="surveys.html"
+                  ><i class="fas fa-clipboard-check"></i> Surveys</a
+                >
+              </li>
+              <li>
+                <a href="networking.html"
+                  ><i class="fas fa-users"></i> Referrals</a
+                >
+              </li>
+              <li>
+                <a href="content.html"
+                  ><i class="fas fa-laugh"></i> Upload Memes</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h3>Quick Links</h3>
+            <ul class="footer-links">
+              <li>
+                <a href="index.html"><i class="fas fa-home"></i> Home</a>
+              </li>
+              <li>
+                <a href="#guide"><i class="fas fa-book"></i> Blog Guide</a>
+              </li>
+              <li>
+                <a href="#tasks"><i class="fas fa-tasks"></i> Blog Tasks</a>
+              </li>
+              <li>
+                <a href="#payment"><i class="fas fa-wallet"></i> Payments</a>
+              </li>
+              <li>
+                <a href="registration.html"
+                  ><i class="fas fa-user-plus"></i> Register</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h3>Support</h3>
+            <ul class="footer-links">
+              <li>
+                <a
+                  href="https://wa.me/254755252499?text=Hello%20Coach%20Dajenny,%20guide%20me%20through."
+                  ><i class="fab fa-whatsapp"></i> WhatsApp Support</a
+                >
+              </li>
+              <li>
+                <a href="tel:+254755252499"
+                  ><i class="fas fa-phone"></i> Call Support</a
+                >
+              </li>
+              <li>
+                <a href="mailto:support@mulastar.com"
+                  ><i class="fas fa-envelope"></i> Email Support</a
+                >
+              </li>
+              <li>
+                <a href="#"><i class="fas fa-question-circle"></i> FAQ</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="copyright">
+          <p>
+            © <span id="currentYear"></span> Mulastar Agencies. All rights
+            reserved.
+          </p>
+          <p style="margin-top: 10px; font-size: 0.8rem">
+            Managed by BESTTECH MANAGEMENT | Phone: +254 755 252 499 | Email:
+            support@mulastar.com
+          </p>
+          <p style="margin-top: 10px; font-size: 0.8rem">
+            Website developed by
+            <a href="https://wa.me/254707995729" style="color: #3b82f6">Jeff</a>
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Set current year
+      document.getElementById("currentYear").textContent =
+        new Date().getFullYear();
+
+      // Mobile Menu Toggle
+      document.addEventListener("DOMContentLoaded", function () {
+        const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+        const navLinks = document.getElementById("navLinks");
+
+        if (mobileMenuBtn && navLinks) {
+          mobileMenuBtn.addEventListener("click", function (e) {
+            e.stopPropagation();
+            navLinks.classList.toggle("show");
+            this.innerHTML = navLinks.classList.contains("show")
+              ? '<i class="fas fa-times"></i>'
+              : '<i class="fas fa-bars"></i>';
+          });
+
+          // Close menu when clicking outside
+          document.addEventListener("click", function (e) {
+            if (
+              !navLinks.contains(e.target) &&
+              !mobileMenuBtn.contains(e.target) &&
+              navLinks.classList.contains("show")
+            ) {
+              navLinks.classList.remove("show");
+              mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            }
+          });
+
+          // Close menu on link click
+          navLinks.querySelectorAll("a").forEach((link) => {
+            link.addEventListener("click", () => {
+              navLinks.classList.remove("show");
+              mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+          });
+
+          // Close menu on window resize
+          window.addEventListener("resize", function () {
+            if (
+              window.innerWidth > 768 &&
+              navLinks.classList.contains("show")
+            ) {
+              navLinks.classList.remove("show");
+              mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            }
+          });
+        }
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+          anchor.addEventListener("click", function (e) {
+            const targetId = this.getAttribute("href");
+            if (targetId === "#") return;
+
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+              e.preventDefault();
+              window.scrollTo({
+                top: targetElement.offsetTop - 100,
+                behavior: "smooth",
+              });
+            }
+          });
+        });
+
+        // Initialize animations
+        const observerOptions = {
+          threshold: 0.1,
+          rootMargin: "0px 0px -50px 0px",
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.style.opacity = "1";
+              entry.target.style.transform = "translateY(0)";
+            }
+          });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document
+          .querySelectorAll(
+            ".step-card, .task-card, .workplace-card, .highlight-box"
+          )
+          .forEach((el) => {
+            el.style.opacity = "0";
+            el.style.transform = "translateY(20px)";
+            el.style.transition = "opacity 0.6s ease, transform 0.6s ease";
+            observer.observe(el);
+          });
+      });
+    </script>
+  </body>
+</html>
