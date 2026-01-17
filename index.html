@@ -2478,7 +2478,8 @@
         const announcementTimer = document.getElementById("countdown");
         if (announcementTimer) {
           announcementTimer.textContent =
-            formattedTime + (isActive ? " - ACTIVE" : " - INACTIVE");
+            formattedTime +
+            (isActive ? " - OFFER AVAILABLE" : " - OFFER INACTIVE");
           announcementTimer.style.color = isActive ? "#fff" : "#ffcccb";
         }
 
