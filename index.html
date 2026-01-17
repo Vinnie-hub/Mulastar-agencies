@@ -1419,9 +1419,9 @@
         </a>
 
         <div class="nav-links hide-mobile">
+          <a href="#how-it-works">Earn</a>
           <a href="#features">Features</a>
-          <a href="#tasks">Earn</a>
-          <a href="#calculator">Earnings</a>
+          <a href="#app">Get App</a>
           <a href="#testimonials">Testimonials</a>
           <a href="#faq">FAQ</a>
           <a href="#contact">Contact</a>
@@ -1721,7 +1721,7 @@
     </section>
 
     <!-- 📱 App Download Section -->
-    <section class="app-download">
+    <section id="app" class="app-download">
       <div class="container">
         <div class="section-title">
           <h2>Download Our Mobile App</h2>
@@ -2421,107 +2421,49 @@
       document.getElementById("currentYear").textContent =
         new Date().getFullYear();
 
-      // Complex Timer Cycles Configuration
-      const timerConfig = {
-        cycles: [
-          {
-            active: true,
-            duration: 16 * 60 * 60 * 1000,
-            label: "OFFER AVAILABLE",
-          },
-          { active: false, duration: 1 * 60 * 60 * 1000, label: "COMING SOON" }, // 1 hour inactive
-          {
-            active: true,
-            duration: 8 * 60 * 60 * 1000,
-            label: "OFFER AVAILABLE",
-          }, // 8 hours active
-          { active: false, duration: 1 * 60 * 60 * 1000, label: "COMING SOON" }, // 1 hour inactive
-          {
-            active: true,
-            duration: 4 * 60 * 60 * 1000,
-            label: "OFFER AVAILABLE",
-          }, // 4 hours active
-          { active: false, duration: 1 * 60 * 60 * 1000, label: "COMING SOON" }, // 1 hour inactive
-          {
-            active: true,
-            duration: 2 * 60 * 60 * 1000,
-            label: "OFFER AVAILABLE",
-          }, // 2 hours active
-          { active: false, duration: 1 * 60 * 60 * 1000, label: "COMING SOON" }, // 1 hour inactive
-          {
-            active: true,
-            duration: 1 * 60 * 60 * 1000,
-            label: "OFFER AVAILABLE",
-          }, // 1 hour active
-          {
-            active: false,
-            duration: 1 * 60 * 60 * 1000,
-            label: "CYCLE RESTART",
-          },
-        ],
-        startTime: null,
-        currentCycleIndex: 0,
-        cycleStartTime: null,
-      };
-
-      function initializeTimer() {
-        timerConfig.startTime = new Date().getTime();
-        timerConfig.currentCycleIndex = 0;
-        timerConfig.cycleStartTime = timerConfig.startTime;
-
-        updateTimerDisplay();
-      }
-
-      // Calculate current cycle based on elapsed time
-      function calculateCurrentCycle() {
-        const now = new Date().getTime();
-        const elapsed = now - timerConfig.startTime;
-
-        // Calculate total cycle duration
-        const totalCycleDuration = timerConfig.cycles.reduce(
-          (total, cycle) => total + cycle.duration,
+      // SIMPLE TIMER - 24-hour cycle: 16h active, 8h inactive
+      function initSimpleTimer() {
+        const now = new Date();
+        const startOfDay = new Date(
+          now.getFullYear(),
+          now.getMonth(),
+          now.getDate(),
+          0,
+          0,
           0,
         );
+        const startTime = startOfDay.getTime();
+        const currentTime = now.getTime();
 
-        // Find which cycle we're in
-        let accumulatedTime = 0;
-        let cycleIndex = 0;
+        // Calculate time elapsed since midnight
+        const timeElapsed = currentTime - startTime;
 
-        // If more than one full cycle has passed, find the current cycle
-        const cycleTime = elapsed % totalCycleDuration;
+        // 24-hour cycle: 16 hours active (midnight to 4pm), 8 hours inactive (4pm to midnight)
+        const isActive = timeElapsed < 16 * 60 * 60 * 1000; // Active if less than 16 hours since midnight
 
-        for (let i = 0; i < timerConfig.cycles.length; i++) {
-          if (cycleTime < accumulatedTime + timerConfig.cycles[i].duration) {
-            cycleIndex = i;
-            break;
-          }
-          accumulatedTime += timerConfig.cycles[i].duration;
+        let timeRemaining;
+        if (isActive) {
+          timeRemaining = 16 * 60 * 60 * 1000 - timeElapsed;
+        } else {
+          timeRemaining = 24 * 60 * 60 * 1000 - timeElapsed;
         }
 
-        timerConfig.currentCycleIndex = cycleIndex;
-        timerConfig.cycleStartTime =
-          timerConfig.startTime +
-          Math.floor(elapsed / totalCycleDuration) * totalCycleDuration +
-          accumulatedTime;
+        updateTimerDisplay(timeRemaining, isActive);
 
-        return {
-          cycleIndex,
-          timeInCycle: now - timerConfig.cycleStartTime,
-          cycle: timerConfig.cycles[cycleIndex],
-        };
+        // Update every second
+        setInterval(() => {
+          const current = new Date().getTime();
+          const elapsed = current - startTime;
+          const isActiveNow = elapsed < 16 * 60 * 60 * 1000;
+          const remaining = isActiveNow
+            ? 16 * 60 * 60 * 1000 - elapsed
+            : 24 * 60 * 60 * 1000 - elapsed;
+          updateTimerDisplay(remaining, isActiveNow);
+        }, 1000);
       }
 
-      // Update all timer displays
-      function updateTimerDisplay() {
-        const now = new Date().getTime();
-        const cycleInfo = calculateCurrentCycle();
-        const currentCycle = cycleInfo.cycle;
-        const timeInCycle = cycleInfo.timeInCycle;
-
-        // Calculate time remaining in current cycle
-        const timeRemaining = Math.max(0, currentCycle.duration - timeInCycle);
-
-        // Format time
+      function updateTimerDisplay(timeRemaining, isActive) {
+        // Format time: HH:MM:SS
         const hours = Math.floor(timeRemaining / (1000 * 60 * 60));
         const minutes = Math.floor(
           (timeRemaining % (1000 * 60 * 60)) / (1000 * 60),
@@ -2532,297 +2474,98 @@
           .toString()
           .padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`;
 
-        // Update all timer elements
-        const countdownElement = document.getElementById("countdown");
-        const countdownTimer = document.getElementById("countdown-timer");
+        // Only update timer elements - don't touch anything else
+        const announcementTimer = document.getElementById("countdown");
+        if (announcementTimer) {
+          announcementTimer.textContent =
+            formattedTime + (isActive ? " - ACTIVE" : " - INACTIVE");
+          announcementTimer.style.color = isActive ? "#fff" : "#ffcccb";
+        }
+
+        const bonusTimer = document.getElementById("countdown-timer");
+        if (bonusTimer) {
+          bonusTimer.textContent = formattedTime;
+          bonusTimer.style.color = isActive ? "#f59e0b" : "#94a3b8";
+        }
+
         const bonusHours = document.getElementById("bonusHours");
         const bonusMinutes = document.getElementById("bonusMinutes");
         const bonusSeconds = document.getElementById("bonusSeconds");
 
-        // Update announcement bar
-        if (countdownElement) {
-          if (currentCycle.active) {
-            countdownElement.textContent = `${formattedTime} - ${currentCycle.label}`;
-            countdownElement.style.background = "rgba(255, 255, 255, 0.3)";
-            countdownElement.style.color = "white";
-          } else {
-            countdownElement.textContent = `${formattedTime} - ${currentCycle.label}`;
-            countdownElement.style.background = "rgba(255, 0, 0, 0.3)";
-            countdownElement.style.color = "#ffcccc";
-          }
-        }
-
-        // Update bonus section timer
-        if (countdownTimer) {
-          if (currentCycle.active) {
-            countdownTimer.textContent = formattedTime;
-            countdownTimer.style.color = "var(--warning)";
-          } else {
-            countdownTimer.textContent = formattedTime;
-            countdownTimer.style.color = "#999";
-          }
-        }
-
-        // Update large bonus timer
         if (bonusHours && bonusMinutes && bonusSeconds) {
           bonusHours.textContent = hours.toString().padStart(2, "0");
           bonusMinutes.textContent = minutes.toString().padStart(2, "0");
           bonusSeconds.textContent = seconds.toString().padStart(2, "0");
 
-          // Change color based on active/inactive
-          if (currentCycle.active) {
-            bonusHours.style.color = "var(--warning)";
-            bonusMinutes.style.color = "var(--warning)";
-            bonusSeconds.style.color = "var(--warning)";
-          } else {
-            bonusHours.style.color = "#999";
-            bonusMinutes.style.color = "#999";
-            bonusSeconds.style.color = "#999";
-          }
-        }
-
-        // Update bonus section styling based on active/inactive
-        updateBonusSectionStyle(currentCycle.active);
-
-        // Update CTA button based on active status
-        updateCTAButton(currentCycle.active);
-      }
-
-      // Update bonus section style
-      function updateBonusSectionStyle(isActive) {
-        const bonusSection = document.querySelector(".bonus-section");
-        const claimButton = document.querySelector(
-          ".bonus-section .btn-primary",
-        );
-
-        if (bonusSection && claimButton) {
           if (isActive) {
-            bonusSection.style.background =
-              "linear-gradient(135deg, #fff9db 0%, #ffe8cc 100%)";
-            bonusSection.style.border = "2px solid var(--warning)";
-            claimButton.style.display = "inline-flex";
-            claimButton.innerHTML =
-              '<i class="fas fa-gift"></i> CLAIM BONUS NOW!';
-            claimButton.disabled = false;
+            bonusHours.style.color = "#f59e0b";
+            bonusMinutes.style.color = "#f59e0b";
+            bonusSeconds.style.color = "#f59e0b";
           } else {
-            bonusSection.style.background =
-              "linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%)";
-            bonusSection.style.border = "2px solid #cbd5e1";
-            claimButton.style.display = "inline-flex";
-            claimButton.innerHTML =
-              '<i class="fas fa-clock"></i> NEXT BONUS STARTS SOON';
-            claimButton.style.background = "#94a3b8";
-            claimButton.disabled = true;
+            bonusHours.style.color = "#94a3b8";
+            bonusMinutes.style.color = "#94a3b8";
+            bonusSeconds.style.color = "#94a3b8";
           }
         }
       }
 
-      // Get cycle information for debugging
-      function getCycleInfo() {
-        const cycleInfo = calculateCurrentCycle();
-        const now = new Date();
-        const nextCycleIndex =
-          (cycleInfo.cycleIndex + 1) % timerConfig.cycles.length;
-        const nextCycle = timerConfig.cycles[nextCycleIndex];
-        const nextCycleTime = new Date(
-          timerConfig.cycleStartTime + cycleInfo.cycle.duration,
-        );
-
-        return {
-          currentCycle: cycleInfo.cycle,
-          currentCycleIndex: cycleInfo.cycleIndex,
-          timeInCycle: cycleInfo.timeInCycle,
-          isActive: cycleInfo.cycle.active,
-          timeRemaining: cycleInfo.cycle.duration - cycleInfo.timeInCycle,
-          nextCycle: nextCycle,
-          nextCycleStarts: nextCycleTime,
-          totalCycles: timerConfig.cycles.length,
-        };
-      }
-
-      // Show current cycle status in console (for debugging)
-      function logCycleStatus() {
-        const info = getCycleInfo();
-        console.log("=== Mulastar Timer Status ===");
-        console.log("Current Cycle:", info.currentCycle.label);
-        console.log("Active:", info.isActive ? "YES" : "NO");
-        console.log(
-          "Time in cycle:",
-          Math.floor(info.timeInCycle / 1000 / 60),
-          "minutes",
-        );
-        console.log(
-          "Time remaining:",
-          Math.floor(info.timeRemaining / 1000 / 60),
-          "minutes",
-        );
-        console.log(
-          "Next cycle:",
-          info.nextCycle.label,
-          "starts at",
-          info.nextCycleStarts.toLocaleTimeString(),
-        );
-        console.log("============================");
-      }
-
-      // Initialize on page load
-      window.addEventListener("DOMContentLoaded", () => {
-        initializeTimer();
-        setInterval(updateTimerDisplay, 1000);
-
-        // Optional: Log status every minute for debugging
-        // setInterval(logCycleStatus, 60000);
-
-        // Optional: Show cycle status somewhere on page
-        // addCycleStatusDisplay();
-      });
-
-      // Optional: Add a cycle status display to the page
-      function addCycleStatusDisplay() {
-        const statusDiv = document.createElement("div");
-        statusDiv.id = "cycle-status";
-        statusDiv.style.cssText = `
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        background: rgba(0,0,0,0.8);
-        color: white;
-        padding: 10px 15px;
-        border-radius: 8px;
-        font-size: 12px;
-        z-index: 9999;
-        max-width: 250px;
-        display: none; /* Hidden by default */
-    `;
-        document.body.appendChild(statusDiv);
-
-        // Update status every second
-        setInterval(() => {
-          const info = getCycleInfo();
-          const remainingMinutes = Math.floor(info.timeRemaining / 1000 / 60);
-          const remainingSeconds = Math.floor(
-            (info.timeRemaining % (1000 * 60)) / 1000,
-          );
-
-          statusDiv.innerHTML = `
-            <strong>${info.currentCycle.label}</strong><br>
-            Status: ${info.isActive ? "🟢 ACTIVE" : "🔴 INACTIVE"}<br>
-            Time remaining: ${remainingMinutes}m ${remainingSeconds}s<br>
-            Next: ${info.nextCycle.label}
-        `;
-        }, 1000);
-      }
-
-      // Mobile Menu Functionality
+      // Mobile Menu - Simple
       const mobileMenuBtn = document.querySelector(".mobile-menu-btn");
       const navLinks = document.querySelector(".nav-links");
-      const mobileMenuOverlay = document.getElementById("mobileMenuOverlay");
-      let menuOpen = false;
 
-      function toggleMobileMenu() {
-        menuOpen = !menuOpen;
-
-        if (menuOpen) {
-          navLinks.classList.add("mobile-open");
-          mobileMenuOverlay.style.display = "block";
-          document.body.style.overflow = "hidden";
-
-          // Change icon to close
-          mobileMenuBtn.innerHTML = '<i class="fas fa-times"></i>';
-        } else {
-          navLinks.classList.remove("mobile-open");
-          mobileMenuOverlay.style.display = "none";
-          document.body.style.overflow = "";
-
-          // Change icon back to menu
-          mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-        }
-      }
-
-      // Close mobile menu when clicking on a link
-      function closeMobileMenu() {
-        menuOpen = false;
-        navLinks.classList.remove("mobile-open");
-        mobileMenuOverlay.style.display = "none";
-        document.body.style.overflow = "";
-        mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-      }
-
-      // Event listeners
       if (mobileMenuBtn && navLinks) {
-        mobileMenuBtn.addEventListener("click", toggleMobileMenu);
-        mobileMenuOverlay.addEventListener("click", closeMobileMenu);
-
-        // Close menu when clicking on nav links
-        const navLinksItems = navLinks.querySelectorAll("a");
-        navLinksItems.forEach((link) => {
-          link.addEventListener("click", closeMobileMenu);
+        mobileMenuBtn.addEventListener("click", () => {
+          navLinks.classList.toggle("mobile-open");
+          document.body.style.overflow = navLinks.classList.contains(
+            "mobile-open",
+          )
+            ? "hidden"
+            : "";
         });
       }
 
-      // FAQ Toggle - IMPROVED with close on select
-      const faqItems = document.querySelectorAll(".faq-item");
-
-      faqItems.forEach((item) => {
-        item.addEventListener("click", (e) => {
-          // If the clicked item is already active, close it
-          if (item.classList.contains("active")) {
-            item.classList.remove("active");
-          } else {
-            // Close all other FAQ items
-            faqItems.forEach((otherItem) => {
-              if (otherItem !== item) {
-                otherItem.classList.remove("active");
-              }
-            });
-            // Open the clicked item
-            item.classList.add("active");
-          }
+      // FAQ Toggle - Simple
+      document.querySelectorAll(".faq-item").forEach((item) => {
+        item.addEventListener("click", () => {
+          item.classList.toggle("active");
         });
       });
 
-      // Smooth scrolling for navigation links
+      // Smooth scrolling - Simple
       document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
         anchor.addEventListener("click", function (e) {
           const targetId = this.getAttribute("href");
-          if (targetId === "#" || targetId === "javascript:void(0)") return;
+          if (targetId === "#") return;
 
           const targetElement = document.querySelector(targetId);
           if (targetElement) {
             e.preventDefault();
             window.scrollTo({
-              top: targetElement.offsetTop - 100,
+              top: targetElement.offsetTop - 80,
               behavior: "smooth",
             });
+
+            // Close mobile menu if open
+            if (navLinks && navLinks.classList.contains("mobile-open")) {
+              navLinks.classList.remove("mobile-open");
+              document.body.style.overflow = "";
+            }
           }
         });
       });
 
-      // Initialize on page load
+      // Initialize everything when page loads
       window.addEventListener("DOMContentLoaded", () => {
-        // Hide mobile menu by default on desktop
-        if (window.innerWidth <= 768) {
-          navLinks.style.display = "none";
-        } else {
-          navLinks.style.display = "flex";
-        }
-      });
+        // Start timer
+        initSimpleTimer();
 
-      // Handle window resize
-      window.addEventListener("resize", () => {
-        if (window.innerWidth > 768) {
-          // Reset mobile menu on desktop
-          navLinks.classList.remove("mobile-open");
-          mobileMenuOverlay.style.display = "none";
-          document.body.style.overflow = "";
-          navLinks.style.display = "flex";
-          menuOpen = false;
-          mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-        } else {
-          if (!menuOpen) {
-            navLinks.style.display = "none";
+        // Handle window resize
+        window.addEventListener("resize", () => {
+          if (window.innerWidth > 768 && navLinks) {
+            navLinks.classList.remove("mobile-open");
+            document.body.style.overflow = "";
           }
-        }
+        });
       });
     </script>
   </body>
