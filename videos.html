@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -151,21 +151,14 @@
 
       /* 🎬 Hero Video Section */
       .video-hero {
-        background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+        background:
+          linear-gradient(rgba(29, 28, 28, 0.85), rgba(27, 27, 27, 0.9)),
+          url("https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80")
+            no-repeat center center/cover;
         color: white;
         padding: 80px 0;
         position: relative;
         overflow: hidden;
-      }
-
-      .video-hero::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 60c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3z' fill='%233b82f6' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
       }
 
       .hero-content {
@@ -809,6 +802,44 @@
         font-weight: 600;
       }
 
+      /* Navigation Links*/
+      .about-navigation {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 50px 0;
+        padding: 20px 0;
+        border-top: 1px solid var(--border);
+        border-bottom: 1px solid var(--border);
+      }
+
+      .nav-about {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 12px 24px;
+        background: white;
+        color: var(--dark);
+        text-decoration: none;
+        border-radius: var(--radius);
+        font-weight: 600;
+        transition: var(--transition);
+        border: 2px solid transparent;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      }
+
+      .nav-about:hover {
+        background: var(--primary);
+        color: white;
+        transform: translateY(-3px);
+        box-shadow: var(--shadow-hover);
+        border-color: var(--primary);
+      }
+
+      .nav-about i {
+        font-size: 0.9rem;
+      }
+
       /* 🏁 Footer */
       .footer {
         background: var(--dark);
@@ -955,7 +986,13 @@
     <header class="header">
       <div class="container nav-container">
         <a href="index.html" class="logo">
-          <div class="logo-icon">🧿</div>
+          <div class="logo-icon">
+            <img
+              src="pictures/icon.jpeg"
+              alt="Mulastar Logo"
+              style="width: 100%; height: 100%; object-fit: contain"
+            />
+          </div>
           <div>
             <div>Mulastar</div>
             <div style="font-size: 0.9rem; color: var(--muted)">Videos</div>
@@ -1126,7 +1163,7 @@
                   <i class="far fa-clock"></i> 3:45 min
                 </span>
               </div>
-              <h3>Trending TikTok Challenge Videos</h3>
+              <h3>Business Promotion Adverts</h3>
               <div class="video-stats">
                 <span><i class="far fa-eye"></i> 2.8K views</span>
                 <span><i class="far fa-thumbs-up"></i> 420 likes</span>
@@ -1159,7 +1196,7 @@
                   <i class="far fa-clock"></i> 1:55 min
                 </span>
               </div>
-              <h3>Funny Comedy Skits Compilation</h3>
+              <h3>Children Best Funny Comedy</h3>
               <div class="video-stats">
                 <span><i class="far fa-eye"></i> 890 views</span>
                 <span><i class="far fa-thumbs-up"></i> 156 likes</span>
@@ -1463,12 +1500,12 @@
             </div>
             <div class="testimonial-author">
               <img
-                src="https://randomuser.me/api/portraits/women/32.jpg"
-                alt="Sarah"
+                src="pictures/catherine.jpeg"
+                alt="Catherine"
                 class="author-avatar"
               />
               <div class="author-info">
-                <h4>Sarah M.</h4>
+                <h4>Catherine T.</h4>
                 <p>Nairobi, Kenya</p>
                 <div class="testimonial-earnings">Earns: Ksh.36,000/month</div>
               </div>
@@ -1483,12 +1520,12 @@
             </div>
             <div class="testimonial-author">
               <img
-                src="https://randomuser.me/api/portraits/men/22.jpg"
-                alt="John"
+                src="pictures/brian.jpeg"
+                alt="Brian"
                 class="author-avatar"
               />
               <div class="author-info">
-                <h4>John K.</h4>
+                <h4>Brian K.</h4>
                 <p>Mombasa, Kenya</p>
                 <div class="testimonial-earnings">Earns: Ksh.800/day</div>
               </div>
@@ -1502,12 +1539,12 @@
             </div>
             <div class="testimonial-author">
               <img
-                src="https://randomuser.me/api/portraits/women/45.jpg"
-                alt="Grace"
+                src="pictures/mourine.jpeg"
+                alt="Mourine"
                 class="author-avatar"
               />
               <div class="author-info">
-                <h4>Grace W.</h4>
+                <h4>Mourine W.</h4>
                 <p>Kampala, Uganda</p>
                 <div class="testimonial-earnings">Earns: Ksh.45,000/month</div>
               </div>
@@ -1594,13 +1631,29 @@
       </div>
     </section>
 
+    <!-- Navigation -->
+    <div class="about-navigation" aria-label="Post navigation">
+      <a class="nav-about" href="about.html">
+        <i class="fas fa-arrow-left"></i> Back: About Mulastar
+      </a>
+      <a class="nav-about" href="reels.html">
+        Next: Watch Reels <i class="fas fa-arrow-right"></i>
+      </a>
+    </div>
+
     <!-- 🏁 Footer -->
     <footer class="footer">
       <div class="container">
         <div class="footer-grid">
           <div>
             <div class="logo" style="color: white; margin-bottom: 20px">
-              <div class="logo-icon">MS</div>
+              <div class="logo-icon">
+                <img
+                  src="pictures/icon.jpeg"
+                  alt="Mulastar Logo"
+                  style="width: 100%; height: 100%; object-fit: contain"
+                />
+              </div>
               <div>
                 <div>Mulastar</div>
                 <div style="font-size: 0.9rem; color: #94a3b8">

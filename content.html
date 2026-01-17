@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -230,12 +230,10 @@
         align-items: center;
         color: white;
         overflow: hidden;
-        background: linear-gradient(
-            rgba(17, 24, 39, 0.9),
-            rgba(139, 92, 246, 0.8)
-          ),
-          url("https://images.unsplash.com/photo-1611605698335-8b1569810432?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80");
-        background-size: cover;
+        background:
+          linear-gradient(rgba(29, 28, 28, 0.85), rgba(27, 27, 27, 0.9)),
+          url("https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80")
+            no-repeat center center/cover;
         background-position: center;
         background-attachment: fixed;
       }
@@ -985,6 +983,44 @@
         color: var(--primary);
       }
 
+      /* Navigation Links*/
+      .about-navigation {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 50px 0;
+        padding: 20px 0;
+        border-top: 1px solid var(--border);
+        border-bottom: 1px solid var(--border);
+      }
+
+      .nav-about {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 12px 24px;
+        background: white;
+        color: var(--dark);
+        text-decoration: none;
+        border-radius: var(--radius);
+        font-weight: 600;
+        transition: var(--transition);
+        border: 2px solid transparent;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      }
+
+      .nav-about:hover {
+        background: var(--primary);
+        color: white;
+        transform: translateY(-3px);
+        box-shadow: var(--shadow-hover);
+        border-color: var(--primary);
+      }
+
+      .nav-about i {
+        font-size: 0.9rem;
+      }
+
       /* 🏁 Footer */
       .footer {
         background: var(--dark);
@@ -1258,7 +1294,13 @@
     <nav class="navbar">
       <div class="container nav-container">
         <a href="index.html" class="logo">
-          <div class="logo-icon">🧿</div>
+          <div class="logo-icon">
+            <img
+              src="pictures/icon.jpeg"
+              alt="Mulastar Logo"
+              style="width: 100%; height: 100%; object-fit: contain"
+            />
+          </div>
           <div class="logo-text">
             <h1>Mulastar</h1>
             <span>Content Creation</span>
@@ -1364,7 +1406,7 @@
           <div class="sample-card" data-category="memes">
             <div class="sample-image">
               <img
-                src="https://images.unsplash.com/photo-1611262588024-d12430b98920?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                src="https://images.unsplash.com/photo-1760350118197-0cf024f6fd15?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                 alt="Funny Meme"
               />
             </div>
@@ -1411,7 +1453,10 @@
           <!-- Sample 3 - Trending -->
           <div class="sample-card" data-category="trending">
             <div class="sample-image">
-              <img src="pictures/yoga.jpeg" alt="Trending Challenge" />
+              <img
+                src="https://images.unsplash.com/photo-1750756826725-b9e9d7ec7c6a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8QWZyaWNhbiUyMGRhbmNlJTIwY2hhbGxlbmdlfGVufDB8fDB8fHww"
+                alt="Trending Challenge"
+              />
             </div>
             <div class="sample-info">
               <span class="sample-category">Trending</span>
@@ -1433,7 +1478,7 @@
           <div class="sample-card" data-category="creative">
             <div class="sample-image">
               <img
-                src="https://images.unsplash.com/photo-1545235617-9465d2a55698?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                src="https://images.unsplash.com/photo-1598338332181-c7a78afa1198?q=80&w=871&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                 alt="Digital Art"
               />
             </div>
@@ -1457,7 +1502,7 @@
           <div class="sample-card" data-category="memes">
             <div class="sample-image">
               <img
-                src="https://images.unsplash.com/photo-1616469829581-73993eb86b02?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                src="https://images.unsplash.com/photo-1732319890350-28f5ebd44da4?q=80&w=1031&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                 alt="Student Meme"
               />
             </div>
@@ -1481,7 +1526,7 @@
           <div class="sample-card" data-category="articles">
             <div class="sample-image">
               <img
-                src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                src="https://images.unsplash.com/photo-1444653614773-995cb1ef9efa?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8YnVzaW5lc3MlMjBtb25leXxlbnwwfHwwfHx8MA%3D%3D"
                 alt="Finance Article"
               />
             </div>
@@ -1773,13 +1818,29 @@
       </div>
     </section>
 
+    <!-- Navigation -->
+    <div class="about-navigation" aria-label="Post navigation">
+      <a class="nav-about" href="games.html">
+        <i class="fas fa-arrow-left"></i> Back: Play Games
+      </a>
+      <a class="nav-about" href="forex.html">
+        Next: Learn forex <i class="fas fa-arrow-right"></i>
+      </a>
+    </div>
+
     <!-- 🏁 Footer -->
     <footer class="footer">
       <div class="container">
         <div class="footer-grid">
           <div>
             <div class="logo" style="color: white; margin-bottom: 25px">
-              <div class="logo-icon">MA</div>
+              <div class="logo-icon">
+                <img
+                  src="pictures/icon.jpeg"
+                  alt="Mulastar Logo"
+                  style="width: 100%; height: 100%; object-fit: contain"
+                />
+              </div>
               <div>
                 <h3>Mulastar Agencies</h3>
                 <span style="color: #94a3b8">Content Creation Platform</span>
