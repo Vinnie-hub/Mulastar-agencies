@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -94,6 +94,25 @@
         padding: 15px 0;
       }
 
+      .logo-icon {
+        width: 40px;
+        height: 40px;
+        background: white;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        border: 2px solid var(--primary);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .logo-icon img {
+        width: 80%;
+        height: 80%;
+        object-fit: contain;
+        display: block;
+      }
       .logo {
         display: flex;
         align-items: center;
@@ -102,18 +121,6 @@
         font-size: 1.3rem;
         color: var(--primary);
         text-decoration: none;
-      }
-
-      .logo-icon {
-        width: 40px;
-        height: 40px;
-        background: var(--gradient);
-        border-radius: 12px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: white;
-        font-weight: 800;
       }
 
       .nav-links {
@@ -175,12 +182,10 @@
       /* 🎨 Hero Section */
       .survey-hero {
         padding: 100px 0 60px;
-        background: linear-gradient(
-            rgba(10, 35, 66, 0.9),
-            rgba(10, 35, 66, 0.9)
-          ),
-          url("https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80");
-        background-size: cover;
+        background:
+          linear-gradient(rgba(29, 28, 28, 0.85), rgba(27, 27, 27, 0.9)),
+          url("https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80")
+            no-repeat center center/cover;
         background-position: center;
         position: relative;
         overflow: hidden;
@@ -961,6 +966,44 @@
         position: relative;
       }
 
+      /* Navigation Links*/
+      .about-navigation {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 50px 0;
+        padding: 20px 0;
+        border-top: 1px solid var(--border);
+        border-bottom: 1px solid var(--border);
+      }
+
+      .nav-about {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 12px 24px;
+        background: white;
+        color: var(--dark);
+        text-decoration: none;
+        border-radius: var(--radius);
+        font-weight: 600;
+        transition: var(--transition);
+        border: 2px solid transparent;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      }
+
+      .nav-about:hover {
+        background: var(--primary);
+        color: white;
+        transform: translateY(-3px);
+        box-shadow: var(--shadow-hover);
+        border-color: var(--primary);
+      }
+
+      .nav-about i {
+        font-size: 0.9rem;
+      }
+
       /* 🏁 Footer */
       .footer {
         background: var(--dark);
@@ -1163,7 +1206,13 @@
     <nav class="navbar">
       <div class="container nav-container">
         <a href="index.html" class="logo">
-          <div class="logo-icon">🧿</div>
+          <div class="logo-icon">
+            <img
+              src="pictures/icon.jpeg"
+              alt="Mulastar Logo"
+              style="width: 100%; height: 100%; object-fit: contain"
+            />
+          </div>
           <div>
             <div>Mulastar</div>
             <div style="font-size: 0.9rem; color: var(--muted)">Surveys</div>
@@ -1252,7 +1301,7 @@
 
           <div class="hero-visual">
             <img
-              src="pictures/survey sample.png"
+              src="pictures/survey.png"
               alt="Mulastar Surveys Dashboard"
               style="
                 width: 100%;
@@ -1261,8 +1310,12 @@
                 transform: perspective(1000px) rotateY(-10deg);
                 transition: var(--transition);
               "
-              onmouseover="this.style.transform='perspective(1000px) rotateY(-5deg)'"
-              onmouseout="this.style.transform='perspective(1000px) rotateY(-10deg)'"
+              onmouseover="
+                this.style.transform = 'perspective(1000px) rotateY(-5deg)'
+              "
+              onmouseout="
+                this.style.transform = 'perspective(1000px) rotateY(-10deg)'
+              "
             />
           </div>
         </div>
@@ -1716,9 +1769,13 @@
               highest paying surveys I've seen anywhere in Africa."
             </div>
             <div class="testimonial-author">
-              <div class="author-avatar">S</div>
+              <img
+                src="pictures/kezia.jpeg"
+                alt="kezia"
+                class="author-avatar"
+              />
               <div class="author-info">
-                <h4>Sarah M.</h4>
+                <h4>Kezia J.</h4>
                 <p>Nairobi, Kenya</p>
                 <div class="testimonial-earnings">
                   Earned: Ksh.45,200 this month
@@ -1733,9 +1790,13 @@
               them between classes and earn enough for my needs."
             </div>
             <div class="testimonial-author">
-              <div class="author-avatar">J</div>
+              <img
+                src="pictures/kelly.jpeg"
+                alt="kelly"
+                class="author-avatar"
+              />
               <div class="author-info">
-                <h4>John K.</h4>
+                <h4>Kelly B.</h4>
                 <p>Kampala, Uganda</p>
                 <div class="testimonial-earnings">
                   Earned: Ksh.28,500 this month
@@ -1750,9 +1811,13 @@
               wait weeks. With Mulastar, I get paid immediately!"
             </div>
             <div class="testimonial-author">
-              <div class="author-avatar">G</div>
+              <img
+                src="pictures/sylvia.jpeg"
+                alt="sylvia"
+                class="author-avatar"
+              />
               <div class="author-info">
-                <h4>Grace W.</h4>
+                <h4>Sylvia L.</h4>
                 <p>Accra, Ghana</p>
                 <div class="testimonial-earnings">
                   Earned: Ksh.52,300 this month
@@ -1888,13 +1953,29 @@
       </div>
     </section>
 
+    <!-- Navigation -->
+    <div class="about-navigation" aria-label="Post navigation">
+      <a class="nav-about" href="networking.html">
+        <i class="fas fa-arrow-left"></i> Back: Affilate Program
+      </a>
+      <a class="nav-about" href="games.html">
+        Next: Play Games <i class="fas fa-arrow-right"></i>
+      </a>
+    </div>
+
     <!-- 🏁 Footer -->
     <footer class="footer">
       <div class="container">
         <div class="footer-grid">
           <div>
             <div class="logo" style="color: white; margin-bottom: 20px">
-              <div class="logo-icon">MS</div>
+              <div class="logo-icon">
+                <img
+                  src="pictures/icon.jpeg"
+                  alt="Mulastar Logo"
+                  style="width: 100%; height: 100%; object-fit: contain"
+                />
+              </div>
               <div>
                 <div>Mulastar</div>
                 <div style="font-size: 0.9rem; color: #94a3b8">Surveys</div>
@@ -2064,7 +2145,7 @@
       // Earnings Calculator
       function updateCalculator() {
         const surveys = parseInt(
-          document.getElementById("surveysPerDay").value
+          document.getElementById("surveysPerDay").value,
         );
         const reward = parseInt(document.getElementById("avgReward").value);
         const days = parseInt(document.getElementById("daysPerWeek").value);
@@ -2080,15 +2161,12 @@
         const monthly = weekly * 4;
 
         // Update result displays
-        document.getElementById(
-          "dailyEarning"
-        ).textContent = `Ksh.${daily.toLocaleString()}`;
-        document.getElementById(
-          "weeklyEarning"
-        ).textContent = `Ksh.${weekly.toLocaleString()}`;
-        document.getElementById(
-          "monthlyEarning"
-        ).textContent = `Ksh.${monthly.toLocaleString()}`;
+        document.getElementById("dailyEarning").textContent =
+          `Ksh.${daily.toLocaleString()}`;
+        document.getElementById("weeklyEarning").textContent =
+          `Ksh.${weekly.toLocaleString()}`;
+        document.getElementById("monthlyEarning").textContent =
+          `Ksh.${monthly.toLocaleString()}`;
       }
 
       // Initialize calculator
@@ -2175,7 +2253,7 @@
         document.querySelectorAll(".survey-action").forEach((button) => {
           button.addEventListener("click", function () {
             alert(
-              "To start this survey, please register or login to your Mulastar account."
+              "To start this survey, please register or login to your Mulastar account.",
             );
           });
         });
@@ -2215,7 +2293,7 @@
         // Observe elements for animation
         document
           .querySelectorAll(
-            ".survey-card, .category-card, .tip-card, .testimonial-card, .step-content"
+            ".survey-card, .category-card, .tip-card, .testimonial-card, .step-content",
           )
           .forEach((el) => {
             el.style.opacity = "0";

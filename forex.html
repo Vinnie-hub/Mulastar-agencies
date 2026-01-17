@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -279,26 +279,13 @@
 
       /* Hero Section */
       .hero {
-        background: linear-gradient(135deg, #f0f7ff 0%, #e6f0ff 100%);
+        background:
+          linear-gradient(rgba(29, 28, 28, 0.85), rgba(27, 27, 27, 0.9)),
+          url("https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80")
+            no-repeat center center/cover;
         padding: 140px 0 80px;
         position: relative;
         overflow: hidden;
-      }
-
-      .hero::before {
-        content: "";
-        position: absolute;
-        top: -50%;
-        right: -20%;
-        width: 800px;
-        height: 800px;
-        background: radial-gradient(
-          circle,
-          var(--primary-light) 0%,
-          transparent 70%
-        );
-        opacity: 0.1;
-        border-radius: 50%;
       }
 
       .hero-content {
@@ -326,7 +313,7 @@
         font-size: 3.5rem;
         font-weight: 800;
         margin-bottom: 24px;
-        color: var(--dark);
+        color: var(--light);
         line-height: 1.1;
       }
 
@@ -339,7 +326,7 @@
 
       .hero-subtitle {
         font-size: 1.2rem;
-        color: var(--text-light);
+        color: var(--border);
         margin-bottom: 40px;
         line-height: 1.6;
         max-width: 700px;
@@ -964,6 +951,44 @@
         color: var(--primary);
       }
 
+      /* Navigation Links*/
+      .about-navigation {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 50px 0;
+        padding: 20px 0;
+        border-top: 1px solid var(--border);
+        border-bottom: 1px solid var(--border);
+      }
+
+      .nav-about {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 12px 24px;
+        background: white;
+        color: var(--dark);
+        text-decoration: none;
+        border-radius: var(--radius);
+        font-weight: 600;
+        transition: var(--transition);
+        border: 2px solid transparent;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      }
+
+      .nav-about:hover {
+        background: var(--primary);
+        color: white;
+        transform: translateY(-3px);
+        box-shadow: var(--shadow-hover);
+        border-color: var(--primary);
+      }
+
+      .nav-about i {
+        font-size: 0.9rem;
+      }
+
       /* Footer */
       .footer {
         background: var(--dark);
@@ -1123,7 +1148,13 @@
     <header class="header">
       <div class="container header-container">
         <a href="index.html" class="brand">
-          <div class="logo">🧿</div>
+          <div class="logo">
+            <img
+              src="pictures/icon.jpeg"
+              alt="Mulastar Logo"
+              style="width: 100%; height: 100%; object-fit: contain"
+            />
+          </div>
           <div class="brand-text">
             <h1>Mulastar</h1>
             <div class="brand-subtitle">Forex</div>
@@ -1553,11 +1584,7 @@
               all the difference."
             </div>
             <div class="testimonial-author">
-              <img
-                src="https://randomuser.me/api/portraits/women/32.jpg"
-                alt="Sarah"
-                class="author-avatar"
-              />
+              <img src="pictures/sara.jpeg" alt="Sarah" class="author-avatar" />
               <div class="author-info">
                 <h4>Sarah Mwangi</h4>
                 <p>Nairobi, Kenya</p>
@@ -1576,7 +1603,7 @@
             </div>
             <div class="testimonial-author">
               <img
-                src="https://randomuser.me/api/portraits/men/45.jpg"
+                src="pictures/david.jpeg"
                 alt="David"
                 class="author-avatar"
               />
@@ -1596,12 +1623,12 @@
             </div>
             <div class="testimonial-author">
               <img
-                src="https://randomuser.me/api/portraits/men/32.jpg"
-                alt="Kevin"
+                src="pictures/samson.avif"
+                alt="Samson"
                 class="author-avatar"
               />
               <div class="author-info">
-                <h4>Kevin Muriuki</h4>
+                <h4>Samson Kariuki</h4>
                 <p>Kampala, Uganda</p>
                 <div class="author-role">
                   University Student & Part-Time Trader
@@ -1657,6 +1684,15 @@
       </div>
     </section>
 
+    <!-- Navigation -->
+    <div class="about-navigation" aria-label="Post navigation">
+      <a class="nav-about" href="content.html">
+        <i class="fas fa-arrow-left"></i> Back: Upload Content
+      </a>
+      <a class="nav-about" href="blog.html">
+        Next: Do Blogs <i class="fas fa-arrow-right"></i>
+      </a>
+    </div>
     <!-- Footer -->
     <footer class="footer">
       <div class="container">
@@ -1670,7 +1706,13 @@
                 margin-bottom: 24px;
               "
             >
-              <div class="logo" style="width: 40px; height: 40px">FT</div>
+              <div class="logo" style="width: 40px; height: 40px">
+                <img
+                  src="pictures/icon.jpeg"
+                  alt="Mulastar Logo"
+                  style="width: 100%; height: 100%; object-fit: contain"
+                />
+              </div>
               <div>
                 <h3 style="color: white; margin: 0">Mulastar Trading</h3>
                 <div style="color: #94a3b8; font-size: 0.9rem">

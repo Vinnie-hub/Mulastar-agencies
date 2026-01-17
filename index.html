@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -95,6 +95,25 @@
         padding: 15px 0;
       }
 
+      .logo-icon {
+        width: 40px;
+        height: 40px;
+        background: white;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        border: 2px solid var(--primary);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .logo-icon img {
+        width: 80%;
+        height: 80%;
+        object-fit: contain;
+        display: block;
+      }
       .logo {
         display: flex;
         align-items: center;
@@ -103,18 +122,6 @@
         font-size: 1.3rem;
         color: var(--primary);
         text-decoration: none;
-      }
-
-      .logo-icon {
-        width: 40px;
-        height: 40px;
-        background: var(--gradient);
-        border-radius: 12px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: white;
-        font-weight: 800;
       }
 
       .nav-links {
@@ -172,12 +179,10 @@
       /* 🎨 Hero Section*/
       .hero {
         padding: 60px 0 100px;
-        background: linear-gradient(
-            rgba(10, 35, 66, 0.9),
-            rgba(10, 35, 66, 0.9)
-          ),
-          url("https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80");
-        background-size: cover;
+        background:
+          linear-gradient(rgba(29, 28, 28, 0.85), rgba(27, 27, 27, 0.9)),
+          url("https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80")
+            no-repeat center center/cover;
         background-position: center;
         overflow: hidden;
         position: relative;
@@ -1400,7 +1405,13 @@
     <nav class="navbar">
       <div class="container nav-container">
         <a href="#" class="logo">
-          <div class="logo-icon">🧿</div>
+          <div class="logo-icon">
+            <img
+              src="pictures/icon.jpeg"
+              alt="Mulastar Logo"
+              style="width: 100%; height: 100%; object-fit: contain"
+            />
+          </div>
           <div>
             <div>Mulastar</div>
             <div style="font-size: 0.9rem; color: var(--muted)">Agencies</div>
@@ -1927,12 +1938,12 @@
             </div>
             <div class="testimonial-author">
               <img
-                src="https://randomuser.me/api/portraits/women/32.jpg"
-                alt="Sarah"
+                src="pictures/Elizabeth.jpeg"
+                alt="Elizabeth"
                 class="author-avatar"
               />
               <div class="author-info">
-                <h4>Sarah M.</h4>
+                <h4>Elizabeth S.</h4>
                 <p>Nairobi, Kenya</p>
                 <div class="testimonial-earnings">
                   Earned: Ksh.45,200 this month
@@ -1948,12 +1959,12 @@
             </div>
             <div class="testimonial-author">
               <img
-                src="https://randomuser.me/api/portraits/men/22.jpg"
-                alt="John"
+                src="pictures/james.jpeg"
+                alt="James"
                 class="author-avatar"
               />
               <div class="author-info">
-                <h4>John K.</h4>
+                <h4>James O.</h4>
                 <p>Mombasa, Kenya</p>
                 <div class="testimonial-earnings">
                   Earned: Ksh.32,500 this month
@@ -1970,12 +1981,12 @@
             </div>
             <div class="testimonial-author">
               <img
-                src="https://randomuser.me/api/portraits/women/45.jpg"
-                alt="Grace"
+                src="pictures/agnes.jpeg 2.jpeg"
+                alt="Agnes"
                 class="author-avatar"
               />
               <div class="author-info">
-                <h4>Grace W.</h4>
+                <h4>Agnes H.</h4>
                 <p>Kampala, Uganda</p>
                 <div class="testimonial-earnings">
                   Earned: Ksh.78,300 this month
@@ -2254,7 +2265,13 @@
         <div class="footer-grid">
           <div>
             <div class="logo" style="color: white; margin-bottom: 20px">
-              <div class="logo-icon">MS</div>
+              <div class="logo-icon">
+                <img
+                  src="pictures/icon.jpeg"
+                  alt="Mulastar Logo"
+                  style="width: 100%; height: 100%; object-fit: contain"
+                />
+              </div>
               <div>
                 <div>Mulastar</div>
                 <div style="font-size: 0.9rem; color: #94a3b8">Agencies</div>
@@ -2404,52 +2421,297 @@
       document.getElementById("currentYear").textContent =
         new Date().getFullYear();
 
-      // Countdown Timer
-      function updateCountdown() {
-        const now = new Date();
-        const endOfDay = new Date();
-        endOfDay.setHours(23, 59, 59, 999);
+      // Complex Timer Cycles Configuration
+      const timerConfig = {
+        cycles: [
+          {
+            active: true,
+            duration: 16 * 60 * 60 * 1000,
+            label: "OFFER AVAILABLE",
+          },
+          { active: false, duration: 1 * 60 * 60 * 1000, label: "COMING SOON" }, // 1 hour inactive
+          {
+            active: true,
+            duration: 8 * 60 * 60 * 1000,
+            label: "OFFER AVAILABLE",
+          }, // 8 hours active
+          { active: false, duration: 1 * 60 * 60 * 1000, label: "COMING SOON" }, // 1 hour inactive
+          {
+            active: true,
+            duration: 4 * 60 * 60 * 1000,
+            label: "OFFER AVAILABLE",
+          }, // 4 hours active
+          { active: false, duration: 1 * 60 * 60 * 1000, label: "COMING SOON" }, // 1 hour inactive
+          {
+            active: true,
+            duration: 2 * 60 * 60 * 1000,
+            label: "OFFER AVAILABLE",
+          }, // 2 hours active
+          { active: false, duration: 1 * 60 * 60 * 1000, label: "COMING SOON" }, // 1 hour inactive
+          {
+            active: true,
+            duration: 1 * 60 * 60 * 1000,
+            label: "OFFER AVAILABLE",
+          }, // 1 hour active
+          {
+            active: false,
+            duration: 1 * 60 * 60 * 1000,
+            label: "CYCLE RESTART",
+          },
+        ],
+        startTime: null,
+        currentCycleIndex: 0,
+        cycleStartTime: null,
+      };
 
-        const diff = endOfDay - now;
+      function initializeTimer() {
+        timerConfig.startTime = new Date().getTime();
+        timerConfig.currentCycleIndex = 0;
+        timerConfig.cycleStartTime = timerConfig.startTime;
 
-        const hours = Math.floor(diff / (1000 * 60 * 60));
-        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+        updateTimerDisplay();
+      }
 
-        // Update announcement countdown
-        const countdownElement = document.getElementById("countdown");
-        if (countdownElement) {
-          countdownElement.textContent = `${hours
-            .toString()
-            .padStart(2, "0")}:${minutes.toString().padStart(2, "0")}:${seconds
-            .toString()
-            .padStart(2, "0")}`;
+      // Calculate current cycle based on elapsed time
+      function calculateCurrentCycle() {
+        const now = new Date().getTime();
+        const elapsed = now - timerConfig.startTime;
+
+        // Calculate total cycle duration
+        const totalCycleDuration = timerConfig.cycles.reduce(
+          (total, cycle) => total + cycle.duration,
+          0,
+        );
+
+        // Find which cycle we're in
+        let accumulatedTime = 0;
+        let cycleIndex = 0;
+
+        // If more than one full cycle has passed, find the current cycle
+        const cycleTime = elapsed % totalCycleDuration;
+
+        for (let i = 0; i < timerConfig.cycles.length; i++) {
+          if (cycleTime < accumulatedTime + timerConfig.cycles[i].duration) {
+            cycleIndex = i;
+            break;
+          }
+          accumulatedTime += timerConfig.cycles[i].duration;
         }
 
-        // Update bonus countdown
-        document.getElementById("bonusHours").textContent = hours
-          .toString()
-          .padStart(2, "0");
-        document.getElementById("bonusMinutes").textContent = minutes
-          .toString()
-          .padStart(2, "0");
-        document.getElementById("bonusSeconds").textContent = seconds
-          .toString()
-          .padStart(2, "0");
+        timerConfig.currentCycleIndex = cycleIndex;
+        timerConfig.cycleStartTime =
+          timerConfig.startTime +
+          Math.floor(elapsed / totalCycleDuration) * totalCycleDuration +
+          accumulatedTime;
 
-        // Update countdown-timer in bonus section
+        return {
+          cycleIndex,
+          timeInCycle: now - timerConfig.cycleStartTime,
+          cycle: timerConfig.cycles[cycleIndex],
+        };
+      }
+
+      // Update all timer displays
+      function updateTimerDisplay() {
+        const now = new Date().getTime();
+        const cycleInfo = calculateCurrentCycle();
+        const currentCycle = cycleInfo.cycle;
+        const timeInCycle = cycleInfo.timeInCycle;
+
+        // Calculate time remaining in current cycle
+        const timeRemaining = Math.max(0, currentCycle.duration - timeInCycle);
+
+        // Format time
+        const hours = Math.floor(timeRemaining / (1000 * 60 * 60));
+        const minutes = Math.floor(
+          (timeRemaining % (1000 * 60 * 60)) / (1000 * 60),
+        );
+        const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+
+        const formattedTime = `${hours.toString().padStart(2, "0")}:${minutes
+          .toString()
+          .padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`;
+
+        // Update all timer elements
+        const countdownElement = document.getElementById("countdown");
         const countdownTimer = document.getElementById("countdown-timer");
+        const bonusHours = document.getElementById("bonusHours");
+        const bonusMinutes = document.getElementById("bonusMinutes");
+        const bonusSeconds = document.getElementById("bonusSeconds");
+
+        // Update announcement bar
+        if (countdownElement) {
+          if (currentCycle.active) {
+            countdownElement.textContent = `${formattedTime} - ${currentCycle.label}`;
+            countdownElement.style.background = "rgba(255, 255, 255, 0.3)";
+            countdownElement.style.color = "white";
+          } else {
+            countdownElement.textContent = `${formattedTime} - ${currentCycle.label}`;
+            countdownElement.style.background = "rgba(255, 0, 0, 0.3)";
+            countdownElement.style.color = "#ffcccc";
+          }
+        }
+
+        // Update bonus section timer
         if (countdownTimer) {
-          countdownTimer.textContent = `${hours
-            .toString()
-            .padStart(2, "0")}:${minutes.toString().padStart(2, "0")}:${seconds
-            .toString()
-            .padStart(2, "0")}`;
+          if (currentCycle.active) {
+            countdownTimer.textContent = formattedTime;
+            countdownTimer.style.color = "var(--warning)";
+          } else {
+            countdownTimer.textContent = formattedTime;
+            countdownTimer.style.color = "#999";
+          }
+        }
+
+        // Update large bonus timer
+        if (bonusHours && bonusMinutes && bonusSeconds) {
+          bonusHours.textContent = hours.toString().padStart(2, "0");
+          bonusMinutes.textContent = minutes.toString().padStart(2, "0");
+          bonusSeconds.textContent = seconds.toString().padStart(2, "0");
+
+          // Change color based on active/inactive
+          if (currentCycle.active) {
+            bonusHours.style.color = "var(--warning)";
+            bonusMinutes.style.color = "var(--warning)";
+            bonusSeconds.style.color = "var(--warning)";
+          } else {
+            bonusHours.style.color = "#999";
+            bonusMinutes.style.color = "#999";
+            bonusSeconds.style.color = "#999";
+          }
+        }
+
+        // Update bonus section styling based on active/inactive
+        updateBonusSectionStyle(currentCycle.active);
+
+        // Update CTA button based on active status
+        updateCTAButton(currentCycle.active);
+      }
+
+      // Update bonus section style
+      function updateBonusSectionStyle(isActive) {
+        const bonusSection = document.querySelector(".bonus-section");
+        const claimButton = document.querySelector(
+          ".bonus-section .btn-primary",
+        );
+
+        if (bonusSection && claimButton) {
+          if (isActive) {
+            bonusSection.style.background =
+              "linear-gradient(135deg, #fff9db 0%, #ffe8cc 100%)";
+            bonusSection.style.border = "2px solid var(--warning)";
+            claimButton.style.display = "inline-flex";
+            claimButton.innerHTML =
+              '<i class="fas fa-gift"></i> CLAIM BONUS NOW!';
+            claimButton.disabled = false;
+          } else {
+            bonusSection.style.background =
+              "linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%)";
+            bonusSection.style.border = "2px solid #cbd5e1";
+            claimButton.style.display = "inline-flex";
+            claimButton.innerHTML =
+              '<i class="fas fa-clock"></i> NEXT BONUS STARTS SOON';
+            claimButton.style.background = "#94a3b8";
+            claimButton.disabled = true;
+          }
         }
       }
 
-      setInterval(updateCountdown, 1000);
-      updateCountdown();
+      // Get cycle information for debugging
+      function getCycleInfo() {
+        const cycleInfo = calculateCurrentCycle();
+        const now = new Date();
+        const nextCycleIndex =
+          (cycleInfo.cycleIndex + 1) % timerConfig.cycles.length;
+        const nextCycle = timerConfig.cycles[nextCycleIndex];
+        const nextCycleTime = new Date(
+          timerConfig.cycleStartTime + cycleInfo.cycle.duration,
+        );
+
+        return {
+          currentCycle: cycleInfo.cycle,
+          currentCycleIndex: cycleInfo.cycleIndex,
+          timeInCycle: cycleInfo.timeInCycle,
+          isActive: cycleInfo.cycle.active,
+          timeRemaining: cycleInfo.cycle.duration - cycleInfo.timeInCycle,
+          nextCycle: nextCycle,
+          nextCycleStarts: nextCycleTime,
+          totalCycles: timerConfig.cycles.length,
+        };
+      }
+
+      // Show current cycle status in console (for debugging)
+      function logCycleStatus() {
+        const info = getCycleInfo();
+        console.log("=== Mulastar Timer Status ===");
+        console.log("Current Cycle:", info.currentCycle.label);
+        console.log("Active:", info.isActive ? "YES" : "NO");
+        console.log(
+          "Time in cycle:",
+          Math.floor(info.timeInCycle / 1000 / 60),
+          "minutes",
+        );
+        console.log(
+          "Time remaining:",
+          Math.floor(info.timeRemaining / 1000 / 60),
+          "minutes",
+        );
+        console.log(
+          "Next cycle:",
+          info.nextCycle.label,
+          "starts at",
+          info.nextCycleStarts.toLocaleTimeString(),
+        );
+        console.log("============================");
+      }
+
+      // Initialize on page load
+      window.addEventListener("DOMContentLoaded", () => {
+        initializeTimer();
+        setInterval(updateTimerDisplay, 1000);
+
+        // Optional: Log status every minute for debugging
+        // setInterval(logCycleStatus, 60000);
+
+        // Optional: Show cycle status somewhere on page
+        // addCycleStatusDisplay();
+      });
+
+      // Optional: Add a cycle status display to the page
+      function addCycleStatusDisplay() {
+        const statusDiv = document.createElement("div");
+        statusDiv.id = "cycle-status";
+        statusDiv.style.cssText = `
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: rgba(0,0,0,0.8);
+        color: white;
+        padding: 10px 15px;
+        border-radius: 8px;
+        font-size: 12px;
+        z-index: 9999;
+        max-width: 250px;
+        display: none; /* Hidden by default */
+    `;
+        document.body.appendChild(statusDiv);
+
+        // Update status every second
+        setInterval(() => {
+          const info = getCycleInfo();
+          const remainingMinutes = Math.floor(info.timeRemaining / 1000 / 60);
+          const remainingSeconds = Math.floor(
+            (info.timeRemaining % (1000 * 60)) / 1000,
+          );
+
+          statusDiv.innerHTML = `
+            <strong>${info.currentCycle.label}</strong><br>
+            Status: ${info.isActive ? "🟢 ACTIVE" : "🔴 INACTIVE"}<br>
+            Time remaining: ${remainingMinutes}m ${remainingSeconds}s<br>
+            Next: ${info.nextCycle.label}
+        `;
+        }, 1000);
+      }
 
       // Mobile Menu Functionality
       const mobileMenuBtn = document.querySelector(".mobile-menu-btn");

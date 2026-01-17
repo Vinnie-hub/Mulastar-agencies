@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -95,6 +95,25 @@
         padding: 15px 0;
       }
 
+      .logo-icon {
+        width: 40px;
+        height: 40px;
+        background: white;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        border: 2px solid var(--primary);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .logo-icon img {
+        width: 80%;
+        height: 80%;
+        object-fit: contain;
+        display: block;
+      }
       .logo {
         display: flex;
         align-items: center;
@@ -103,18 +122,6 @@
         font-size: 1.3rem;
         color: var(--primary);
         text-decoration: none;
-      }
-
-      .logo-icon {
-        width: 40px;
-        height: 40px;
-        background: var(--gradient);
-        border-radius: 12px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: white;
-        font-weight: 800;
       }
 
       .nav-links {
@@ -193,7 +200,10 @@
       /* 🎮 Hero Section */
       .games-hero {
         padding: 100px 0 60px;
-        background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+        background:
+          linear-gradient(rgba(29, 28, 28, 0.85), rgba(27, 27, 27, 0.9)),
+          url("https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80")
+            no-repeat center center/cover;
         position: relative;
         overflow: hidden;
       }
@@ -1244,6 +1254,44 @@
         position: relative;
       }
 
+      /* Navigation Links*/
+      .about-navigation {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 50px 0;
+        padding: 20px 0;
+        border-top: 1px solid var(--border);
+        border-bottom: 1px solid var(--border);
+      }
+
+      .nav-about {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 12px 24px;
+        background: white;
+        color: var(--dark);
+        text-decoration: none;
+        border-radius: var(--radius);
+        font-weight: 600;
+        transition: var(--transition);
+        border: 2px solid transparent;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      }
+
+      .nav-about:hover {
+        background: var(--primary);
+        color: white;
+        transform: translateY(-3px);
+        box-shadow: var(--shadow-hover);
+        border-color: var(--primary);
+      }
+
+      .nav-about i {
+        font-size: 0.9rem;
+      }
+
       /* 🏁 Footer */
       .footer {
         background: var(--dark);
@@ -1448,7 +1496,13 @@
     <nav class="navbar">
       <div class="container nav-container">
         <a href="index.html" class="logo">
-          <div class="logo-icon">🧿</div>
+          <div class="logo-icon">
+            <img
+              src="pictures/icon.jpeg"
+              alt="Mulastar Logo"
+              style="width: 100%; height: 100%; object-fit: contain"
+            />
+          </div>
           <div>
             <div>Mulastar</div>
             <div style="font-size: 0.9rem; color: var(--muted)">Games</div>
@@ -2303,7 +2357,7 @@
               Mulastar has the fairest gaming platform I've seen in Africa."
             </div>
             <div class="testimonial-author">
-              <div class="author-avatar">M</div>
+              <img src="pictures/mike.jpeg" alt="Mike" class="author-avatar" />
               <div class="author-info">
                 <h4>Mike T.</h4>
                 <p>Pro Gamer, Nairobi</p>
@@ -2320,12 +2374,16 @@
               expenses. The withdrawals are instant and reliable!"
             </div>
             <div class="testimonial-author">
-              <div class="author-avatar">S</div>
+              <img
+                src="pictures/vallary.jpeg"
+                alt="vallary"
+                class="author-avatar"
+              />
               <div class="author-info">
-                <h4>Sarah K.</h4>
+                <h4>Vallary A.</h4>
                 <p>Student, Kampala</p>
                 <div class="testimonial-earnings">
-                  Earned: Ksh.32,500 this month
+                  Earned: Ugx.323,500 this month
                 </div>
               </div>
             </div>
@@ -2337,12 +2395,16 @@
               me wrong. Now I make more gaming than my day job!"
             </div>
             <div class="testimonial-author">
-              <div class="author-avatar">D</div>
+              <img
+                src="pictures/derrick.jpeg"
+                alt="Derrick"
+                class="author-avatar"
+              />
               <div class="author-info">
-                <h4>David W.</h4>
+                <h4>Derrick W.</h4>
                 <p>Accra, Ghana</p>
                 <div class="testimonial-earnings">
-                  Earned: Ksh.68,300 this month
+                  Earned: Gh.2,800 this month
                 </div>
               </div>
             </div>
@@ -2475,13 +2537,29 @@
       </div>
     </section>
 
+    <!-- Navigation -->
+    <div class="about-navigation" aria-label="Post navigation">
+      <a class="nav-about" href="surveys.html">
+        <i class="fas fa-arrow-left"></i> Back: Answer Surveys
+      </a>
+      <a class="nav-about" href="content.html">
+        Next: Upload Content <i class="fas fa-arrow-right"></i>
+      </a>
+    </div>
+
     <!-- 🏁 Footer -->
     <footer class="footer">
       <div class="container">
         <div class="footer-grid">
           <div>
             <div class="logo" style="color: white; margin-bottom: 20px">
-              <div class="logo-icon">MG</div>
+              <div class="logo-icon">
+                <img
+                  src="pictures/icon.jpeg"
+                  alt="Mulastar Logo"
+                  style="width: 100%; height: 100%; object-fit: contain"
+                />
+              </div>
               <div>
                 <div>Mulastar</div>
                 <div style="font-size: 0.9rem; color: #94a3b8">Games</div>
@@ -2663,14 +2741,12 @@
 
         // Update result displays
         document.getElementById("dailyEarning").textContent = `Ksh.${Math.round(
-          daily
+          daily,
         ).toLocaleString()}`;
-        document.getElementById(
-          "weeklyEarning"
-        ).textContent = `Ksh.${Math.round(weekly).toLocaleString()}`;
-        document.getElementById(
-          "monthlyEarning"
-        ).textContent = `Ksh.${Math.round(monthly).toLocaleString()}`;
+        document.getElementById("weeklyEarning").textContent =
+          `Ksh.${Math.round(weekly).toLocaleString()}`;
+        document.getElementById("monthlyEarning").textContent =
+          `Ksh.${Math.round(monthly).toLocaleString()}`;
       }
 
       // Initialize calculator
@@ -2748,7 +2824,7 @@
           .forEach((button) => {
             button.addEventListener("click", function () {
               alert(
-                "To play this game, please register or login to your Mulastar account."
+                "To play this game, please register or login to your Mulastar account.",
               );
             });
           });
@@ -2837,7 +2913,7 @@
         // Observe elements for animation
         document
           .querySelectorAll(
-            ".grid-game-card, .featured-game-card, .tip-card, .testimonial-card, .tournament-card, .step-content, .scroll-game-card"
+            ".grid-game-card, .featured-game-card, .tip-card, .testimonial-card, .tournament-card, .step-content, .scroll-game-card",
           )
           .forEach((el) => {
             el.style.opacity = "0";
