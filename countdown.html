@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!doctype html>
 <html lang="en">
   <head>
@@ -878,3 +879,885 @@
     </script>
   </body>
 </html>
+=======
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Mulastar Agencies | Launching Soon</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Africa's fastest-growing digital income platform. Launching January 21st, 2026."
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="icon" href="pictures/icon2.png" type="image/png" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Montserrat:wght@800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Open Graph Meta Tags -->
+    <meta
+      property="og:title"
+      content="Mulastar Agencies | Digital Income Platform"
+    />
+    <meta
+      property="og:description"
+      content="Earn more, save smarter, grow your income. Launching January 21st, 2026."
+    />
+    <meta
+      property="og:image"
+      content="https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3"
+    />
+    <meta property="og:type" content="website" />
+
+    <style>
+      :root {
+        --primary: #feca57;
+        --primary-dark: #e6b44c;
+        --secondary: #48dbfb;
+        --danger: #ff6b6b;
+        --success: #1dd1a1;
+        --dark: #1a1a1a;
+        --light: #ffffff;
+        --muted: #b0b0b0;
+        --card-bg: rgba(255, 255, 255, 0.08);
+        --card-border: rgba(255, 255, 255, 0.12);
+        --radius: 16px;
+        --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        --shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        --gradient: linear-gradient(
+          135deg,
+          #ff6b6b 0%,
+          #feca57 50%,
+          #48dbfb 100%
+        );
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        min-height: 100vh;
+        font-family: "Poppins", Arial, sans-serif;
+        background:
+          linear-gradient(
+            135deg,
+            rgba(26, 26, 26, 0.95) 0%,
+            rgba(20, 20, 30, 0.98) 100%
+          ),
+          url("https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80")
+            no-repeat center center/cover;
+        color: var(--light);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow-x: hidden;
+        position: relative;
+        line-height: 1.6;
+      }
+
+      body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background:
+          radial-gradient(
+            circle at 20% 80%,
+            rgba(254, 202, 87, 0.1) 0%,
+            transparent 40%
+          ),
+          radial-gradient(
+            circle at 80% 20%,
+            rgba(72, 219, 251, 0.1) 0%,
+            transparent 40%
+          ),
+          radial-gradient(
+            circle at 40% 40%,
+            rgba(255, 107, 107, 0.05) 0%,
+            transparent 40%
+          );
+        z-index: -1;
+        pointer-events: none;
+      }
+
+      .container {
+        max-width: 1200px;
+        width: 90%;
+        padding: 40px 20px;
+        position: relative;
+        z-index: 1;
+      }
+
+      /* Header Styles */
+      .header {
+        text-align: center;
+        margin-bottom: 50px;
+        animation: fadeInDown 1s ease-out;
+      }
+
+      .logo-container {
+        margin-bottom: 30px;
+      }
+
+      .logo {
+        font-family: "Montserrat", sans-serif;
+        font-size: 3.8rem;
+        font-weight: 900;
+        background: var(--gradient);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        margin-bottom: 8px;
+        letter-spacing: 1.5px;
+        position: relative;
+        display: inline-block;
+      }
+
+      .logo::after {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 150px;
+        height: 4px;
+        background: var(--gradient);
+        border-radius: 2px;
+      }
+
+      .tagline {
+        font-size: 1.3rem;
+        color: var(--muted);
+        font-weight: 400;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        margin-top: 20px;
+      }
+
+      /* Main Content */
+      .main-content {
+        display: grid;
+        gap: 40px;
+        margin-bottom: 50px;
+      }
+
+      /* Announcement Banner */
+      .announcement-banner {
+        background: linear-gradient(
+          135deg,
+          rgba(239, 68, 68, 0.15) 0%,
+          rgba(245, 158, 11, 0.15) 100%
+        );
+        border-left: 5px solid var(--danger);
+        padding: 30px;
+        border-radius: var(--radius);
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(239, 68, 68, 0.2);
+        animation: slideInLeft 0.8s ease-out 0.3s both;
+        box-shadow: var(--shadow);
+      }
+
+      .announcement-header {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin-bottom: 20px;
+      }
+
+      .announcement-icon {
+        width: 50px;
+        height: 50px;
+        background: linear-gradient(135deg, var(--danger), #ff8e8e);
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        flex-shrink: 0;
+        box-shadow: 0 8px 20px rgba(255, 107, 107, 0.3);
+      }
+
+      .announcement-header h2 {
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: var(--light);
+      }
+
+      .announcement-content {
+        color: rgba(255, 255, 255, 0.9);
+        line-height: 1.7;
+        font-size: 1.1rem;
+      }
+
+      .announcement-content p {
+        margin-bottom: 15px;
+      }
+
+      .announcement-content strong {
+        color: var(--primary);
+        font-weight: 600;
+      }
+
+      .new-date {
+        background: rgba(254, 202, 87, 0.1);
+        padding: 15px 25px;
+        border-radius: 12px;
+        margin-top: 20px;
+        border: 1px solid rgba(254, 202, 87, 0.2);
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        animation: pulse 2s infinite;
+      }
+
+      @keyframes pulse {
+        0%,
+        100% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.02);
+        }
+      }
+
+      /* Launch Info */
+      .launch-info {
+        background: var(--card-bg);
+        padding: 30px;
+        border-radius: var(--radius);
+        backdrop-filter: blur(20px);
+        border: 1px solid var(--card-border);
+        text-align: center;
+        animation: fadeInUp 0.8s ease-out 0.5s both;
+      }
+
+      .launch-info h1 {
+        font-size: 3.2rem;
+        margin-bottom: 20px;
+        font-weight: 800;
+        background: linear-gradient(90deg, var(--light), var(--primary));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .launch-description {
+        font-size: 1.2rem;
+        color: var(--muted);
+        max-width: 700px;
+        margin: 0 auto 30px;
+        line-height: 1.7;
+      }
+
+      /* Countdown Timer */
+      .countdown-container {
+        animation: fadeInUp 0.8s ease-out 0.7s both;
+      }
+
+      .countdown-label {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        font-size: 1.2rem;
+        margin-bottom: 30px;
+        color: var(--primary);
+        font-weight: 600;
+      }
+
+      .countdown {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 20px;
+        margin-bottom: 50px;
+      }
+
+      .time-box {
+        background: var(--card-bg);
+        padding: 30px 20px;
+        border-radius: var(--radius);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        backdrop-filter: blur(20px);
+        border: 1px solid var(--card-border);
+        transition: var(--transition);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .time-box::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.1),
+          transparent
+        );
+        transition: left 0.7s ease;
+      }
+
+      .time-box:hover::before {
+        left: 100%;
+      }
+
+      .time-box:hover {
+        transform: translateY(-10px);
+        box-shadow: var(--shadow);
+        border-color: var(--primary);
+      }
+
+      .time-value {
+        font-size: 3rem;
+        font-weight: 800;
+        color: var(--light);
+        margin-bottom: 5px;
+        font-variant-numeric: tabular-nums;
+      }
+
+      .time-label {
+        font-size: 0.9rem;
+        color: var(--muted);
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        font-weight: 600;
+      }
+
+      /* Action Buttons */
+      .action-buttons {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        flex-wrap: wrap;
+        animation: fadeInUp 0.8s ease-out 1.1s both;
+      }
+
+      .btn {
+        padding: 16px 35px;
+        border-radius: 50px;
+        font-weight: 600;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        transition: var(--transition);
+        font-size: 1rem;
+        border: none;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+      }
+
+      .btn::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.1);
+        transition: width 0.3s ease;
+        z-index: -1;
+      }
+
+      .btn:hover::before {
+        width: 100%;
+      }
+
+      .btn-primary {
+        background: var(--gradient);
+        color: var(--dark);
+        box-shadow: 0 10px 30px rgba(254, 202, 87, 0.3);
+      }
+
+      .btn-primary:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 15px 40px rgba(254, 202, 87, 0.4);
+      }
+
+      .btn-secondary {
+        background: var(--card-bg);
+        color: var(--light);
+        border: 1px solid var(--card-border);
+        backdrop-filter: blur(10px);
+      }
+
+      .btn-secondary:hover {
+        background: rgba(255, 255, 255, 0.1);
+        transform: translateY(-3px);
+      }
+
+      /* Footer */
+      .footer {
+        margin-top: 50px;
+        padding-top: 30px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        text-align: center;
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
+
+      /* Progress Bar */
+      .launch-progress {
+        margin: 40px 0;
+        animation: fadeInUp 0.8s ease-out 1.3s both;
+      }
+
+      .progress-info {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+        color: var(--light);
+        font-size: 0.9rem;
+      }
+
+      .progress-bar {
+        height: 8px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 4px;
+        overflow: hidden;
+      }
+
+      .progress-fill {
+        height: 100%;
+        background: var(--gradient);
+        border-radius: 4px;
+        width: 85%;
+        animation: progressAnimation 2s ease-in-out;
+      }
+
+      /* Animations */
+      @keyframes fadeInDown {
+        from {
+          opacity: 0;
+          transform: translateY(-30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes slideInLeft {
+        from {
+          opacity: 0;
+          transform: translateX(-30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
+      @keyframes progressAnimation {
+        from {
+          width: 0;
+        }
+        to {
+          width: 85%;
+        }
+      }
+
+      /* Floating Particles */
+      .particles {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 0;
+      }
+
+      .particle {
+        position: absolute;
+        background: var(--gradient);
+        border-radius: 50%;
+        animation: float 20s infinite linear;
+        opacity: 0.3;
+      }
+
+      @keyframes float {
+        0% {
+          transform: translateY(0) rotate(0deg);
+        }
+        100% {
+          transform: translateY(-1000px) rotate(720deg);
+        }
+      }
+
+      /* Responsive Design */
+      @media (max-width: 992px) {
+        .logo {
+          font-size: 3rem;
+        }
+
+        .launch-info h1 {
+          font-size: 2.5rem;
+        }
+
+        .countdown {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media (max-width: 768px) {
+        .container {
+          padding: 20px 15px;
+        }
+
+        .logo {
+          font-size: 2.5rem;
+        }
+
+        .launch-info h1 {
+          font-size: 2rem;
+        }
+
+        .announcement-header {
+          flex-direction: column;
+          text-align: center;
+          gap: 10px;
+        }
+
+        .action-buttons {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .btn {
+          width: 100%;
+          justify-content: center;
+        }
+
+        .features-preview {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .logo {
+          font-size: 2rem;
+        }
+
+        .time-value {
+          font-size: 2.5rem;
+        }
+
+        .time-box {
+          padding: 20px 15px;
+        }
+
+        .announcement-banner,
+        .launch-info {
+          padding: 20px;
+        }
+      }
+
+      /* Live State */
+      .live-banner {
+        background: linear-gradient(135deg, var(--success), #1abc9c);
+        padding: 20px;
+        border-radius: var(--radius);
+        text-align: center;
+        margin-bottom: 30px;
+        animation: pulse 2s infinite;
+        box-shadow: 0 10px 30px rgba(29, 209, 161, 0.3);
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Floating Particles -->
+    <div class="particles" id="particles"></div>
+
+    <div class="container">
+      <header class="header">
+        <div class="logo-container">
+          <div class="logo">MULASTAR AGENCIES</div>
+          <div class="tagline">Digital Income Platform</div>
+        </div>
+      </header>
+
+      <main class="main-content">
+        <!-- Announcement Banner -->
+        <section class="announcement-banner">
+          <div class="announcement-header">
+            <div class="announcement-icon">
+              <i class="fas fa-exclamation-triangle"></i>
+            </div>
+            <h2>Launch Update</h2>
+          </div>
+          <div class="announcement-content">
+            <p>
+              Due to ongoing nationwide internet disruptions in Uganda affecting
+              service accessibility, we have rescheduled our platform launch to
+              ensure optimal participation for all members.
+            </p>
+            <p>
+              Mobile money services and internet access remain inconsistent in
+              several regions, impacting our community's ability to engage
+              effectively.
+            </p>
+            <div class="new-date">
+              <i class="fas fa-calendar-check"></i>
+              <span>
+                <strong>New Launch Date:</strong> Wednesday, January 21st, 2026
+                at 2:00 PM (EAT)
+              </span>
+            </div>
+          </div>
+        </section>
+
+        <!-- Launch Information -->
+        <section class="launch-info">
+          <h1>Coming <span>Soon</span></h1>
+          <p class="launch-description">
+            Building Africa's fastest-growing digital income platform to help
+            you earn more, save smarter, and grow your financial freedom. Get
+            ready for a revolutionary approach to digital income generation.
+          </p>
+
+          <!-- Launch Progress -->
+          <div class="launch-progress">
+            <div class="progress-info">
+              <span>Launch Progress</span>
+              <span>85% Complete</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-fill"></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Countdown Timer -->
+        <section class="countdown-container">
+          <div class="countdown-label">
+            <i class="fas fa-clock"></i>
+            <span>Launching In:</span>
+          </div>
+
+          <div class="countdown">
+            <div class="time-box">
+              <div class="time-value" id="days">00</div>
+              <div class="time-label">Days</div>
+            </div>
+            <div class="time-box">
+              <div class="time-value" id="hours">00</div>
+              <div class="time-label">Hours</div>
+            </div>
+            <div class="time-box">
+              <div class="time-value" id="minutes">00</div>
+              <div class="time-label">Minutes</div>
+            </div>
+            <div class="time-box">
+              <div class="time-value" id="seconds">00</div>
+              <div class="time-label">Seconds</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Action Buttons -->
+        <div class="action-buttons">
+          <a href="index.html" class="btn btn-primary">
+            <i class="fas fa-home"></i> Return to Homepage
+          </a>
+          <a
+            href="https://wa.me/254755252499?text=Hello%20Mulastar%20Support,%20I%20have%20questions%20about%20the%20launch."
+            class="btn btn-secondary"
+            target="_blank"
+          >
+            <i class="fab fa-whatsapp"></i> Contact Support
+          </a>
+          <button class="btn btn-secondary" id="notifyBtn">
+            <i class="fas fa-bell"></i> Notify Me
+          </button>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <p>© 2026 Mulastar Agencies. All rights reserved.</p>
+        <p class="contact-info">
+          <i class="fas fa-envelope"></i> dajennysydney254@gmail.com |
+          <i class="fas fa-phone"></i> +254 755 252 499
+        </p>
+      </footer>
+    </div>
+
+    <script>
+      // Set launch date: January 21, 2026, 2:00 PM EAT (East Africa Time)
+      const launchDate = new Date(
+        "January 21, 2026 14:00:00 GMT+0300",
+      ).getTime();
+
+      // Update countdown every second
+      const countdownTimer = setInterval(() => {
+        const now = new Date().getTime();
+        const distance = launchDate - now;
+
+        if (distance < 0) {
+          clearInterval(countdownTimer);
+          showLaunchLive();
+          return;
+        }
+
+        // Calculate time units
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor(
+          (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
+        );
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        // Update display
+        document.getElementById("days").textContent = days
+          .toString()
+          .padStart(2, "0");
+        document.getElementById("hours").textContent = hours
+          .toString()
+          .padStart(2, "0");
+        document.getElementById("minutes").textContent = minutes
+          .toString()
+          .padStart(2, "0");
+        document.getElementById("seconds").textContent = seconds
+          .toString()
+          .padStart(2, "0");
+      }, 1000);
+
+      // Show live state when countdown ends
+      function showLaunchLive() {
+        const mainContent = document.querySelector(".main-content");
+        mainContent.innerHTML = `
+          <div class="live-banner">
+            <h2 style="font-size: 2.5rem; margin-bottom: 10px;">
+              <i class="fas fa-rocket"></i> We're Live!
+            </h2>
+            <p style="font-size: 1.2rem;">The platform is now officially launched!</p>
+          </div>
+          <div style="text-align: center; padding: 40px; background: var(--card-bg); border-radius: var(--radius);">
+            <h3 style="font-size: 2rem; margin-bottom: 20px; color: var(--primary);">
+              Welcome to Mulastar Agencies
+            </h3>
+            <p style="margin-bottom: 30px; font-size: 1.1rem;">
+              Start your journey to financial freedom today. Join thousands of successful earners on Africa's fastest-growing digital income platform.
+            </p>
+            <div class="action-buttons">
+              <a href="index.html" class="btn btn-primary" style="font-size: 1.2rem; padding: 18px 40px;">
+                <i class="fas fa-play-circle"></i> Launch Platform
+              </a>
+              <a href="register.html" class="btn btn-secondary" style="font-size: 1.2rem; padding: 18px 40px;">
+                <i class="fas fa-user-plus"></i> Create Account
+              </a>
+            </div>
+          </div>
+        `;
+      }
+
+      // Create floating particles
+      function createParticles() {
+        const particlesContainer = document.getElementById("particles");
+        const particleCount = 50;
+
+        for (let i = 0; i < particleCount; i++) {
+          const particle = document.createElement("div");
+          particle.classList.add("particle");
+
+          // Random properties
+          const size = Math.random() * 5 + 2;
+          const posX = Math.random() * 100;
+          const posY = Math.random() * 100;
+          const duration = Math.random() * 20 + 20;
+          const delay = Math.random() * 5;
+
+          // Apply styles
+          particle.style.width = `${size}px`;
+          particle.style.height = `${size}px`;
+          particle.style.left = `${posX}%`;
+          particle.style.top = `${posY}%`;
+          particle.style.animationDuration = `${duration}s`;
+          particle.style.animationDelay = `${delay}s`;
+          particle.style.opacity = Math.random() * 0.4 + 0.1;
+
+          particlesContainer.appendChild(particle);
+        }
+      }
+
+      // Notify Me button functionality
+      document
+        .getElementById("notifyBtn")
+        ?.addEventListener("click", function () {
+          const email = prompt(
+            "Enter your email to get notified when we launch then whatsapp support for guidance:",
+          );
+          if (email) {
+            this.innerHTML = '<i class="fas fa-check"></i> Notifications Set!';
+            this.style.background = "var(--success)";
+            this.style.color = "white";
+            this.disabled = true;
+
+            // In a real application, send this email to your backend
+            console.log("Notification email saved:", email);
+          }
+        });
+
+      // Initialize particles when page loads
+      document.addEventListener("DOMContentLoaded", function () {
+        createParticles();
+
+        // Add smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+          anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute("href"));
+            if (target) {
+              target.scrollIntoView({ behavior: "smooth" });
+            }
+          });
+        });
+      });
+
+      // Handle page visibility change (for countdown accuracy)
+      document.addEventListener("visibilitychange", function () {
+        if (!document.hidden) {
+          // Page became visible again, recalculate countdown
+          const event = new Event("visibilityUpdate");
+          document.dispatchEvent(event);
+        }
+      });
+    </script>
+  </body>
+</html>
+>>>>>>> 31b5d206e82c7a0e41bbcf9a5c021943627e7c2e
