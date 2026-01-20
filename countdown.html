@@ -720,6 +720,7 @@
           >
             <i class="fab fa-whatsapp"></i> Contact Support
           </a>
+          <!-- HTML Button -->
           <button class="btn btn-secondary" id="notifyBtn">
             <i class="fas fa-bell"></i> Notify Me
           </button>
@@ -833,22 +834,33 @@
         }
       }
 
-      // Notify Me button functionality
+      // JavaScript - Direct to your Google Form
       document
         .getElementById("notifyBtn")
         ?.addEventListener("click", function () {
-          const email = prompt(
-            "Enter your email to get notified when we launch then whatsapp support for guidance:",
-          );
-          if (email) {
-            this.innerHTML = '<i class="fas fa-check"></i> Notifications Set!';
-            this.style.background = "var(--success)";
-            this.style.color = "white";
-            this.disabled = true;
+          // Your Google Form URL
+          const googleFormUrl = "https://forms.gle/vhaeg2rGWZ8LPtRo9";
 
-            // In a real application, send this email to your backend
-            console.log("Notification email saved:", email);
-          }
+          // Open Google Form in new tab
+          window.open(googleFormUrl, "_blank", "noopener,noreferrer");
+
+          // Show visual feedback
+          const originalHTML = this.innerHTML;
+          const originalBg = this.style.background;
+          const originalColor = this.style.color;
+
+          this.innerHTML = '<i class="fas fa-check"></i> Opening Form...';
+          this.style.background = "#10b981";
+          this.style.color = "white";
+          this.disabled = true;
+
+          // Reset button after 3 seconds
+          setTimeout(() => {
+            this.innerHTML = originalHTML;
+            this.style.background = originalBg;
+            this.style.color = originalColor;
+            this.disabled = false;
+          }, 3000);
         });
 
       // Initialize particles when page loads
