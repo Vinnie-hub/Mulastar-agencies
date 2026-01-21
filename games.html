@@ -172,32 +172,7 @@
         background: rgba(37, 99, 235, 0.05);
       }
 
-      /* 🔝 Announcement Bar */
-      .announcement-bar {
-        background: var(--gradient-purple);
-        color: white;
-        padding: 10px 0;
-        font-weight: 500;
-        text-align: center;
-        z-index: 999;
-      }
-
-      .announcement-content {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 10px;
-        flex-wrap: wrap;
-      }
-
-      .announcement-badge {
-        background: rgba(255, 255, 255, 0.2);
-        padding: 4px 12px;
-        border-radius: 20px;
-        font-size: 0.85rem;
-      }
-
-      /* 🎮 Hero Section */
+      /* 🎮 Hero Section - PRESERVED */
       .games-hero {
         padding: 100px 0 60px;
         background:
@@ -396,6 +371,149 @@
         font-size: 1.1rem;
       }
 
+      /* Enhanced Video Card Styles */
+      .hero-visual {
+        display: flex;
+        justify-content: center;
+      }
+
+      .video-card {
+        width: 100%;
+        max-width: 400px;
+        background: white;
+        border-radius: var(--radius);
+        box-shadow: var(--shadow-lg);
+        overflow: hidden;
+        transition: var(--transition);
+      }
+
+      .video-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+      }
+
+      .video-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 15px 20px;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .user-info {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .user-info .author-avatar {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: var(--gradient);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-weight: bold;
+        font-size: 1rem;
+      }
+
+      .user-info .name {
+        font-weight: 600;
+        font-size: 0.95rem;
+        color: var(--dark);
+      }
+
+      .user-info small {
+        color: var(--muted);
+        font-size: 0.8rem;
+        display: block;
+      }
+
+      .live-indicator {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        background: #ef4444;
+        color: white;
+        padding: 4px 10px;
+        border-radius: 12px;
+        font-size: 0.8rem;
+        font-weight: 600;
+      }
+
+      .live-dot {
+        width: 8px;
+        height: 8px;
+        background: white;
+        border-radius: 50%;
+        animation: pulse 1.5s infinite;
+      }
+
+      .video-thumb {
+        padding: 20px;
+        background: var(--light);
+      }
+
+      .video-btn {
+        display: block;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        transition: var(--transition);
+        background: #000;
+        min-height: 200px;
+        position: relative;
+      }
+
+      .video-btn:hover {
+        transform: scale(1.02);
+        box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
+      }
+
+      .video-fallback {
+        width: 100%;
+        height: 200px;
+        background: linear-gradient(45deg, #667eea, #764ba2);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-weight: 700;
+        font-size: 1.2rem;
+        border-radius: 12px;
+      }
+
+      .video-footer {
+        padding: 15px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 0.9rem;
+        color: var(--text);
+        background: var(--light);
+        border-top: 1px solid var(--border);
+      }
+
+      .video-footer span {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .video-footer small {
+        font-size: 0.75rem;
+        color: var(--muted);
+        margin-top: 4px;
+      }
+
+      .payout {
+        color: var(--secondary);
+        font-weight: 700;
+        font-size: 1.1rem;
+      }
+
+      /* Enhanced Games Scroll Section */
       .play-section {
         background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         padding: 60px 0;
@@ -416,6 +534,7 @@
         display: flex;
         width: max-content;
         animation: scrollGames 40s linear infinite;
+        padding: 20px 0;
       }
 
       .games-container {
@@ -433,7 +552,6 @@
         }
       }
 
-      /* FIXED: Game card classes */
       .scroll-game-card {
         flex: 0 0 auto;
         width: 160px;
@@ -449,6 +567,7 @@
       .scroll-game-card:hover {
         transform: scale(1.1);
         box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+        z-index: 2;
       }
 
       .scroll-game-card img {
@@ -457,6 +576,27 @@
         object-fit: cover;
       }
 
+      .game-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgba(0, 0, 0, 0.7);
+        color: white;
+        padding: 10px;
+        text-align: center;
+        font-weight: 600;
+        font-size: 0.9rem;
+        border-radius: 0 0 15px 15px;
+        transform: translateY(100%);
+        transition: transform 0.3s ease;
+      }
+
+      .scroll-game-card:hover .game-overlay {
+        transform: translateY(0);
+      }
+
+      /* 🎮 Featured Games */
       .featured-games {
         background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
         border-radius: var(--radius-lg);
@@ -477,7 +617,6 @@
         display: none;
       }
 
-      /* FIXED: Featured game card class name */
       .featured-game-card {
         flex: 0 0 auto;
         width: 280px;
@@ -585,135 +724,6 @@
         box-shadow: var(--shadow-hover);
       }
 
-      /* Video Card Styles */
-      .hero-visual {
-        display: flex;
-        justify-content: center;
-      }
-
-      .video-card {
-        width: 100%;
-        max-width: 400px;
-        background: white;
-        border-radius: var(--radius);
-        box-shadow: var(--shadow-lg);
-        overflow: hidden;
-        transition: var(--transition);
-      }
-
-      .video-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
-      }
-
-      .video-header {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 15px 20px;
-        border-bottom: 1px solid var(--border);
-      }
-
-      .user-info {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-      }
-
-      .user-info img {
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        object-fit: cover;
-      }
-
-      .user-info .name {
-        font-weight: 600;
-        font-size: 0.95rem;
-        color: var(--dark);
-      }
-
-      .user-info small {
-        color: var(--muted);
-        font-size: 0.8rem;
-        display: block;
-      }
-
-      .controller {
-        width: 24px;
-        opacity: 0.7;
-      }
-
-      .video-thumb {
-        padding: 20px;
-        background: var(--light);
-      }
-
-      .video-btn {
-        display: block;
-        border-radius: 12px;
-        overflow: hidden;
-        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-        transition: var(--transition);
-        background: #000;
-        min-height: 200px;
-        position: relative;
-      }
-
-      .video-btn:hover {
-        transform: scale(1.02);
-        box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
-      }
-
-      video {
-        display: block;
-        width: 100%;
-        height: auto;
-        border-radius: 12px;
-      }
-
-      /* FIXED: Video fallback styles */
-      .video-fallback {
-        width: 100%;
-        height: 200px;
-        background: linear-gradient(45deg, #667eea, #764ba2);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: white;
-        font-weight: 700;
-        font-size: 1.2rem;
-        border-radius: 12px;
-      }
-
-      .video-footer {
-        padding: 15px 20px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        font-size: 0.9rem;
-        color: var(--text);
-        background: var(--light);
-        border-top: 1px solid var(--border);
-      }
-
-      .video-footer span {
-        display: flex;
-        flex-direction: column;
-      }
-
-      .video-footer small {
-        font-size: 0.75rem;
-        color: var(--muted);
-        margin-top: 4px;
-      }
-
-      .payout {
-        color: var(--secondary);
-        font-weight: 700;
-        font-size: 1.1rem;
-      }
-
       /* 🎮 All Games Grid */
       .games-grid {
         display: grid;
@@ -722,7 +732,6 @@
         margin-top: 40px;
       }
 
-      /* FIXED: Grid game card class */
       .grid-game-card {
         background: white;
         border-radius: var(--radius);
@@ -782,101 +791,6 @@
         margin: 15px 0;
       }
 
-      /* 💰 Earnings Calculator */
-      .calculator-section {
-        background: white;
-        border-radius: var(--radius-lg);
-        padding: 60px;
-        margin: 60px 0;
-        box-shadow: var(--shadow);
-        position: relative;
-        overflow: hidden;
-      }
-
-      .calculator-section::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 5px;
-        background: var(--gradient);
-      }
-
-      .calculator {
-        max-width: 800px;
-        margin: 0 auto;
-      }
-
-      .calc-inputs {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 25px;
-        margin: 30px 0;
-      }
-
-      .input-group {
-        display: flex;
-        flex-direction: column;
-      }
-
-      .input-group label {
-        font-weight: 600;
-        margin-bottom: 10px;
-        color: var(--dark);
-        display: flex;
-        align-items: center;
-        gap: 8px;
-      }
-
-      .input-group input {
-        padding: 15px;
-        border: 2px solid var(--border);
-        border-radius: 10px;
-        font-size: 1rem;
-        transition: var(--transition);
-      }
-
-      .input-group input:focus {
-        border-color: var(--primary);
-        outline: none;
-        box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
-      }
-
-      .calc-results {
-        background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
-        border-radius: var(--radius);
-        padding: 40px;
-        margin-top: 40px;
-      }
-
-      .result-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 20px;
-      }
-
-      .result-item {
-        text-align: center;
-        padding: 25px;
-        background: white;
-        border-radius: var(--radius);
-        box-shadow: var(--shadow);
-      }
-
-      .result-value {
-        font-size: 2.5rem;
-        font-weight: 900;
-        color: var(--primary);
-        line-height: 1;
-        margin-bottom: 10px;
-      }
-
-      .result-label {
-        font-size: 0.9rem;
-        color: var(--muted);
-      }
-
       /* 🎯 How It Works */
       .steps-section {
         background: var(--light);
@@ -886,38 +800,15 @@
       }
 
       .steps {
-        display: flex;
-        justify-content: space-between;
-        position: relative;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 40px;
         margin-top: 60px;
-        flex-wrap: wrap;
-      }
-
-      .steps::before {
-        content: "";
-        position: absolute;
-        top: 60px;
-        left: 10%;
-        width: 80%;
-        height: 3px;
-        background: linear-gradient(90deg, var(--primary), var(--accent));
-        z-index: 1;
-      }
-
-      @media (max-width: 768px) {
-        .steps::before {
-          display: none;
-        }
       }
 
       .step {
-        flex: 1;
         text-align: center;
         position: relative;
-        z-index: 2;
-        padding: 0 15px;
-        min-width: 250px;
-        margin-bottom: 40px;
       }
 
       .step-number {
@@ -1125,6 +1016,7 @@
         z-index: 1;
         margin-bottom: 20px;
         font-style: italic;
+        line-height: 1.8;
       }
 
       .testimonial-author {
@@ -1194,10 +1086,23 @@
         margin-top: 15px;
         color: var(--muted);
         display: none;
+        line-height: 1.7;
       }
 
       .faq-item.active .faq-answer {
         display: block;
+        animation: fadeIn 0.3s ease;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(-10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
       }
 
       .faq-item.active .faq-question i {
@@ -1214,21 +1119,6 @@
         text-align: center;
         position: relative;
         overflow: hidden;
-      }
-
-      .cta-section::before {
-        content: "";
-        position: absolute;
-        top: -50%;
-        right: -50%;
-        width: 400px;
-        height: 400px;
-        background: radial-gradient(
-          circle,
-          rgba(255, 255, 255, 0.1) 0%,
-          transparent 70%
-        );
-        border-radius: 50%;
       }
 
       .cta-section h2 {
@@ -1252,6 +1142,37 @@
         margin-top: 40px;
         flex-wrap: wrap;
         position: relative;
+      }
+
+      /* Back to Top Button */
+      .back-to-top {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        width: 50px;
+        height: 50px;
+        background: var(--gradient);
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        opacity: 0;
+        transform: translateY(100px);
+        transition: all 0.3s ease;
+        z-index: 999;
+        box-shadow: var(--shadow-lg);
+      }
+
+      .back-to-top.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .back-to-top:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-hover);
       }
 
       /* Navigation Links*/
@@ -1446,6 +1367,11 @@
         .cta-section h2 {
           font-size: 2.2rem;
         }
+
+        .about-navigation {
+          flex-direction: column;
+          gap: 15px;
+        }
       }
 
       @media (max-width: 480px) {
@@ -1527,19 +1453,7 @@
       </div>
     </nav>
 
-    <!-- 🔝 Announcement Bar -->
-    <div class="announcement-bar">
-      <div class="container announcement-content">
-        <span class="announcement-badge">🏆 DAILY TOURNAMENTS</span>
-        <span
-          >Win up to <strong>Ksh.10,000</strong> in today's Aviator
-          tournament!</span
-        >
-        <span id="countdown" class="announcement-badge">01:59:59</span>
-      </div>
-    </div>
-
-    <!-- 🎮 Hero Section -->
+    <!-- 🎮 Hero Section - PRESERVED AS IS -->
     <section class="games-hero">
       <div class="container">
         <div class="hero-grid">
@@ -1563,7 +1477,7 @@
                 <span class="stat-label">Active Gamers</span>
               </div>
               <div class="stat">
-                <span class="stat-number">Ksh.25M+</span>
+                <span class="stat-number">Ksh.15M+</span>
                 <span class="stat-label">Paid to Winners</span>
               </div>
               <div class="stat">
@@ -1593,17 +1507,16 @@
             <div class="video-card">
               <div class="video-header">
                 <div class="user-info">
-                  <img src="pictures/games.jpg" alt="Gamer Profile" />
+                  <div class="author-avatar">PG</div>
                   <div>
-                    <div class="name">SpinEveryday_314</div>
-                    <small>NBA2K25 · PlayNow Online</small>
+                    <div class="name">ProGamer_254</div>
+                    <small>Live · Aviator Tournament</small>
                   </div>
                 </div>
-                <img
-                  src="https://cdn-icons-png.flaticon.com/512/906/906343.png"
-                  alt="controller"
-                  class="controller"
-                />
+                <div class="live-indicator">
+                  <span class="live-dot"></span>
+                  LIVE
+                </div>
               </div>
 
               <div class="video-thumb">
@@ -1612,7 +1525,7 @@
                   class="video-btn"
                   aria-label="Register on Mulastar"
                 >
-                  <video
+                <video
                     autoplay
                     loop
                     muted
@@ -1620,31 +1533,29 @@
                     poster="pictures/games.jpg"
                   >
                     <source src="video/spin.mp4" type="video/mp4" />
-                    <!-- Fallback content -->
-                    <div class="video-fallback">
-                      <div style="text-align: center">
-                        <i
-                          class="fas fa-play-circle"
-                          style="font-size: 3rem; margin-bottom: 10px"
-                        ></i
-                        ><br />
-                        TAP TO PLAY<br />
-                        <small style="font-size: 0.8rem"
-                          >Game preview available after registration</small
-                        >
-                      </div>
+                  <div class="video-fallback">
+                    <div style="text-align: center">
+                      <i
+                        class="fas fa-play-circle"
+                        style="font-size: 3rem; margin-bottom: 10px"
+                      ></i
+                      ><br />
+                      <span style="font-weight: 700">TAP TO PLAY</span><br />
+                      <small style="font-size: 0.8rem"
+                        >Join thousands earning daily</small
+                      >
                     </div>
-                  </video>
+                  </div>
                 </a>
               </div>
 
               <div class="video-footer">
                 <span
-                  >Tap to play<br /><small
-                    >3 people staked this challenge</small
+                  >Start earning now<br /><small
+                    >No experience needed</small
                   ></span
                 >
-                <span class="payout">Ksh. 247.50</span>
+                <span class="payout">Ksh. 500+ Daily</span>
               </div>
             </div>
           </div>
@@ -1688,7 +1599,7 @@
                   <span>Instant win</span>
                 </div>
               </div>
-              <button class="game-action">
+              <button class="game-action" onclick="playGame('Aviator')">
                 <i class="fas fa-play"></i> Play Aviator
               </button>
             </div>
@@ -1721,7 +1632,7 @@
                   <span>Strategy</span>
                 </div>
               </div>
-              <button class="game-action">
+              <button class="game-action" onclick="playGame('Chess')">
                 <i class="fas fa-play"></i> Play Chess
               </button>
             </div>
@@ -1754,7 +1665,7 @@
                   <span>Free spins</span>
                 </div>
               </div>
-              <button class="game-action">
+              <button class="game-action" onclick="playGame('Spin')">
                 <i class="fas fa-play"></i> Spin Now
               </button>
             </div>
@@ -1787,7 +1698,7 @@
                   <span>Fast-paced</span>
                 </div>
               </div>
-              <button class="game-action">
+              <button class="game-action" onclick="playGame('Soccer')">
                 <i class="fas fa-play"></i> Play Soccer
               </button>
             </div>
@@ -1799,56 +1710,88 @@
     <!-- Games Scroll Section -->
     <section class="play-section">
       <h2>Popular Games Collection</h2>
-      <div class="scroll-wrapper">
-        <div class="games-container" id="gamesContainer">
-          <!-- FIXED: Changed class from games-card to scroll-game-card -->
-          <div class="scroll-game-card">
-            <img
-              src="https://img.poki-cdn.com/cdn-cgi/image/q=78,scq=50,width=204,height=204,fit=cover,f=auto/2d5e417ea0fc1ef06d746b2cef691c07/bubble-shooter-lak.png"
-              alt="Bubble Shooter"
-            />
-          </div>
-          <div class="scroll-game-card">
-            <img
-              src="https://www.shutterstock.com/image-illustration/neon-3d-play-casino-game-600nw-2470306267.jpg"
-              alt="Casino Games"
-            />
-          </div>
-          <div class="scroll-game-card">
-            <img
-              src="https://t4.ftcdn.net/jpg/15/67/81/75/240_F_1567817510_oZouwLtkeFuCLjAGLUMdi6vloAQMQ5t3.jpg"
-              alt="Puzzle Game"
-            />
-          </div>
-          <div class="scroll-game-card">
-            <img
-              src="https://t4.ftcdn.net/jpg/03/02/42/43/240_F_302424378_djSZbKJGPMp7AnJkopnGQ7NUj1d06DVa.jpg"
-              alt="Arcade Game"
-            />
-          </div>
-          <div class="scroll-game-card">
-            <img
-              src="https://images.seeklogo.com/logo-png/61/1/aviator-logo-png_seeklogo-618852.png"
-              alt="Aviator"
-            />
-          </div>
-          <div class="scroll-game-card">
-            <img
-              src="https://t3.ftcdn.net/jpg/02/38/49/84/240_F_238498452_OgKgKXRJ9ilHtfbw3GXbTlpZHDvzFPGU.jpg"
-              alt="Strategy Game"
-            />
-          </div>
-          <div class="scroll-game-card">
-            <img
-              src="https://m.media-amazon.com/images/I/81c0y3+hxCL.png"
-              alt="Adventure Game"
-            />
-          </div>
-          <div class="scroll-game-card">
-            <img
-              src="https://thumbs.dreamstime.com/b/games-14152659.jpg"
-              alt="Action Game"
-            />
+      <div style="overflow: hidden">
+        <div class="scroll-wrapper">
+          <div class="games-container" id="gamesContainer">
+            <!-- Duplicate games for seamless scrolling -->
+            <div class="scroll-game-card">
+              <img
+                src="https://img.poki-cdn.com/cdn-cgi/image/q=78,scq=50,width=204,height=204,fit=cover,f=auto/2d5e417ea0fc1ef06d746b2cef691c07/bubble-shooter-lak.png"
+                alt="Bubble Shooter"
+              />
+              <div class="game-overlay">Bubble Shooter</div>
+            </div>
+            <div class="scroll-game-card">
+              <img
+                src="https://www.shutterstock.com/image-illustration/neon-3d-play-casino-game-600nw-2470306267.jpg"
+                alt="Casino Games"
+              />
+              <div class="game-overlay">Casino Games</div>
+            </div>
+            <div class="scroll-game-card">
+              <img
+                src="https://t4.ftcdn.net/jpg/15/67/81/75/240_F_1567817510_oZouwLtkeFuCLjAGLUMdi6vloAQMQ5t3.jpg"
+                alt="Puzzle Game"
+              />
+              <div class="game-overlay">Puzzle Game</div>
+            </div>
+            <div class="scroll-game-card">
+              <img
+                src="https://t4.ftcdn.net/jpg/03/02/42/43/240_F_302424378_djSZbKJGPMp7AnJkopnGQ7NUj1d06DVa.jpg"
+                alt="Arcade Game"
+              />
+              <div class="game-overlay">Arcade Game</div>
+            </div>
+            <div class="scroll-game-card">
+              <img
+                src="https://images.seeklogo.com/logo-png/61/1/aviator-logo-png_seeklogo-618852.png"
+                alt="Aviator"
+              />
+              <div class="game-overlay">Aviator</div>
+            </div>
+            <div class="scroll-game-card">
+              <img
+                src="https://t3.ftcdn.net/jpg/02/38/49/84/240_F_238498452_OgKgKXRJ9ilHtfbw3GXbTlpZHDvzFPGU.jpg"
+                alt="Strategy Game"
+              />
+              <div class="game-overlay">Strategy</div>
+            </div>
+            <div class="scroll-game-card">
+              <img
+                src="https://m.media-amazon.com/images/I/81c0y3+hxCL.png"
+                alt="Adventure Game"
+              />
+              <div class="game-overlay">Adventure</div>
+            </div>
+            <div class="scroll-game-card">
+              <img
+                src="https://thumbs.dreamstime.com/b/games-14152659.jpg"
+                alt="Action Game"
+              />
+              <div class="game-overlay">Action</div>
+            </div>
+            <!-- Duplicate for seamless loop -->
+            <div class="scroll-game-card">
+              <img
+                src="https://img.poki-cdn.com/cdn-cgi/image/q=78,scq=50,width=204,height=204,fit=cover,f=auto/2d5e417ea0fc1ef06d746b2cef691c07/bubble-shooter-lak.png"
+                alt="Bubble Shooter"
+              />
+              <div class="game-overlay">Bubble Shooter</div>
+            </div>
+            <div class="scroll-game-card">
+              <img
+                src="https://www.shutterstock.com/image-illustration/neon-3d-play-casino-game-600nw-2470306267.jpg"
+                alt="Casino Games"
+              />
+              <div class="game-overlay">Casino Games</div>
+            </div>
+            <div class="scroll-game-card">
+              <img
+                src="https://t4.ftcdn.net/jpg/15/67/81/75/240_F_1567817510_oZouwLtkeFuCLjAGLUMdi6vloAQMQ5t3.jpg"
+                alt="Puzzle Game"
+              />
+              <div class="game-overlay">Puzzle Game</div>
+            </div>
           </div>
         </div>
       </div>
@@ -1867,7 +1810,6 @@
 
         <div class="games-grid">
           <!-- Game 1 -->
-          <!-- FIXED: Changed class from game-card to grid-game-card -->
           <div class="grid-game-card">
             <div class="game-icon">
               <i class="fas fa-chess-board"></i>
@@ -1878,7 +1820,7 @@
               points and climb leaderboards.
             </p>
             <div class="game-earnings">Earn Ksh.50-1,000 per win</div>
-            <button class="game-action">
+            <button class="game-action" onclick="playGame('Chess Pro')">
               <i class="fas fa-play"></i> Play Now
             </button>
           </div>
@@ -1894,21 +1836,23 @@
               risk, high reward excitement.
             </p>
             <div class="game-earnings">Earn Ksh.100-5,000 per game</div>
-            <button class="game-action">
+            <button class="game-action" onclick="playGame('Aviator')">
               <i class="fas fa-play"></i> Play Now
             </button>
           </div>
 
           <!-- Game 3 -->
           <div class="grid-game-card">
-            <div class="game-icon">🔴⚫</div>
+            <div class="game-icon">
+              <i class="fas fa-gamepad"></i>
+            </div>
             <h3>Checkers</h3>
             <p>
               Play fast and fun Checkers matches. Each win boosts your daily
               bonus score, and winning streaks unlock exclusive rewards.
             </p>
             <div class="game-earnings">Earn Ksh.50-500 per game</div>
-            <button class="game-action">
+            <button class="game-action" onclick="playGame('Checkers')">
               <i class="fas fa-play"></i> Play Now
             </button>
           </div>
@@ -1924,7 +1868,7 @@
               soccer game.
             </p>
             <div class="game-earnings">Earn Ksh.20-500 per goal</div>
-            <button class="game-action">
+            <button class="game-action" onclick="playGame('Soccer Challenge')">
               <i class="fas fa-play"></i> Play Now
             </button>
           </div>
@@ -1940,7 +1884,7 @@
               strategy.
             </p>
             <div class="game-earnings">Earn Ksh.30-300 per roll</div>
-            <button class="game-action">
+            <button class="game-action" onclick="playGame('Dice Duel')">
               <i class="fas fa-play"></i> Play Now
             </button>
           </div>
@@ -1956,7 +1900,7 @@
               adds to your earnings.
             </p>
             <div class="game-earnings">Earn Ksh.10-200 per level</div>
-            <button class="game-action">
+            <button class="game-action" onclick="playGame('Puzzle Match')">
               <i class="fas fa-play"></i> Play Now
             </button>
           </div>
@@ -1972,7 +1916,7 @@
               your earnings.
             </p>
             <div class="game-earnings">Earn Ksh.5-100 per answer</div>
-            <button class="game-action">
+            <button class="game-action" onclick="playGame('Trivia Quest')">
               <i class="fas fa-play"></i> Play Now
             </button>
           </div>
@@ -1988,7 +1932,7 @@
               earn quick rewards.
             </p>
             <div class="game-earnings">Earn Ksh.10-150 per flip</div>
-            <button class="game-action">
+            <button class="game-action" onclick="playGame('Coin Flip')">
               <i class="fas fa-play"></i> Play Now
             </button>
           </div>
@@ -2004,116 +1948,9 @@
               bonus points.
             </p>
             <div class="game-earnings">Earn Ksh.20-400 per race</div>
-            <button class="game-action">
+            <button class="game-action" onclick="playGame('Car Racer')">
               <i class="fas fa-play"></i> Play Now
             </button>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 💰 Earnings Calculator -->
-    <section id="calculator" class="calculator-section">
-      <div class="container">
-        <div class="section-title">
-          <h2>💰 Gaming Earnings Calculator</h2>
-          <p>See how much you can earn playing games on Mulastar</p>
-        </div>
-
-        <div class="calculator">
-          <div class="calc-inputs">
-            <div class="input-group">
-              <label><i class="fas fa-clock"></i> Hours Per Day</label>
-              <input
-                type="range"
-                id="hoursPerDay"
-                min="1"
-                max="12"
-                value="3"
-                class="slider"
-              />
-              <div
-                style="
-                  text-align: center;
-                  margin-top: 10px;
-                  font-weight: 600;
-                  color: var(--primary);
-                "
-              >
-                <span id="hoursValue">3</span> hours
-              </div>
-            </div>
-
-            <div class="input-group">
-              <label><i class="fas fa-gamepad"></i> Average Win Rate</label>
-              <input
-                type="range"
-                id="winRate"
-                min="30"
-                max="90"
-                value="60"
-                step="5"
-                class="slider"
-              />
-              <div
-                style="
-                  text-align: center;
-                  margin-top: 10px;
-                  font-weight: 600;
-                  color: var(--primary);
-                "
-              >
-                <span id="rateValue">60</span>% wins
-              </div>
-            </div>
-
-            <div class="input-group">
-              <label><i class="fas fa-calendar-alt"></i> Days Per Week</label>
-              <input
-                type="range"
-                id="daysPerWeek"
-                min="1"
-                max="7"
-                value="5"
-                class="slider"
-              />
-              <div
-                style="
-                  text-align: center;
-                  margin-top: 10px;
-                  font-weight: 600;
-                  color: var(--primary);
-                "
-              >
-                <span id="daysValue">5</span> days
-              </div>
-            </div>
-          </div>
-
-          <div class="calc-results">
-            <h3 style="text-align: center; margin-bottom: 30px">
-              Your Estimated Gaming Earnings
-            </h3>
-            <div class="result-grid">
-              <div class="result-item">
-                <div class="result-value" id="dailyEarning">Ksh.750</div>
-                <div class="result-label">Daily Earnings</div>
-              </div>
-              <div class="result-item">
-                <div class="result-value" id="weeklyEarning">Ksh.3,750</div>
-                <div class="result-label">Weekly Earnings</div>
-              </div>
-              <div class="result-item">
-                <div class="result-value" id="monthlyEarning">Ksh.15,000</div>
-                <div class="result-label">Monthly Earnings</div>
-              </div>
-            </div>
-          </div>
-
-          <div style="text-align: center; margin-top: 40px">
-            <a href="registration.html" class="btn btn-primary">
-              <i class="fas fa-rocket"></i> START EARNING NOW!
-            </a>
           </div>
         </div>
       </div>
@@ -2205,7 +2042,10 @@
               </div>
             </div>
 
-            <button class="tournament-action">
+            <button
+              class="tournament-action"
+              onclick="joinTournament('Aviator Grand Prix')"
+            >
               <i class="fas fa-trophy"></i> Join Tournament
             </button>
           </div>
@@ -2231,7 +2071,10 @@
               </div>
             </div>
 
-            <button class="tournament-action">
+            <button
+              class="tournament-action"
+              onclick="joinTournament('Chess Championship')"
+            >
               <i class="fas fa-chess"></i> Join Tournament
             </button>
           </div>
@@ -2257,7 +2100,10 @@
               </div>
             </div>
 
-            <button class="tournament-action">
+            <button
+              class="tournament-action"
+              onclick="joinTournament('Spin Masters')"
+            >
               <i class="fas fa-star"></i> Join Tournament
             </button>
           </div>
@@ -2354,10 +2200,16 @@
           <div class="testimonial-card">
             <div class="testimonial-content">
               "I earn Ksh.2,000-3,000 daily from Aviator and Chess tournaments.
-              Mulastar has the fairest gaming platform I've seen in Africa."
+              Mulastar has the fairest gaming platform I've seen in Africa. The
+              instant withdrawals make it perfect!"
             </div>
             <div class="testimonial-author">
-              <img src="pictures/mike.jpeg" alt="Mike" class="author-avatar" />
+              <div
+                class="author-avatar"
+                style="background: var(--gradient-orange)"
+              >
+                <span>MT</span>
+              </div>
               <div class="author-info">
                 <h4>Mike T.</h4>
                 <p>Pro Gamer, Nairobi</p>
@@ -2371,19 +2223,21 @@
           <div class="testimonial-card">
             <div class="testimonial-content">
               "As a student, gaming on Mulastar pays my tuition and living
-              expenses. The withdrawals are instant and reliable!"
+              expenses. The withdrawals are instant and reliable! I can focus on
+              studies while earning from gaming."
             </div>
             <div class="testimonial-author">
-              <img
-                src="pictures/vallary.jpeg"
-                alt="vallary"
+              <div
                 class="author-avatar"
-              />
+                style="background: var(--gradient-purple)"
+              >
+                <span>VA</span>
+              </div>
               <div class="author-info">
                 <h4>Vallary A.</h4>
                 <p>Student, Kampala</p>
                 <div class="testimonial-earnings">
-                  Earned: Ugx.323,500 this month
+                  Earned: UGX 2,300,000 this month
                 </div>
               </div>
             </div>
@@ -2392,19 +2246,21 @@
           <div class="testimonial-card">
             <div class="testimonial-content">
               "I was skeptical about play-to-earn platforms, but Mulastar proved
-              me wrong. Now I make more gaming than my day job!"
+              me wrong. Now I make more gaming than my day job! The community is
+              amazing and support is 24/7."
             </div>
             <div class="testimonial-author">
-              <img
-                src="pictures/derrick.jpeg"
-                alt="Derrick"
+              <div
                 class="author-avatar"
-              />
+                style="background: var(--gradient-green)"
+              >
+                <span>DW</span>
+              </div>
               <div class="author-info">
                 <h4>Derrick W.</h4>
                 <p>Accra, Ghana</p>
                 <div class="testimonial-earnings">
-                  Earned: Gh.2,800 this month
+                  Earned: GHS 2,800 this month
                 </div>
               </div>
             </div>
@@ -2430,7 +2286,8 @@
             <div class="faq-answer">
               Most players earn Ksh.500-3,000 daily from games. Top tournament
               winners earn Ksh.10,000+ weekly. Your earnings depend on skill
-              level, time invested, and game selection.
+              level, time invested, and game selection. Beginners typically earn
+              Ksh.500-1,000 daily.
             </div>
           </div>
 
@@ -2442,7 +2299,8 @@
             <div class="faq-answer">
               Yes! All games use certified random number generators. Our
               platform is regularly audited for fairness and transparency. Every
-              player has equal winning chances.
+              player has equal winning chances. We use provably fair technology
+              that allows you to verify each game result.
             </div>
           </div>
 
@@ -2454,7 +2312,8 @@
             <div class="faq-answer">
               We offer strategy games (Chess, Checkers), luck-based games
               (Aviator, Spin & Win), skill games (Puzzle Match, Car Racer), and
-              tournament games. New games added monthly.
+              tournament games. New games are added monthly based on player
+              feedback and popularity trends.
             </div>
           </div>
 
@@ -2466,7 +2325,8 @@
             <div class="faq-answer">
               Withdrawals are instant! As soon as you win, the reward is
               credited to your Mulastar wallet. You can withdraw immediately to
-              M-Pesa (1-5 minutes).
+              M-Pesa (1-5 minutes). Minimum withdrawal is Ksh.50, no maximum
+              limit for verified accounts.
             </div>
           </div>
 
@@ -2478,7 +2338,8 @@
             <div class="faq-answer">
               No! We have games for all skill levels. Beginners can start with
               simple luck-based games, while experienced players can join
-              strategy tournaments.
+              strategy tournaments. Our practice modes help you learn without
+              risk.
             </div>
           </div>
 
@@ -2489,7 +2350,9 @@
             </div>
             <div class="faq-answer">
               Yes, you must be 18+ to play cash games on Mulastar. We strictly
-              verify age during registration to ensure responsible gaming.
+              verify age during registration to ensure responsible gaming. For
+              younger players, we offer free practice games without cash
+              rewards.
             </div>
           </div>
         </div>
@@ -2514,13 +2377,14 @@
             <i class="fas fa-gamepad"></i> START GAMING NOW
           </a>
           <a
-            href="https://wa.me/254755252499?text=Hello%20Coach%20Dajenny,%20guide%20me%20through."
+            href="https://wa.me/254755252499?text=Hello%20Coach%20Dajenny,%20I%20want%20to%20join%20Mulastar%20Games"
             class="btn btn-secondary"
             style="
               background: rgba(255, 255, 255, 0.2);
               color: white;
               border: 2px solid white;
             "
+            target="_blank"
           >
             <i class="fab fa-whatsapp"></i> CHAT WITH SUPPORT
           </a>
@@ -2533,6 +2397,7 @@
             company
           </p>
           <p><i class="fas fa-check-circle"></i> 24/7 gaming & support</p>
+          <p><i class="fas fa-check-circle"></i> 50,000+ active players</p>
         </div>
       </div>
     </section>
@@ -2566,66 +2431,44 @@
               </div>
             </div>
             <p style="color: #94a3b8; margin-bottom: 20px">
-              Play exciting games and earn real money. Africa's #1 play-to-earn
-              gaming platform.
+              Africa's #1 play-to-earn gaming platform. Turn your gaming skills
+              into real money with instant withdrawals.
             </p>
             <div class="social-links">
               <a
                 href="https://www.facebook.com/dajenny.sydney"
                 class="social-link"
-                ><i class="fab fa-facebook-f"></i
-              ></a>
-              <a href="https://x.com/jenny995729" class="social-link"
-                ><i class="fab fa-twitter"></i
-              ></a>
+                target="_blank"
+              >
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a
+                href="https://x.com/jenny995729"
+                class="social-link"
+                target="_blank"
+              >
+                <i class="fab fa-twitter"></i>
+              </a>
               <a
                 href="https://www.instagram.com/bestaffiliatecoach2025"
                 class="social-link"
-                ><i class="fab fa-instagram"></i
-              ></a>
+                target="_blank"
+              >
+                <i class="fab fa-instagram"></i>
+              </a>
               <a
                 href="https://www.youtube.com/DajennySydney"
                 class="social-link"
-                ><i class="fab fa-youtube"></i
-              ></a>
+                target="_blank"
+              >
+                <i class="fab fa-youtube"></i>
+              </a>
             </div>
           </div>
 
           <div>
             <h3>Game Categories</h3>
             <ul class="footer-links">
-              <li>
-                <a href="videos.html"
-                  ><i class="fas fa-play-circle"></i> Watch Videos</a
-                >
-              </li>
-              <li>
-                <a href="blog.html"><i class="fas fa-gamepad"></i> Blogs</a>
-              </li>
-              <li>
-                <a href="surveys.html"
-                  ><i class="fas fa-clipboard-check"></i> Surveys</a
-                >
-              </li>
-              <li>
-                <a href="networking.html"
-                  ><i class="fas fa-users"></i> Referrals</a
-                >
-              </li>
-              <li>
-                <a href="content.html"
-                  ><i class="fas fa-laugh"></i> Upload Memes</a
-                >
-              </li>
-            </ul>
-          </div>
-
-          <div>
-            <h3>Quick Links</h3>
-            <ul class="footer-links">
-              <li>
-                <a href="index.html"><i class="fas fa-home"></i> Home</a>
-              </li>
               <li>
                 <a href="#featured"
                   ><i class="fas fa-fire"></i> Featured Games</a
@@ -2640,7 +2483,37 @@
                 >
               </li>
               <li>
+                <a href="#"><i class="fas fa-dice"></i> Casino Games</a>
+              </li>
+              <li>
+                <a href="#"><i class="fas fa-chess"></i> Strategy Games</a>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h3>Quick Links</h3>
+            <ul class="footer-links">
+              <li>
+                <a href="index.html"><i class="fas fa-home"></i> Home</a>
+              </li>
+              <li>
+                <a href="registration.html"
+                  ><i class="fas fa-user-plus"></i> Sign Up</a
+                >
+              </li>
+              <li>
+                <a href="#testimonials"
+                  ><i class="fas fa-star"></i> Testimonials</a
+                >
+              </li>
+              <li>
                 <a href="#faq"><i class="fas fa-question-circle"></i> FAQ</a>
+              </li>
+              <li>
+                <a href="contact.html"
+                  ><i class="fas fa-envelope"></i> Contact Us</a
+                >
               </li>
             </ul>
           </div>
@@ -2649,30 +2522,29 @@
             <h3>Support</h3>
             <ul class="footer-links">
               <li>
-                <a
-                  href="https://wa.me/254755252499?text=Hello%20Coach%20Dajenny,%20guide%20me%20through."
-                  ><i class="fab fa-whatsapp"></i> WhatsApp Support</a
-                >
+                <a href="https://wa.me/254755252499" target="_blank">
+                  <i class="fab fa-whatsapp"></i> WhatsApp Support
+                </a>
               </li>
               <li>
-                <a href="tel:+254755252499"
-                  ><i class="fas fa-phone"></i> Call Support</a
-                >
+                <a href="tel:+254755252499">
+                  <i class="fas fa-phone"></i> +254 755 252 499
+                </a>
               </li>
               <li>
-                <a href="mailto:support@mulastar.com"
-                  ><i class="fas fa-envelope"></i> Email Support</a
-                >
+                <a href="mailto:support@mulastar.com">
+                  <i class="fas fa-envelope"></i> support@mulastar.com
+                </a>
               </li>
               <li>
-                <a href="registration.html"
-                  ><i class="fas fa-download"></i> Download App</a
-                >
+                <a href="privacy.html">
+                  <i class="fas fa-shield-alt"></i> Privacy Policy
+                </a>
               </li>
               <li>
-                <a href="registration.html"
-                  ><i class="fas fa-user-plus"></i> Sign Up</a
-                >
+                <a href="terms.html">
+                  <i class="fas fa-file-contract"></i> Terms of Service
+                </a>
               </li>
             </ul>
           </div>
@@ -2689,239 +2561,226 @@
           </p>
           <p style="margin-top: 10px; font-size: 0.8rem">
             Website developed by
-            <a href="https://wa.me/254707995729" style="color: #3b82f6">Jeff</a>
+            <a
+              href="https://wa.me/254707995729"
+              style="color: #3b82f6"
+              target="_blank"
+              >Jeff</a
+            >
+          </p>
+          <p style="margin-top: 5px; font-size: 0.75rem; opacity: 0.7">
+            Gamble responsibly. Must be 18+ to play.
           </p>
         </div>
       </div>
     </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" id="backToTop">
+      <i class="fas fa-chevron-up"></i>
+    </a>
 
     <script>
       // Set current year
       document.getElementById("currentYear").textContent =
         new Date().getFullYear();
 
-      // Countdown Timer
-      function updateCountdown() {
-        const now = new Date();
-        const endOfDay = new Date();
-        endOfDay.setHours(23, 59, 59, 999);
-
-        const diff = endOfDay - now;
-
-        const hours = Math.floor(diff / (1000 * 60 * 60));
-        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-
-        document.getElementById("countdown").textContent = `${hours
-          .toString()
-          .padStart(2, "0")}:${minutes.toString().padStart(2, "0")}:${seconds
-          .toString()
-          .padStart(2, "0")}`;
-      }
-
-      setInterval(updateCountdown, 1000);
-      updateCountdown();
-
-      // Earnings Calculator
-      function updateCalculator() {
-        const hours = parseInt(document.getElementById("hoursPerDay").value);
-        const rate = parseInt(document.getElementById("winRate").value);
-        const days = parseInt(document.getElementById("daysPerWeek").value);
-
-        // Update display values
-        document.getElementById("hoursValue").textContent = hours;
-        document.getElementById("rateValue").textContent = rate;
-        document.getElementById("daysValue").textContent = days;
-
-        // Calculate earnings (base formula: hours * hourly rate * win rate)
-        const hourlyRate = 250; // Base earning per hour
-        const daily = hours * hourlyRate * (rate / 100);
-        const weekly = daily * days;
-        const monthly = weekly * 4;
-
-        // Update result displays
-        document.getElementById("dailyEarning").textContent = `Ksh.${Math.round(
-          daily,
-        ).toLocaleString()}`;
-        document.getElementById("weeklyEarning").textContent =
-          `Ksh.${Math.round(weekly).toLocaleString()}`;
-        document.getElementById("monthlyEarning").textContent =
-          `Ksh.${Math.round(monthly).toLocaleString()}`;
-      }
-
-      // Initialize calculator
-      document.addEventListener("DOMContentLoaded", function () {
-        // Set up slider event listeners
-        document
-          .getElementById("hoursPerDay")
-          .addEventListener("input", updateCalculator);
-        document
-          .getElementById("winRate")
-          .addEventListener("input", updateCalculator);
-        document
-          .getElementById("daysPerWeek")
-          .addEventListener("input", updateCalculator);
-
-        // Initial calculation
-        updateCalculator();
-
-        // Mobile Menu Toggle
-        const mobileMenuBtn = document.getElementById("mobileMenuBtn");
-        const navLinks = document.getElementById("navLinks");
-
-        if (mobileMenuBtn && navLinks) {
-          mobileMenuBtn.addEventListener("click", function (e) {
-            e.stopPropagation();
-            navLinks.classList.toggle("show");
-            this.innerHTML = navLinks.classList.contains("show")
-              ? '<i class="fas fa-times"></i>'
-              : '<i class="fas fa-bars"></i>';
-          });
-
-          // Close menu when clicking outside
-          document.addEventListener("click", function (e) {
-            if (
-              !navLinks.contains(e.target) &&
-              !mobileMenuBtn.contains(e.target) &&
-              navLinks.classList.contains("show")
-            ) {
-              navLinks.classList.remove("show");
-              mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-            }
-          });
-
-          // Close menu on link click
-          navLinks.querySelectorAll("a").forEach((link) => {
-            link.addEventListener("click", () => {
-              navLinks.classList.remove("show");
-              mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-            });
-          });
-
-          // Close menu on window resize
-          window.addEventListener("resize", function () {
-            if (
-              window.innerWidth > 768 &&
-              navLinks.classList.contains("show")
-            ) {
-              navLinks.classList.remove("show");
-              mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-            }
-          });
-        }
-
-        // FAQ Toggle
-        const faqItems = document.querySelectorAll(".faq-item");
-        faqItems.forEach((item) => {
-          item.addEventListener("click", () => {
-            item.classList.toggle("active");
-          });
-        });
-
-        // Game action buttons
-        document
-          .querySelectorAll(".game-action, .tournament-action")
-          .forEach((button) => {
-            button.addEventListener("click", function () {
-              alert(
-                "To play this game, please register or login to your Mulastar account.",
-              );
-            });
-          });
-
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-          anchor.addEventListener("click", function (e) {
-            const targetId = this.getAttribute("href");
-            if (targetId === "#") return;
-
-            const targetElement = document.querySelector(targetId);
-            if (targetElement) {
-              e.preventDefault();
-              window.scrollTo({
-                top: targetElement.offsetTop - 100,
-                behavior: "smooth",
-              });
-            }
-          });
-        });
-
-        // Games carousel auto-scroll
-        const gamesCarousel = document.querySelector(".games-carousel");
-        if (gamesCarousel) {
-          let scrollAmount = 0;
-          function autoScroll() {
-            gamesCarousel.scrollLeft += 1;
-            scrollAmount++;
-
-            // Reset when reaching end
-            if (scrollAmount >= gamesCarousel.scrollWidth / 2) {
-              gamesCarousel.scrollLeft = 0;
-              scrollAmount = 0;
-            }
+      // Back to Top Button
+      const backToTop = document.getElementById("backToTop");
+      if (backToTop) {
+        window.addEventListener("scroll", () => {
+          if (window.pageYOffset > 300) {
+            backToTop.classList.add("visible");
+          } else {
+            backToTop.classList.remove("visible");
           }
+        });
 
-          let scrollInterval = setInterval(autoScroll, 30);
-
-          // Pause on hover
-          gamesCarousel.addEventListener("mouseenter", () => {
-            clearInterval(scrollInterval);
+        backToTop.addEventListener("click", (e) => {
+          e.preventDefault();
+          window.scrollTo({
+            top: 0,
+            behavior: "smooth",
           });
+        });
+      }
 
-          gamesCarousel.addEventListener("mouseleave", () => {
-            scrollInterval = setInterval(autoScroll, 30);
-          });
-        }
+      // Mobile Menu Toggle
+      const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+      const navLinks = document.getElementById("navLinks");
 
-        // Video fallback handling
-        const videos = document.querySelectorAll("video");
-        videos.forEach((video) => {
-          video.addEventListener("error", function () {
-            this.style.display = "none";
-            const fallback = this.querySelector(".video-fallback");
-            if (fallback) {
-              fallback.style.display = "flex";
-            }
-          });
+      if (mobileMenuBtn && navLinks) {
+        mobileMenuBtn.addEventListener("click", function (e) {
+          e.stopPropagation();
+          navLinks.classList.toggle("show");
+          this.innerHTML = navLinks.classList.contains("show")
+            ? '<i class="fas fa-times"></i>'
+            : '<i class="fas fa-bars"></i>';
+        });
 
-          // Try to play video
-          video.play().catch((error) => {
-            console.log("Video play failed:", error);
-            video.style.display = "none";
-            const fallback = video.querySelector(".video-fallback");
-            if (fallback) {
-              fallback.style.display = "flex";
-            }
+        // Close menu when clicking outside
+        document.addEventListener("click", function (e) {
+          if (
+            !navLinks.contains(e.target) &&
+            !mobileMenuBtn.contains(e.target) &&
+            navLinks.classList.contains("show")
+          ) {
+            navLinks.classList.remove("show");
+            mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+          }
+        });
+
+        // Close menu on link click
+        navLinks.querySelectorAll("a").forEach((link) => {
+          link.addEventListener("click", () => {
+            navLinks.classList.remove("show");
+            mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
           });
         });
 
-        // Initialize animations
-        const observerOptions = {
-          threshold: 0.1,
-          rootMargin: "0px 0px -50px 0px",
-        };
+        // Close menu on window resize
+        window.addEventListener("resize", function () {
+          if (window.innerWidth > 768 && navLinks.classList.contains("show")) {
+            navLinks.classList.remove("show");
+            mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+          }
+        });
+      }
 
-        const observer = new IntersectionObserver((entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.style.opacity = "1";
-              entry.target.style.transform = "translateY(0)";
-            }
-          });
-        }, observerOptions);
+      // FAQ Toggle
+      const faqItems = document.querySelectorAll(".faq-item");
+      faqItems.forEach((item) => {
+        item.addEventListener("click", () => {
+          const isActive = item.classList.contains("active");
 
-        // Observe elements for animation
-        document
-          .querySelectorAll(
-            ".grid-game-card, .featured-game-card, .tip-card, .testimonial-card, .tournament-card, .step-content, .scroll-game-card",
-          )
-          .forEach((el) => {
-            el.style.opacity = "0";
-            el.style.transform = "translateY(20px)";
-            el.style.transition = "opacity 0.6s ease, transform 0.6s ease";
-            observer.observe(el);
+          // Close all FAQ items
+          faqItems.forEach((otherItem) => {
+            otherItem.classList.remove("active");
           });
+
+          // Open clicked item if it wasn't active
+          if (!isActive) {
+            item.classList.add("active");
+          }
+        });
       });
+
+      // Game action functions
+      function playGame(gameName) {
+        const isRegistered = confirm(
+          `To play ${gameName}, you need to register or login first.\n\nClick OK to go to registration page.`,
+        );
+        if (isRegistered) {
+          window.location.href = "registration.html";
+        }
+      }
+
+      function joinTournament(tournamentName) {
+        const isRegistered = confirm(
+          `To join ${tournamentName}, you need to be registered.\n\nClick OK to go to registration page.`,
+        );
+        if (isRegistered) {
+          window.location.href = "registration.html";
+        }
+      }
+
+      // Attach event listeners to buttons
+      document
+        .querySelectorAll(".game-action:not([onclick])")
+        .forEach((button) => {
+          button.addEventListener("click", function () {
+            const gameName =
+              this.closest(".featured-game-card")?.querySelector(".game-title")
+                ?.textContent ||
+              this.closest(".grid-game-card")?.querySelector("h3")
+                ?.textContent ||
+              "this game";
+            playGame(gameName);
+          });
+        });
+
+      document
+        .querySelectorAll(".tournament-action:not([onclick])")
+        .forEach((button) => {
+          button.addEventListener("click", function () {
+            const tournamentName =
+              this.closest(".tournament-card")?.querySelector(
+                ".tournament-title",
+              )?.textContent || "this tournament";
+            joinTournament(tournamentName);
+          });
+        });
+
+      // Smooth scrolling for navigation links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          const targetId = this.getAttribute("href");
+          if (targetId === "#") return;
+
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            e.preventDefault();
+            window.scrollTo({
+              top: targetElement.offsetTop - 100,
+              behavior: "smooth",
+            });
+          }
+        });
+      });
+
+      // Games carousel auto-scroll
+      const gamesCarousel = document.querySelector(".games-carousel");
+      if (gamesCarousel) {
+        let scrollAmount = 0;
+        function autoScroll() {
+          gamesCarousel.scrollLeft += 1;
+          scrollAmount++;
+
+          // Reset when reaching end
+          if (scrollAmount >= gamesCarousel.scrollWidth / 2) {
+            gamesCarousel.scrollLeft = 0;
+            scrollAmount = 0;
+          }
+        }
+
+        let scrollInterval = setInterval(autoScroll, 30);
+
+        // Pause on hover
+        gamesCarousel.addEventListener("mouseenter", () => {
+          clearInterval(scrollInterval);
+        });
+
+        gamesCarousel.addEventListener("mouseleave", () => {
+          scrollInterval = setInterval(autoScroll, 30);
+        });
+      }
+
+      // Initialize animations
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px",
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = "1";
+            entry.target.style.transform = "translateY(0)";
+          }
+        });
+      }, observerOptions);
+
+      // Observe elements for animation
+      document
+        .querySelectorAll(
+          ".grid-game-card, .featured-game-card, .tip-card, .testimonial-card, .tournament-card, .step-content, .scroll-game-card",
+        )
+        .forEach((el) => {
+          el.style.opacity = "0";
+          el.style.transform = "translateY(20px)";
+          el.style.transition = "opacity 0.6s ease, transform 0.6s ease";
+          observer.observe(el);
+        });
     </script>
   </body>
 </html>

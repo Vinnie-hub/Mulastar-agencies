@@ -6,7 +6,7 @@
     <title>Mulastar Agencies - Register & Start Earning Today</title>
     <meta
       name="description"
-      content="Join Mulastar Agencies in minutes. Get Ksh.300 welcome bonus. Start earning online today."
+      content="Register for Mulastar Agencies. Get Ksh.300 welcome bonus + start earning immediately."
     />
     <link rel="icon" href="pictures/icon2.png" type="image/png" />
     <link
@@ -26,7 +26,7 @@
         --secondary-dark: #059669;
         --accent: #f59e0b;
         --light: #ffffff;
-        --dark: #0f172a;
+        --dark: #1e293b;
         --gray-50: #f8fafc;
         --gray-100: #f1f5f9;
         --gray-200: #e2e8f0;
@@ -40,7 +40,6 @@
         --gradient-primary: linear-gradient(135deg, #2563eb 0%, #4f46e5 100%);
         --gradient-secondary: linear-gradient(135deg, #10b981 0%, #059669 100%);
         --gradient-accent: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
-        --gradient-dark: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
 
         --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
         --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.12);
@@ -50,12 +49,10 @@
         --radius-sm: 8px;
         --radius-md: 12px;
         --radius-lg: 16px;
-        --radius-xl: 24px;
+        --radius-xl: 20px;
         --radius-full: 9999px;
 
-        --transition-fast: 0.2s ease;
         --transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        --transition-slow: 0.5s ease;
       }
 
       * {
@@ -72,14 +69,17 @@
         font-family: "Poppins", sans-serif;
         background: linear-gradient(
           135deg,
-          #f0f9ff 0%,
-          #e0f2fe 50%,
-          #f8fafc 100%
+          #f8fafc 0%,
+          #f1f5f9 50%,
+          #e2e8f0 100%
         );
         color: var(--dark);
         line-height: 1.6;
         min-height: 100vh;
-        overflow-x: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
       }
 
       body::before {
@@ -91,50 +91,71 @@
         height: 100%;
         background:
           radial-gradient(
-            circle at 20% 80%,
-            rgba(37, 99, 235, 0.08) 0%,
-            transparent 50%
+            circle at 10% 20%,
+            rgba(37, 99, 235, 0.05) 0%,
+            transparent 40%
           ),
           radial-gradient(
-            circle at 80% 20%,
-            rgba(16, 185, 129, 0.08) 0%,
-            transparent 50%
+            circle at 90% 80%,
+            rgba(16, 185, 129, 0.05) 0%,
+            transparent 40%
           );
         pointer-events: none;
         z-index: -1;
       }
 
-      /* Header */
-      .header {
-        background: rgba(255, 255, 255, 0.95);
-        backdrop-filter: blur(20px);
-        padding: 1.2rem 0;
-        box-shadow: var(--shadow-sm);
-        position: sticky;
-        top: 0;
-        z-index: 1000;
-        border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+      /* Container */
+      .container {
+        width: 100%;
+        max-width: 420px;
+        margin: 0 auto;
       }
 
-      .header-content {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 2rem;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+      /* Card */
+      .card {
+        background: white;
+        border-radius: var(--radius-xl);
+        box-shadow: var(--shadow-xl);
+        overflow: hidden;
+        border: 1px solid rgba(226, 232, 240, 0.8);
+        transition: var(--transition-normal);
+      }
+
+      .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
+      }
+
+      /* Card Header */
+      .card-header {
+        background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+        color: white;
+        padding: 32px;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .card-header::before {
+        content: "";
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(
+          circle,
+          rgba(255, 255, 255, 0.1) 0%,
+          transparent 70%
+        );
       }
 
       .logo {
         display: flex;
         align-items: center;
-        gap: 1rem;
-        text-decoration: none;
-        transition: var(--transition-normal);
-      }
-
-      .logo:hover {
-        transform: translateX(5px);
+        justify-content: center;
+        gap: 12px;
+        margin-bottom: 20px;
       }
 
       .logo-icon {
@@ -148,120 +169,37 @@
         color: white;
         font-weight: 800;
         font-size: 1.4rem;
-        box-shadow: var(--shadow-md);
-        overflow: hidden;
+        box-shadow: var(--shadow-lg);
       }
 
       .logo-icon img {
         width: 100%;
         height: 100%;
         object-fit: cover;
+        border-radius: inherit;
       }
 
       .logo-text {
         font-weight: 800;
-        font-size: 1.5rem;
-        background: var(--gradient-primary);
+        font-size: 1.8rem;
+        background: linear-gradient(90deg, #60a5fa 0%, #a855f7 100%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
-        letter-spacing: -0.5px;
       }
 
       .logo-subtext {
-        font-size: 0.85rem;
-        color: var(--gray-400);
+        font-size: 0.9rem;
+        color: #cbd5e1;
         font-weight: 500;
         letter-spacing: 0.5px;
       }
 
-      /* Navigation */
-      .nav {
-        display: flex;
-        gap: 1.5rem;
-        align-items: center;
-      }
-
-      .nav-link {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        color: var(--gray-600);
-        text-decoration: none;
-        padding: 0.75rem 1.25rem;
-        border-radius: var(--radius-full);
-        font-weight: 500;
-        transition: var(--transition-normal);
-        position: relative;
-      }
-
-      .nav-link:hover {
-        color: var(--primary);
-        background: rgba(37, 99, 235, 0.08);
-      }
-
-      .nav-link.active {
-        color: var(--primary);
-        background: rgba(37, 99, 235, 0.1);
-        font-weight: 600;
-      }
-
-      .nav-link i {
-        font-size: 1.1rem;
-      }
-
-      /* Main Container */
-      .container {
-        max-width: 1200px;
-        margin: 3rem auto;
-        padding: 0 2rem;
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 3rem;
-      }
-
-      @media (min-width: 992px) {
-        .container {
-          grid-template-columns: 1fr 1fr;
-          gap: 4rem;
-        }
-      }
-
-      /* Hero Section */
-      .hero {
-        background: rgba(255, 255, 255, 0.95);
-        backdrop-filter: blur(20px);
-        border-radius: var(--radius-xl);
-        padding: 3rem;
-        box-shadow: var(--shadow-lg);
-        border: 1px solid rgba(226, 232, 240, 0.5);
-        position: relative;
-        overflow: hidden;
-      }
-
-      .hero::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        right: 0;
-        width: 100px;
-        height: 100px;
-        background: var(--gradient-primary);
-        border-radius: 0 0 0 100px;
-        opacity: 0.1;
-      }
-
-      .hero-header {
-        margin-bottom: 2.5rem;
-        position: relative;
-      }
-
-      .hero-header h1 {
-        font-size: 2.5rem;
-        color: var(--dark);
-        margin-bottom: 1rem;
-        line-height: 1.2;
-        font-weight: 800;
+      .card-header h1 {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-bottom: 8px;
+        color: white;
       }
 
       .highlight {
@@ -285,697 +223,195 @@
         border-radius: 2px;
       }
 
-      .hero-subtitle {
-        font-size: 1.1rem;
-        color: var(--gray-600);
-        max-width: 500px;
-      }
-
-      /* Stats */
-      .stats {
-        display: flex;
-        gap: 2rem;
-        margin: 2.5rem 0;
-        padding: 2rem;
-        background: rgba(241, 245, 249, 0.6);
-        border-radius: var(--radius-lg);
-        backdrop-filter: blur(10px);
-        border: 1px solid rgba(226, 232, 240, 0.5);
-      }
-
-      .stat-item {
-        flex: 1;
-        text-align: center;
-        position: relative;
-      }
-
-      .stat-item:not(:last-child)::after {
-        content: "";
-        position: absolute;
-        right: -1rem;
-        top: 50%;
-        transform: translateY(-50%);
-        width: 1px;
-        height: 40px;
-        background: rgba(148, 163, 184, 0.2);
-      }
-
-      .stat-number {
-        font-size: 2.2rem;
-        font-weight: 800;
-        color: var(--primary);
-        display: block;
-        line-height: 1;
-        margin-bottom: 0.5rem;
-        text-shadow: 0 2px 4px rgba(37, 99, 235, 0.1);
-      }
-
-      .stat-label {
-        font-size: 0.9rem;
-        color: var(--gray-600);
-        font-weight: 500;
-        letter-spacing: 0.5px;
-      }
-
-      /* Steps */
-      .steps {
-        margin: 3rem 0;
-      }
-
-      .step {
-        display: flex;
-        gap: 1.5rem;
-        margin-bottom: 2rem;
-        align-items: flex-start;
-        position: relative;
-      }
-
-      .step:not(:last-child)::after {
-        content: "";
-        position: absolute;
-        left: 20px;
-        top: 60px;
-        width: 2px;
-        height: calc(100% + 1rem);
-        background: linear-gradient(
-          to bottom,
-          rgba(37, 99, 235, 0.1) 0%,
-          rgba(37, 99, 235, 0.3) 50%,
-          rgba(37, 99, 235, 0.1) 100%
-        );
-        z-index: 1;
-      }
-
-      .step-number {
-        width: 50px;
-        height: 50px;
-        background: var(--gradient-primary);
-        color: white;
-        border-radius: var(--radius-full);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-weight: 800;
-        font-size: 1.2rem;
-        flex-shrink: 0;
-        position: relative;
-        z-index: 2;
-        box-shadow: var(--shadow-md);
-        transition: var(--transition-normal);
-      }
-
-      .step:hover .step-number {
-        transform: scale(1.1);
-        box-shadow: var(--shadow-lg);
-      }
-
-      .step-content {
-        flex: 1;
-        padding-top: 0.5rem;
-      }
-
-      .step-content h3 {
-        font-size: 1.3rem;
-        margin-bottom: 0.5rem;
-        color: var(--dark);
-        font-weight: 700;
-      }
-
-      .step-content p {
-        color: var(--gray-600);
-        font-size: 0.95rem;
-        line-height: 1.6;
-      }
-
-      /* Registration Card */
-      .register-card {
-        background: rgba(255, 255, 255, 0.95);
-        backdrop-filter: blur(20px);
-        border-radius: var(--radius-xl);
-        padding: 3rem;
-        box-shadow: var(--shadow-xl);
-        border: 1px solid rgba(226, 232, 240, 0.5);
-        position: sticky;
-        top: 120px;
-        overflow: hidden;
-      }
-
-      .register-card::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 8px;
-        background: var(--gradient-primary);
-      }
-
-      .card-header {
-        text-align: center;
-        margin-bottom: 2.5rem;
-        position: relative;
-      }
-
-      .card-header h2 {
-        font-size: 2.2rem;
-        color: var(--dark);
-        margin-bottom: 0.75rem;
-        font-weight: 800;
-      }
-
       .card-header p {
-        color: var(--gray-600);
-        font-size: 1.1rem;
+        color: #cbd5e1;
+        font-size: 0.95rem;
+        max-width: 300px;
+        margin: 0 auto;
+        line-height: 1.5;
       }
 
-      /* Bonus Banner */
-      .bonus-banner {
-        background: linear-gradient(
-          135deg,
-          rgba(245, 158, 11, 0.1) 0%,
-          rgba(217, 119, 6, 0.1) 100%
-        );
-        border: 2px solid rgba(245, 158, 11, 0.3);
-        border-radius: var(--radius-lg);
-        padding: 2rem;
-        text-align: center;
-        margin: 2.5rem 0;
-        position: relative;
-        overflow: hidden;
-        animation: float 3s ease-in-out infinite;
-      }
-
-      @keyframes float {
-        0%,
-        100% {
-          transform: translateY(0);
-        }
-        50% {
-          transform: translateY(-10px);
-        }
-      }
-
-      .bonus-banner::before {
-        content: "";
-        position: absolute;
-        top: -50%;
-        left: -50%;
-        width: 200%;
-        height: 200%;
-        background: radial-gradient(
-          circle,
-          rgba(245, 158, 11, 0.05) 0%,
-          transparent 70%
-        );
-      }
-
-      .bonus-banner h3 {
-        color: var(--warning);
-        margin-bottom: 0.75rem;
-        font-size: 1.4rem;
-        display: flex;
+      /* Trial Badge */
+      .trial-badge {
+        background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+        color: white;
+        padding: 8px 16px;
+        border-radius: var(--radius-full);
+        font-size: 0.85rem;
+        font-weight: 600;
+        display: inline-flex;
         align-items: center;
-        justify-content: center;
-        gap: 0.75rem;
-        font-weight: 700;
-        position: relative;
-      }
-
-      .bonus-amount {
-        font-size: 3.5rem;
-        font-weight: 900;
-        color: var(--warning);
-        margin: 1rem 0;
-        text-shadow: 0 4px 8px rgba(217, 119, 6, 0.2);
-        position: relative;
-      }
-
-      .bonus-subtext {
-        color: var(--warning);
-        font-size: 1rem;
-        font-weight: 500;
-        position: relative;
+        gap: 6px;
+        margin: 20px auto;
+        box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
       }
 
       /* Pricing */
       .pricing {
-        background: linear-gradient(
-          135deg,
-          rgba(37, 99, 235, 0.05) 0%,
-          rgba(79, 70, 229, 0.05) 100%
-        );
-        border-radius: var(--radius-lg);
-        padding: 2rem;
-        margin: 2rem 0;
+        padding: 28px 32px;
+        background: white;
         text-align: center;
-        border: 1px solid rgba(37, 99, 235, 0.1);
+        border-bottom: 1px solid var(--gray-200);
       }
 
       .old-price {
         color: var(--gray-400);
         text-decoration: line-through;
-        font-size: 1.2rem;
+        font-size: 0.9rem;
         font-weight: 500;
       }
 
       .current-price {
-        font-size: 3.5rem;
-        font-weight: 900;
+        font-size: 3rem;
+        font-weight: 800;
         color: var(--primary);
-        margin: 0.5rem 0;
-        text-shadow: 0 4px 8px rgba(37, 99, 235, 0.2);
+        margin: 8px 0;
+        line-height: 1;
       }
 
       .price-note {
         color: var(--gray-600);
-        font-size: 0.95rem;
+        font-size: 0.9rem;
+        font-weight: 500;
       }
 
-      /* Buttons */
-      .btn {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 1rem;
-        width: 100%;
-        padding: 1.25rem;
-        font-size: 1.2rem;
-        font-weight: 700;
-        border: none;
-        border-radius: var(--radius-lg);
-        cursor: pointer;
-        transition: var(--transition-normal);
-        text-decoration: none;
-        margin: 1.5rem 0;
-        position: relative;
-        overflow: hidden;
-        letter-spacing: 0.5px;
-      }
-
-      .btn::after {
-        content: "";
-        position: absolute;
-        top: -50%;
-        left: -50%;
-        width: 200%;
-        height: 200%;
-        background: linear-gradient(
-          to right,
-          transparent 20%,
-          rgba(255, 255, 255, 0.3) 50%,
-          transparent 80%
-        );
-        transform: translateX(-100%);
-      }
-
-      .btn:hover::after {
-        animation: shimmer 1s ease-out;
-      }
-
-      @keyframes shimmer {
-        100% {
-          transform: translateX(100%);
-        }
-      }
-
-      .btn-primary {
-        background: var(--gradient-primary);
-        color: white;
-        box-shadow: 0 10px 30px rgba(37, 99, 235, 0.3);
-        animation: pulse 2s infinite;
-      }
-
-      .btn-primary:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 15px 40px rgba(37, 99, 235, 0.4);
-      }
-
-      @keyframes pulse {
-        0% {
-          box-shadow:
-            0 10px 30px rgba(37, 99, 235, 0.3),
-            0 0 0 0 rgba(37, 99, 235, 0.7);
-        }
-        70% {
-          box-shadow:
-            0 10px 30px rgba(37, 99, 235, 0.3),
-            0 0 0 15px rgba(37, 99, 235, 0);
-        }
-        100% {
-          box-shadow:
-            0 10px 30px rgba(37, 99, 235, 0.3),
-            0 0 0 0 rgba(37, 99, 235, 0);
-        }
-      }
-
-      .btn-secondary {
-        background: rgba(241, 245, 249, 0.8);
-        color: var(--dark);
-        border: 1px solid rgba(226, 232, 240, 0.5);
-      }
-
-      .btn-secondary:hover {
-        background: rgba(226, 232, 240, 0.8);
-        transform: translateY(-3px);
-        box-shadow: var(--shadow-md);
-      }
-
-      .btn-whatsapp {
-        background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
-        color: white;
-        box-shadow: 0 10px 30px rgba(37, 211, 102, 0.3);
-      }
-
-      .btn-whatsapp:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 15px 40px rgba(37, 211, 102, 0.4);
-      }
-
-      /* Trust Indicators */
-      .trust-indicators {
+      /* Stats */
+      .stats {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-        gap: 1rem;
-        margin-top: 2rem;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+        padding: 20px 32px;
+        background: var(--gray-50);
+        border-bottom: 1px solid var(--gray-200);
       }
 
-      .trust-item {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+      .stat-item {
         text-align: center;
-        padding: 1rem;
-        background: rgba(255, 255, 255, 0.6);
-        border-radius: var(--radius-md);
-        border: 1px solid rgba(226, 232, 240, 0.5);
-        transition: var(--transition-normal);
       }
 
-      .trust-item:hover {
-        transform: translateY(-3px);
-        box-shadow: var(--shadow-md);
-        background: white;
+      .stat-number {
+        font-size: 1.5rem;
+        font-weight: 800;
+        color: var(--primary);
+        display: block;
+        line-height: 1;
+        margin-bottom: 5px;
       }
 
-      .trust-icon {
-        width: 40px;
-        height: 40px;
-        background: var(--gradient-primary);
-        border-radius: var(--radius-full);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: white;
-        margin-bottom: 0.75rem;
-      }
-
-      .trust-item p {
-        font-size: 0.85rem;
+      .stat-label {
+        font-size: 0.75rem;
         color: var(--gray-600);
         font-weight: 500;
       }
 
-      /* Simple Footer */
-      .footer {
-        background: #0f172a;
-        color: white;
-        padding: 3rem 0 2rem;
-        margin-top: 4rem;
-        border-top: 4px solid #2563eb;
-      }
-
-      .footer-content {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 2rem;
-      }
-
-      /* Footer Main Section */
-      .footer-main {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 3rem;
-        margin-bottom: 3rem;
-        padding-bottom: 3rem;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-      }
-
-      /* Brand Section */
-      .footer-brand {
-        max-width: 300px;
-      }
-
-      .footer-logo {
+      /* Main Action Button */
+      .btn-primary {
         display: flex;
         align-items: center;
-        gap: 0.5rem;
-        font-size: 1.8rem;
-        font-weight: 700;
+        justify-content: center;
+        gap: 12px;
+        width: calc(100% - 64px);
+        margin: 32px 32px 20px;
+        padding: 18px;
+        background: linear-gradient(135deg, #2563eb 0%, #4f46e5 100%);
         color: white;
-        margin-bottom: 0.5rem;
+        border: none;
+        border-radius: var(--radius-lg);
+        font-size: 1.1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: var(--transition-normal);
+        text-decoration: none;
+        box-shadow: 0 8px 25px rgba(37, 99, 235, 0.3);
       }
 
-      .footer-logo i {
-        color: #2563eb;
+      .btn-primary:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 12px 30px rgba(37, 99, 235, 0.4);
       }
 
-      .footer-tagline {
-        color: #60a5fa;
-        font-size: 0.9rem;
-        margin-bottom: 1rem;
+      .btn-primary:active {
+        transform: translateY(-1px);
+      }
+
+      /* Support Button */
+      .support-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        width: calc(100% - 64px);
+        margin: 0 32px 32px;
+        padding: 14px;
+        background: white;
+        color: var(--gray-600);
+        border: 2px solid var(--gray-200);
+        border-radius: var(--radius-lg);
+        font-size: 0.95rem;
+        font-weight: 500;
+        cursor: pointer;
+        transition: var(--transition-normal);
+        text-decoration: none;
+      }
+
+      .support-btn:hover {
+        background: var(--gray-50);
+        border-color: var(--gray-300);
+        color: var(--dark);
+      }
+
+      /* Footer */
+      .footer {
+        text-align: center;
+        padding: 24px 32px;
+        border-top: 1px solid var(--gray-200);
+        background: var(--gray-50);
+      }
+
+      .trust-badges {
+        display: flex;
+        justify-content: center;
+        gap: 16px;
+        margin-bottom: 16px;
+        flex-wrap: wrap;
+      }
+
+      .trust-badge {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        color: var(--gray-600);
+        font-size: 0.85rem;
         font-weight: 500;
       }
 
-      .footer-description {
-        color: #94a3b8;
+      .trust-badge i {
+        color: var(--primary);
         font-size: 0.9rem;
-        line-height: 1.6;
       }
 
-      /* Links Section */
-      .footer-links {
-        display: flex;
-        flex-direction: column;
-        gap: 0.8rem;
-      }
-
-      .footer-links h4,
-      .footer-contact h4 {
-        color: white;
-        font-size: 1.1rem;
-        margin-bottom: 1rem;
-        font-weight: 600;
-      }
-
-      .footer-links a {
-        color: #94a3b8;
-        text-decoration: none;
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        transition: color 0.3s ease;
-      }
-
-      .footer-links a:hover {
-        color: #60a5fa;
-      }
-
-      /* Contact Section */
-      .footer-contact {
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-      }
-
-      .contact-item {
-        display: flex;
-        align-items: center;
-        gap: 0.75rem;
-      }
-
-      .contact-item i {
-        color: #60a5fa;
-        width: 20px;
-      }
-
-      .contact-item a {
-        color: #94a3b8;
-        text-decoration: none;
-        transition: color 0.3s ease;
-      }
-
-      .contact-item a:hover {
-        color: white;
-      }
-
-      /* Footer Bottom */
-      .footer-bottom {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 1.5rem;
-        text-align: center;
-      }
-
-      /* Copyright */
       .copyright {
-        color: #94a3b8;
-        font-size: 0.85rem;
-        line-height: 1.6;
+        color: var(--gray-400);
+        font-size: 0.8rem;
+        line-height: 1.4;
       }
 
-      /* Developer Credit */
       .developer {
-        color: #94a3b8;
-        font-size: 0.85rem;
+        margin-top: 8px;
+        color: var(--gray-400);
+        font-size: 0.8rem;
       }
 
       .developer a {
-        color: #60a5fa;
+        color: var(--primary);
         text-decoration: none;
         font-weight: 500;
-        display: inline-flex;
-        align-items: center;
-        gap: 0.25rem;
-        transition: color 0.3s ease;
+        transition: var(--transition-normal);
       }
 
       .developer a:hover {
-        color: white;
-      }
-
-      /* Responsive */
-      @media (max-width: 768px) {
-        .footer {
-          padding: 2rem 0;
-        }
-
-        .footer-main {
-          grid-template-columns: 1fr;
-          gap: 2rem;
-          text-align: center;
-        }
-
-        .footer-links a,
-        .contact-item {
-          justify-content: center;
-        }
-
-        .footer-brand {
-          max-width: 100%;
-        }
-      }
-
-      /* Responsive */
-      @media (max-width: 992px) {
-        .container {
-          gap: 2rem;
-        }
-
-        .hero,
-        .register-card {
-          padding: 2rem;
-        }
-
-        .hero-header h1 {
-          font-size: 2rem;
-        }
-
-        .stats {
-          flex-direction: column;
-          gap: 1.5rem;
-        }
-
-        .stat-item:not(:last-child)::after {
-          display: none;
-        }
-      }
-
-      @media (max-width: 768px) {
-        .header-content {
-          flex-direction: column;
-          gap: 1rem;
-          padding: 1rem;
-        }
-
-        .nav {
-          width: 100%;
-          justify-content: center;
-          flex-wrap: wrap;
-        }
-
-        .nav-link {
-          padding: 0.5rem 1rem;
-          font-size: 0.9rem;
-        }
-
-        .hero-header h1 {
-          font-size: 1.8rem;
-        }
-
-        .bonus-amount {
-          font-size: 2.8rem;
-        }
-
-        .current-price {
-          font-size: 2.8rem;
-        }
-
-        .btn {
-          padding: 1rem;
-          font-size: 1.1rem;
-        }
-      }
-
-      @media (max-width: 480px) {
-        .container {
-          padding: 0 1rem;
-        }
-
-        .hero,
-        .register-card {
-          padding: 1.5rem;
-        }
-
-        .step {
-          flex-direction: column;
-          align-items: center;
-          text-align: center;
-        }
-
-        .step:not(:last-child)::after {
-          display: none;
-        }
-
-        .contact-links {
-          flex-direction: column;
-          align-items: center;
-        }
-      }
-
-      /* Animations */
-      @keyframes fadeIn {
-        from {
-          opacity: 0;
-          transform: translateY(30px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-
-      .fade-in {
-        opacity: 0;
-        animation: fadeIn 0.8s ease-out forwards;
-      }
-
-      .fade-in-delay-1 {
-        animation-delay: 0.2s;
-      }
-
-      .fade-in-delay-2 {
-        animation-delay: 0.4s;
+        color: var(--primary-dark);
+        text-decoration: underline;
       }
 
       /* Loading Animation */
@@ -987,11 +423,11 @@
         width: 100%;
         height: 100%;
         background: rgba(255, 255, 255, 0.95);
-        z-index: 9999;
+        z-index: 1000;
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        gap: 2rem;
+        gap: 20px;
       }
 
       .loader.active {
@@ -999,10 +435,10 @@
       }
 
       .spinner {
-        width: 60px;
-        height: 60px;
-        border: 5px solid rgba(37, 99, 235, 0.2);
-        border-top: 5px solid var(--primary);
+        width: 50px;
+        height: 50px;
+        border: 4px solid rgba(37, 99, 235, 0.1);
+        border-top: 4px solid var(--primary);
         border-radius: 50%;
         animation: spin 1s linear infinite;
       }
@@ -1015,6 +451,63 @@
           transform: rotate(360deg);
         }
       }
+
+      /* Animations */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .card {
+        animation: fadeIn 0.6s ease-out forwards;
+      }
+
+      /* Responsive */
+      @media (max-width: 480px) {
+        body {
+          padding: 16px;
+        }
+
+        .container {
+          max-width: 100%;
+        }
+
+        .card-header {
+          padding: 24px;
+        }
+
+        .pricing,
+        .stats {
+          padding-left: 24px;
+          padding-right: 24px;
+        }
+
+        .btn-primary,
+        .support-btn {
+          width: calc(100% - 48px);
+          margin-left: 24px;
+          margin-right: 24px;
+        }
+
+        .current-price {
+          font-size: 2.5rem;
+        }
+
+        .stat-number {
+          font-size: 1.3rem;
+        }
+
+        .trial-badge {
+          font-size: 0.8rem;
+          padding: 6px 12px;
+        }
+      }
     </style>
   </head>
 
@@ -1022,57 +515,51 @@
     <!-- Loading Animation -->
     <div class="loader" id="loader">
       <div class="spinner"></div>
-      <p>Preparing your registration...</p>
+      <p>Processing your registration...</p>
     </div>
 
-    <!-- Header -->
-    <header class="header">
-      <div class="header-content">
-        <a href="index.html" class="logo">
-          <div class="logo-icon">
-            <img src="pictures/icon.jpeg" alt="Mulastar Logo" />
+    <!-- Main Container -->
+    <div class="container">
+      <div class="card">
+        <!-- Card Header -->
+        <div class="card-header">
+          <div class="logo">
+            <div class="logo-icon">
+              <img src="pictures/icon.jpeg" alt="Mulastar Logo" />
+            </div>
+            <div>
+              <div class="logo-text">Mulastar</div>
+              <div class="logo-subtext">Registration Portal</div>
+            </div>
           </div>
-          <div>
-            <div class="logo-text">Mulastar</div>
-            <div class="logo-subtext">Registration Portal</div>
-          </div>
-        </a>
-        <nav class="nav">
-          <a href="index.html" class="nav-link">
-            <i class="fas fa-home"></i> Home
-          </a>
-          <a
-            href="https://wa.me/254755252499?text=Hello%20Coach%20Dajenny,%20I'm%20interested%20in%20Mulastar%20guide%20me%20through"
-            target="_blank"
-            class="nav-link"
-          >
-            <i class="fas fa-question-circle"></i> Help Center
-          </a>
-          <a href="countdown.html" class="nav-link active">
-            <i class="fas fa-user-plus"></i> Register Now
-          </a>
-        </nav>
-      </div>
-    </header>
-
-    <!-- Main Content -->
-    <main class="container">
-      <!-- Left Column: Information -->
-      <section class="hero fade-in">
-        <div class="hero-header">
           <h1>
             Registration is Required to
             <span class="highlight">Get Started on Mulastar</span>
           </h1>
-          <p class="hero-subtitle">
-            Join thousands of successful earners with Mulastar Agencies -
-            Africa's fastest-growing digital income platform.
+          <p>
+            Join thousands of successful earners with Africa's fastest-growing
+            digital income platform
           </p>
+
+          <div class="trial-badge">
+            <i class="fas fa-gift"></i>
+            Receive Ksh.300 instant welcome bonus upon successful registration!
+          </div>
         </div>
 
-        <div class="stats fade-in-delay-1">
+        <!-- Pricing -->
+        <div class="pricing">
+          <div class="old-price">Was: Ksh.550</div>
+          <div class="current-price">Ksh.500</div>
+          <div class="price-note">
+            One-time activation fee only (no hidden charges)
+          </div>
+        </div>
+
+        <!-- Stats -->
+        <div class="stats">
           <div class="stat-item">
-            <span class="stat-number">50,000+</span>
+            <span class="stat-number">50K+</span>
             <span class="stat-label">Active Members</span>
           </div>
           <div class="stat-item">
@@ -1085,186 +572,49 @@
           </div>
         </div>
 
-        <div class="steps">
-          <div class="step fade-in-delay-1">
-            <div class="step-number">1</div>
-            <div class="step-content">
-              <h3>Quick Sign Up</h3>
-              <p>
-                Simple registration process using your phone number. Get started
-                in less than 2 minutes with our streamlined onboarding.
-              </p>
-            </div>
-          </div>
-
-          <div class="step fade-in-delay-1">
-            <div class="step-number">2</div>
-            <div class="step-content">
-              <h3>One-Time Activation</h3>
-              <p>
-                Pay the Ksh.500 activation fee once to unlock full platform
-                access and all earning opportunities.
-              </p>
-            </div>
-          </div>
-
-          <div class="step fade-in-delay-1">
-            <div class="step-number">3</div>
-            <div class="step-content">
-              <h3>Start Earning Immediately</h3>
-              <p>
-                Receive Ksh.300 welcome bonus instantly and begin completing
-                tasks to grow your income from day one.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Right Column: Registration -->
-      <section class="register-card fade-in-delay-1" id="register">
-        <div class="card-header">
-          <h2>Ready to Start?</h2>
-          <p>Complete your registration here to get started</p>
-        </div>
-
-        <div class="bonus-banner">
-          <h3><i class="fas fa-gift"></i> EXCLUSIVE WELCOME BONUS</h3>
-          <div class="bonus-amount">Ksh.300</div>
-          <p class="bonus-subtext">
-            Receive instant welcome bonus upon successful registration!
-          </p>
-        </div>
-
-        <div class="pricing">
-          <div class="old-price">Was: Ksh.550</div>
-          <div class="current-price">Ksh.500</div>
-          <p class="price-note">
-            One-time activation fee only (no hidden charges)
-          </p>
-        </div>
-
         <!-- Main Action Button -->
-        <a
-          href="countdown.html"
-          class="btn btn-primary"
-          target="_blank"
-          id="registerBtn"
-        >
-          <i class="fas fa-user-plus"></i>
+        <button class="btn-primary" id="registerBtn">
+          <i class="fas fa-rocket"></i>
           REGISTER HERE - ONLY Ksh.500
-        </a>
+        </button>
 
-        <div class="trust-indicators">
-          <div class="trust-item">
-            <div class="trust-icon">
-              <i class="fas fa-lock"></i>
-            </div>
-            <p>Secure Registration</p>
-          </div>
-          <div class="trust-item">
-            <div class="trust-icon">
-              <i class="fas fa-shield-alt"></i>
-            </div>
-            <p>SSL Encrypted</p>
-          </div>
-          <div class="trust-item">
-            <div class="trust-icon">
-              <i class="fas fa-clock"></i>
-            </div>
-            <p>Instant Access</p>
-          </div>
-          <div class="trust-item">
-            <div class="trust-icon">
-              <i class="fas fa-headset"></i>
-            </div>
-            <p>24/7 Support</p>
-          </div>
-        </div>
-
-        <!-- Alternative Support -->
+        <!-- Support Button -->
         <a
-          href="https://wa.me/254755252499?text=Hello%20Coach%20Dajenny,%20I%20need%20help%20with%20registration"
-          class="btn btn-whatsapp"
+          href="https://wa.me/254755252499?text=Hello%20Coach%20Dajenny,%20I%20need%20help%20with%20Mulastar%20registration"
+          class="support-btn"
           target="_blank"
         >
           <i class="fab fa-whatsapp"></i>
           NEED HELP? CHAT ON WHATSAPP
         </a>
-      </section>
-    </main>
 
-    <!-- Footer -->
-    <footer class="footer">
-      <div class="footer-content">
-        <!-- Main Footer Section -->
-        <div class="footer-main">
-          <!-- Logo and Description -->
-          <div class="footer-brand">
-            <div class="footer-logo">
-              <i class="fas fa-star"></i>
-              <span>Mulastar</span>
+        <!-- Footer -->
+        <div class="footer">
+          <div class="trust-badges">
+            <div class="trust-badge">
+              <i class="fas fa-lock"></i>
+              Secure
             </div>
-            <p class="footer-tagline">Digital Income Platform</p>
-            <p class="footer-description">
-              Empowering thousands to achieve financial freedom through digital
-              opportunities.
-            </p>
-          </div>
-
-          <!-- Quick Links -->
-          <div class="footer-links">
-            <h4>Quick Links</h4>
-            <a href="index.html"><i class="fas fa-home"></i> Home</a>
-            <a href="#"><i class="fas fa-user-plus"></i> Register</a>
-            <a href="#"><i class="fas fa-rocket"></i> Launch Status</a>
-          </div>
-
-          <!-- Contact -->
-          <div class="footer-contact">
-            <h4>Contact Us</h4>
-            <div class="contact-item">
-              <i class="fas fa-phone"></i>
-              <a href="tel:+254755252499">+254 755 252 499</a>
+            <div class="trust-badge">
+              <i class="fas fa-shield-alt"></i>
+              Verified
             </div>
-            <div class="contact-item">
-              <i class="fab fa-whatsapp"></i>
-              <a
-                href="https://wa.me/254755252499?text=Hello%20Coach%20Dajenny,%20I'm%20interested%20in%20Mulastar%20guide%20me%20through"
-                target="_blank"
-                >WhatsApp Support</a
-              >
-            </div>
-            <div class="contact-item">
-              <i class="fas fa-envelope"></i>
-              <a href="mailto:dajennysydney254@gmail.com"
-                >dajennysydney254@gmail.com</a
-              >
+            <div class="trust-badge">
+              <i class="fas fa-clock"></i>
+              Instant
             </div>
           </div>
-        </div>
-
-        <!-- Footer Bottom -->
-        <div class="footer-bottom">
-          <!-- Copyright -->
           <div class="copyright">
-            <p>
-              &copy; <span id="currentYear"></span> Mulastar Agencies. All
-              rights reserved.
-            </p>
-            <p>Managed by BESTTECH MANAGEMENT</p>
+            © <span id="currentYear"></span> Mulastar Agencies. All rights
+            reserved.
           </div>
-
-          <!-- Developer Credit -->
           <div class="developer">
-            <span>Website developed by </span>
-            <a href="https://wa.me/254707995729" target="_blank">
-              <i class="fas fa-code"></i> Jeff
-            </a>
+            Managed by BESTTECH MANAGEMENT |
+            <a href="tel:+254755252499">+254 755 252 499</a>
           </div>
         </div>
       </div>
-    </footer>
+    </div>
 
     <script>
       // Set current year
@@ -1277,85 +627,43 @@
 
       if (registerBtn) {
         registerBtn.addEventListener("click", (e) => {
-          e.preventDefault(); // Prevent immediate redirect
+          e.preventDefault();
+
+          // Show loading animation
           loader.classList.add("active");
 
-          // Show loading for 2 seconds then redirect
+          // Simulate processing for 2 seconds, then redirect
           setTimeout(() => {
             loader.classList.remove("active");
-            window.location.href = "countdown.html";
+            window.location.href =
+              "https://mulastar.com/register.php?ref=Sydney";
           }, 2000);
         });
       }
 
-      // Simple animations on load
+      // Add animation on page load
       document.addEventListener("DOMContentLoaded", () => {
-        // Start countdown timer
-        startCountdown();
-
-        // Fade in animations
-        document
-          .querySelectorAll(".fade-in, .fade-in-delay-1, .fade-in-delay-2")
-          .forEach((el, index) => {
-            setTimeout(() => {
-              el.style.opacity = "1";
-              el.style.transform = "translateY(0)";
-            }, index * 200);
+        // Add click sound effect (optional)
+        const buttons = document.querySelectorAll("button, .support-btn");
+        buttons.forEach((button) => {
+          button.addEventListener("click", () => {
+            // Add your click sound effect here if desired
           });
+        });
 
-        // Add scroll effect to header
-        window.addEventListener("scroll", () => {
-          const header = document.querySelector(".header");
-          if (window.scrollY > 50) {
-            header.style.background = "rgba(255, 255, 255, 0.98)";
-            header.style.boxShadow = "0 4px 20px rgba(0, 0, 0, 0.1)";
-          } else {
-            header.style.background = "rgba(255, 255, 255, 0.95)";
-            header.style.boxShadow = "0 1px 3px rgba(0, 0, 0, 0.08)";
+        // Keyboard navigation for accessibility
+        document.addEventListener("keydown", (e) => {
+          if (e.key === "Enter" && document.activeElement === registerBtn) {
+            registerBtn.click();
           }
         });
 
-        // Add hover effect to steps
-        const steps = document.querySelectorAll(".step");
-        steps.forEach((step) => {
-          step.addEventListener("mouseenter", () => {
-            const number = step.querySelector(".step-number");
-            number.style.transform = "scale(1.1)";
-          });
-
-          step.addEventListener("mouseleave", () => {
-            const number = step.querySelector(".step-number");
-            number.style.transform = "scale(1)";
-          });
-        });
-
-        // Track registration clicks
-        document.querySelectorAll('a[href*="countdown"]').forEach((link) => {
-          link.addEventListener("click", () => {
-            // Add analytics tracking here
-            console.log("Registration process started");
-
-            // You can add Google Analytics or other tracking here
-            // gtag('event', 'registration_start', {
-            //   'event_category': 'engagement',
-            //   'event_label': 'registration_page'
-            // });
-          });
-        });
-
-        // Smooth scroll for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-          anchor.addEventListener("click", function (e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute("href"));
-            if (target) {
-              window.scrollTo({
-                top: target.offsetTop - 100,
-                behavior: "smooth",
-              });
-            }
-          });
-        });
+        // Add subtle animation to card
+        const card = document.querySelector(".card");
+        setTimeout(() => {
+          card.style.transform = "translateY(0)";
+          card.style.opacity = "1";
+        }, 100);
       });
     </script>
   </body>
